@@ -221,10 +221,16 @@ BasePill {
                     MouseArea {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
+                        acceptedButtons: Qt.LeftButton | Qt.RightButton
                         onPressed: mouse => {
                             root.triggerRipple(this, mouse.x, mouse.y);
                         }
-                        onClicked: {
+                        onClicked: mouse => {
+                            if (mouse.button === Qt.RightButton) {
+                                const rPos = mapToItem(root, mouse.x, mouse.y);
+                                root.rightClicked(rPos.x, rPos.y);
+                                return;
+                            }
                             if (root.popoutTarget && root.popoutTarget.setTriggerPosition) {
                                 const globalPos = parent.mapToItem(null, 0, 0);
                                 const currentScreen = root.parentScreen || Screen;
@@ -423,17 +429,23 @@ BasePill {
                             anchors.fill: parent
                             enabled: root.playerAvailable
                             cursorShape: Qt.PointingHandCursor
-                            onPressed: mouse => {
-                                root.triggerRipple(this, mouse.x, mouse.y);
-                                if (root.popoutTarget && root.popoutTarget.setTriggerPosition) {
-                                    const globalPos = mapToItem(null, 0, 0);
-                                    const currentScreen = root.parentScreen || Screen;
-                                    const barPosition = root.axis?.edge === "left" ? 2 : (root.axis?.edge === "right" ? 3 : (root.axis?.edge === "top" ? 0 : 1));
-                                    const pos = SettingsData.getPopupTriggerPosition(globalPos, currentScreen, root.barThickness, root.width, root.barSpacing, barPosition, root.barConfig);
-                                    root.popoutTarget.setTriggerPosition(pos.x, pos.y, pos.width, root.section, currentScreen, barPosition, root.barThickness, root.barSpacing, root.barConfig);
-                                }
-                                root.clicked();
+                            acceptedButtons: Qt.LeftButton | Qt.RightButton
+                        onClicked: mouse => {
+                            if (mouse.button === Qt.RightButton) {
+                                const rPos = mapToItem(root, mouse.x, mouse.y);
+                                root.rightClicked(rPos.x, rPos.y);
+                                return;
                             }
+                            root.triggerRipple(this, mouse.x, mouse.y);
+                            if (root.popoutTarget && root.popoutTarget.setTriggerPosition) {
+                                const globalPos = mapToItem(null, 0, 0);
+                                const currentScreen = root.parentScreen || Screen;
+                                const barPosition = root.axis?.edge === "left" ? 2 : (root.axis?.edge === "right" ? 3 : (root.axis?.edge === "top" ? 0 : 1));
+                                const pos = SettingsData.getPopupTriggerPosition(globalPos, currentScreen, root.barThickness, root.width, root.barSpacing, barPosition, root.barConfig);
+                                root.popoutTarget.setTriggerPosition(pos.x, pos.y, pos.width, root.section, currentScreen, barPosition, root.barThickness, root.barSpacing, root.barConfig);
+                            }
+                            root.clicked();
+                        }
                         }
                     }
                 }

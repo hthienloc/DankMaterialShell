@@ -601,6 +601,25 @@ Item {
     }
 
     LazyLoader {
+        id: mediaRightClickPopoutLoader
+
+        active: false
+
+        Component.onCompleted: {
+            PopoutService.mediaRightClickPopoutLoader = mediaRightClickPopoutLoader;
+        }
+
+        MediaRightClickPopout {
+            id: mediaRightClickPopout
+            onPopoutClosed: PopoutService.unloadMediaRightClick()
+
+            Component.onCompleted: {
+                PopoutService.mediaRightClickPopout = mediaRightClickPopout;
+            }
+        }
+    }
+
+    LazyLoader {
         id: layoutPopoutLoader
 
         active: false

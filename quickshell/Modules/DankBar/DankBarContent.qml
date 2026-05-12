@@ -993,6 +993,44 @@ Item {
                     PopoutManager.requestPopout(dankDashPopoutLoader.item, 1, (effectiveBarConfig?.id ?? "default") + "-" + section + "-1");
                 }
             }
+
+            onRightClicked: {
+                PopoutService.mediaRightClickPopoutLoader.active = true;
+                if (PopoutService.mediaRightClickPopoutLoader.item) {
+                    const effectiveBarConfig = topBarContent.barConfig;
+                    const barPosition = barWindow.axis?.edge === "left" ? 2 : (barWindow.axis?.edge === "right" ? 3 : (barWindow.axis?.edge === "top" ? 0 : 1));
+                    
+                    if (PopoutService.mediaRightClickPopoutLoader.item.setTriggerPosition) {
+                        let triggerPos, triggerWidth;
+                        if (section === "center") {
+                            const centerSection = barWindow.isVertical ? (barWindow.axis?.edge === "left" ? vCenterSection : vCenterSection) : hCenterSection;
+                            if (centerSection) {
+                                if (barWindow.isVertical) {
+                                    const centerY = centerSection.height / 2;
+                                    const centerGlobalPos = centerSection.mapToItem(null, 0, centerY);
+                                    triggerPos = centerGlobalPos;
+                                    triggerWidth = centerSection.height;
+                                } else {
+                                    const centerGlobalPos = centerSection.mapToItem(null, 0, 0);
+                                    triggerPos = centerGlobalPos;
+                                    triggerWidth = centerSection.width;
+                                }
+                            } else {
+                                triggerPos = visualContent.mapToItem(null, 0, 0);
+                                triggerWidth = visualWidth;
+                            }
+                        } else {
+                            triggerPos = visualContent.mapToItem(null, 0, 0);
+                            triggerWidth = visualWidth;
+                        }
+                        const pos = SettingsData.getPopupTriggerPosition(triggerPos, barWindow.screen, barWindow.effectiveBarThickness, triggerWidth, effectiveBarConfig?.spacing ?? 4, barPosition, effectiveBarConfig);
+                        PopoutService.mediaRightClickPopoutLoader.item.setTriggerPosition(pos.x, pos.y, pos.width, section, barWindow.screen, barPosition, barWindow.effectiveBarThickness, effectiveBarConfig?.spacing ?? 4, effectiveBarConfig);
+                    } else {
+                        PopoutService.mediaRightClickPopoutLoader.item.triggerScreen = barWindow.screen;
+                    }
+                    PopoutManager.requestPopout(PopoutService.mediaRightClickPopoutLoader.item, 0, (effectiveBarConfig?.id ?? "default") + "-" + section + "-right-click");
+                }
+            }
         }
     }
 

@@ -28,6 +28,8 @@ Singleton {
     property var layoutPopoutLoader: null
     property var clipboardHistoryPopout: null
     property var clipboardHistoryPopoutLoader: null
+    property var mediaRightClickPopout: null
+    property var mediaRightClickPopoutLoader: null
 
     property var settingsModal: null
     property var settingsModalLoader: null
@@ -299,6 +301,31 @@ Singleton {
         if (vpnPopout) {
             setPosition(vpnPopout, x, y, width, section, screen);
             vpnPopout.toggle();
+        }
+    }
+
+    function openMediaRightClick(x, y, width, section, screen) {
+        if (mediaRightClickPopout) {
+            setPosition(mediaRightClickPopout, x, y, width, section, screen);
+            mediaRightClickPopout.open();
+        }
+    }
+
+    function closeMediaRightClick() {
+        mediaRightClickPopout?.close();
+    }
+
+    function unloadMediaRightClick() {
+        if (!mediaRightClickPopoutLoader)
+            return;
+        mediaRightClickPopout = null;
+        mediaRightClickPopoutLoader.active = false;
+    }
+
+    function toggleMediaRightClick(x, y, width, section, screen) {
+        if (mediaRightClickPopout) {
+            setPosition(mediaRightClickPopout, x, y, width, section, screen);
+            mediaRightClickPopout.toggle();
         }
     }
 
