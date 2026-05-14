@@ -570,7 +570,7 @@ FloatingWindow {
                                         return "available";
                                     }
 
-                                    width: buttonState === "incompatible" ? incompatRow.implicitWidth + Theme.spacingM * 2 : 80
+                                    width: Math.max(80, incompatRow.implicitWidth + Theme.spacingM * 2)
                                     height: 32
                                     radius: Theme.cornerRadius
                                     anchors.verticalCenter: parent.verticalCenter

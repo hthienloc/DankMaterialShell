@@ -13,6 +13,7 @@ StyledRect {
     property int buttonSize: 32
     property var tooltipText: null
     property string tooltipSide: "bottom"
+    readonly property bool hovered: stateLayer.containsMouse
 
     signal clicked
     signal entered
@@ -31,6 +32,7 @@ StyledRect {
     }
 
     StateLayer {
+        id: stateLayer
         disabled: !root.enabled
         stateColor: Theme.primary
         cornerRadius: root.radius
