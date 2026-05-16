@@ -23,14 +23,14 @@ FocusScope {
     function updateFilteredPlugins() {
         var query = searchQuery.toLowerCase();
         filteredPlugins = PluginService.availablePluginsList.filter(plugin => {
-            if (!query) return true;
+            if (!query)
+                return true;
             var name = (plugin.name || "").toLowerCase();
             var desc = (plugin.description || "").toLowerCase();
             var author = (plugin.author || "").toLowerCase();
             return name.includes(query) || desc.includes(query) || author.includes(query);
         });
     }
-
 
     Connections {
         target: PluginService
@@ -250,11 +250,15 @@ FocusScope {
                         }
 
                         DankButton {
-                            text: I18n.tr("Create Dir")
-                            iconName: "create_new_folder"
+                            text: PluginService.pluginDirectoryExists ? I18n.tr("Open Dir") : I18n.tr("Create Dir")
+                            iconName: PluginService.pluginDirectoryExists ? "folder_open" : "create_new_folder"
                             onClicked: {
-                                PluginService.createPluginDirectory();
-                                ToastService.showInfo("Created plugin directory: " + PluginService.pluginDirectory);
+                                if (PluginService.pluginDirectoryExists) {
+                                    PluginService.openPluginDirectory();
+                                } else {
+                                    PluginService.createPluginDirectory();
+                                    ToastService.showInfo(I18n.tr("Created plugin directory: %1").arg(PluginService.pluginDirectory));
+                                }
                             }
                         }
                     }

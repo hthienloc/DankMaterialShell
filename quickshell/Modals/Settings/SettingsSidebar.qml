@@ -160,20 +160,6 @@ Rectangle {
                     "tabIndex": 18
                 },
                 {
-                    "id": "running_apps",
-                    "text": I18n.tr("Running Apps"),
-                    "icon": "app_registration",
-                    "tabIndex": 19,
-                    "hyprlandNiriOnly": true
-                },
-                {
-                    "id": "updater",
-                    "text": I18n.tr("System Updater"),
-                    "icon": "refresh",
-                    "tabIndex": 20,
-                    "updaterOnly": true
-                },
-                {
                     "id": "desktop_widgets",
                     "text": I18n.tr("Desktop Widgets"),
                     "icon": "widgets",
@@ -184,7 +170,7 @@ Rectangle {
         {
             "id": "dock_launcher",
             "text": I18n.tr("Dock & Launcher"),
-            "icon": "apps",
+            "icon": "shelf_auto_hide",
             "collapsedByDefault": true,
             "children": [
                 {
@@ -242,6 +228,27 @@ Rectangle {
             "dmsOnly": true
         },
         {
+            "id": "applications",
+            "text": I18n.tr("Applications"),
+            "icon": "apps",
+            "collapsedByDefault": true,
+            "children": [
+                {
+                    "id": "default_apps",
+                    "text": I18n.tr("Default Apps"),
+                    "icon": "star",
+                    "tabIndex": 34
+                },
+                {
+                    "id": "running_apps",
+                    "text": I18n.tr("Running Apps"),
+                    "icon": "app_registration",
+                    "tabIndex": 19,
+                    "hyprlandNiriOnly": true
+                }
+            ]
+        },
+        {
             "id": "system",
             "text": I18n.tr("System"),
             "icon": "memory",
@@ -278,6 +285,13 @@ Rectangle {
                     "text": I18n.tr("Multiplexers"),
                     "icon": "terminal",
                     "tabIndex": 32
+                },
+                {
+                    "id": "updater",
+                    "text": I18n.tr("System Updater"),
+                    "icon": "refresh",
+                    "tabIndex": 20,
+                    "updaterOnly": true
                 },
                 {
                     "id": "window_rules",

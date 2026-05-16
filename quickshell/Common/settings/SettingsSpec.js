@@ -242,7 +242,7 @@ var SPEC = {
     monoFontFamily: { def: "Fira Code" },
     fontWeight: { def: 400 },
     fontScale: { def: 1.0 },
-    textRenderType: { def: 1 },
+    textRenderType: { def: 0 },
     textRenderQuality: { def: 0 },
 
     notepadUseMonospace: { def: true },
@@ -431,6 +431,7 @@ var SPEC = {
     customPowerActionPowerOff: { def: "" },
 
     updaterHideWidget: { def: false },
+    updaterCheckOnStart: { def: false },
     updaterUseCustomCommand: { def: false },
     updaterCustomCommand: { def: "" },
     updaterTerminalAdditionalParams: { def: "" },
@@ -571,7 +572,7 @@ var SPEC = {
     frameCloseGaps: { def: true },
     frameLauncherEmergeSide: { def: "bottom" },
     frameLauncherArcExtender: { def: false },
-    frameMode: { def: "separate" }
+    frameMode: { def: "connected" }
 };
 
 function getValidKeys() {

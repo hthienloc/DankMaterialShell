@@ -4,6 +4,7 @@ import Quickshell
 import Quickshell.Widgets
 import Quickshell.Hyprland
 import Quickshell.I3
+import Quickshell.WindowManager
 import qs.Common
 import qs.Services
 import qs.Widgets
@@ -86,7 +87,22 @@ Item {
         }
     }
 
-    readonly property bool useExtWorkspace: DMSService.forceExtWorkspace || (!CompositorService.isNiri && !CompositorService.isHyprland && !CompositorService.isDwl && !CompositorService.isSway && !CompositorService.isScroll && !CompositorService.isMiracle && ExtWorkspaceService.extWorkspaceAvailable)
+    readonly property var extProjection: (useExtWorkspace && parentScreen) ? WindowManager.screenProjection(parentScreen) : null
+    readonly property bool useExtWorkspace: {
+        if (Quickshell.env("DMS_FORCE_EXTWS") === "1")
+            return (WindowManager.windowsets?.length ?? 0) > 0;
+        switch (CompositorService.compositor) {
+        case "niri":
+        case "hyprland":
+        case "dwl":
+        case "sway":
+        case "scroll":
+        case "miracle":
+            return false;
+        default:
+            return (WindowManager.windowsets?.length ?? 0) > 0;
+        }
+    }
 
     Connections {
         target: DesktopEntries
@@ -361,7 +377,7 @@ Item {
                 "id": "",
                 "name": "",
                 "active": false,
-                "hidden": true
+                "_placeholder": true
             };
         } else if (CompositorService.isNiri) {
             placeholder = {
@@ -493,33 +509,21 @@ Item {
     }
 
     function getExtWorkspaceWorkspaces() {
-        const groups = ExtWorkspaceService.groups;
-        if (!ExtWorkspaceService.extWorkspaceAvailable || groups.length === 0) {
-            return [
-                {
-                    "id": "1",
-                    "name": "1",
-                    "active": false
-                }
-            ];
-        }
+        const fallback = [
+            {
+                "id": "1",
+                "name": "1",
+                "active": false
+            }
+        ];
+        if (!extProjection)
+            return fallback;
 
-        const group = groups.find(g => g.outputs && g.outputs.includes(root.screenName));
-        if (!group || !group.workspaces) {
-            return [
-                {
-                    "id": "1",
-                    "name": "1",
-                    "active": false
-                }
-            ];
-        }
-
-        let visible = group.workspaces.filter(ws => !ws.hidden);
+        let visible = extProjection.windowsets.filter(ws => ws.shouldDisplay);
 
         const hasValidCoordinates = visible.some(ws => ws.coordinates && ws.coordinates.length > 0);
         if (hasValidCoordinates) {
-            visible = visible.sort((a, b) => {
+            visible = visible.slice().sort((a, b) => {
                 const coordsA = a.coordinates || [0, 0];
                 const coordsB = b.coordinates || [0, 0];
                 if (coordsA[0] !== coordsB[0])
@@ -528,33 +532,14 @@ Item {
             });
         }
 
-        visible = visible.map(ws => ({
-                    id: ws.id,
-                    name: ws.name,
-                    coordinates: ws.coordinates,
-                    state: ws.state,
-                    active: ws.active,
-                    urgent: ws.urgent,
-                    hidden: ws.hidden,
-                    groupID: group.id
-                }));
-
-        return visible.length > 0 ? visible : [
-            {
-                "id": "1",
-                "name": "1",
-                "active": false
-            }
-        ];
+        return visible.length > 0 ? visible : fallback;
     }
 
     function getExtWorkspaceActiveWorkspace() {
-        if (!ExtWorkspaceService.extWorkspaceAvailable) {
-            return 1;
-        }
-
-        const activeWs = ExtWorkspaceService.getActiveWorkspaceForOutput(root.screenName);
-        return activeWs ? (activeWs.id || activeWs.name || "1") : "1";
+        if (!extProjection)
+            return "";
+        const activeWs = extProjection.windowsets.find(ws => ws.active);
+        return activeWs ? (activeWs.id || activeWs.name || "") : "";
     }
 
     readonly property real dpr: parentScreen ? CompositorService.getScreenScale(parentScreen) : 1
@@ -566,7 +551,7 @@ Item {
     function getRealWorkspaces() {
         return root.workspaceList.filter(ws => {
             if (useExtWorkspace)
-                return ws && (ws.id !== "" || ws.name !== "") && !ws.hidden;
+                return ws && !ws._placeholder;
             if (CompositorService.isNiri)
                 return ws && ws.idx !== -1;
             if (CompositorService.isHyprland)
@@ -583,19 +568,21 @@ Item {
         if (!data)
             return;
 
-        if (root.useExtWorkspace && (data.id || data.name)) {
-            ExtWorkspaceService.activateWorkspace(data.id || data.name, data.groupID || "");
+        if (root.useExtWorkspace) {
+            if (typeof data.activate === "function")
+                data.activate();
             return;
         }
 
         switch (CompositorService.compositor) {
         case "niri":
-            if (data.idx !== undefined)
-                NiriService.switchToWorkspace(data.idx);
+            if (data.id !== undefined)
+                NiriService.switchToWorkspace(data.id);
             break;
         case "hyprland":
-            if (data.id)
-                Hyprland.dispatch(`workspace ${data.id}`);
+            if (data.id) {
+                HyprlandService.focusWorkspace(data.id);
+            }
             break;
         case "dwl":
             if (data.tag !== undefined)
@@ -649,7 +636,8 @@ Item {
             }
 
             const nextWorkspace = realWorkspaces[nextIndex];
-            ExtWorkspaceService.activateWorkspace(nextWorkspace.id || nextWorkspace.name, nextWorkspace.groupID || "");
+            if (typeof nextWorkspace.activate === "function")
+                nextWorkspace.activate();
         } else if (CompositorService.isNiri) {
             const realWorkspaces = getRealWorkspaces();
             if (realWorkspaces.length < 2) {
@@ -665,10 +653,10 @@ Item {
             }
 
             const nextWorkspace = realWorkspaces[nextIndex];
-            if (!nextWorkspace || nextWorkspace.idx === undefined) {
+            if (!nextWorkspace || nextWorkspace.id === undefined) {
                 return;
             }
-            NiriService.switchToWorkspace(nextWorkspace.idx);
+            NiriService.switchToWorkspace(nextWorkspace.id);
         } else if (CompositorService.isHyprland) {
             const realWorkspaces = getRealWorkspaces();
             if (realWorkspaces.length < 2) {
@@ -683,7 +671,7 @@ Item {
                 return;
             }
 
-            Hyprland.dispatch(`workspace ${realWorkspaces[nextIndex].id}`);
+            HyprlandService.focusWorkspace(realWorkspaces[nextIndex].id);
         } else if (CompositorService.isDwl) {
             const realWorkspaces = getRealWorkspaces();
             if (realWorkspaces.length < 2) {
@@ -1013,7 +1001,7 @@ Item {
                 }
                 property bool isPlaceholder: {
                     if (root.useExtWorkspace)
-                        return !!(modelData && modelData.hidden);
+                        return !!(modelData && modelData._placeholder);
                     if (CompositorService.isNiri)
                         return !!(modelData && modelData.idx === -1);
                     if (CompositorService.isHyprland)
@@ -1296,9 +1284,9 @@ Item {
                             const sourceWs = root.workspaceList[root.dragSourceIndex];
                             const targetWs = root.workspaceList[root.dragTargetIndex];
 
-                            if (sourceWs && targetWs && sourceWs.idx !== undefined && targetWs.idx !== undefined) {
+                            if (sourceWs && targetWs && sourceWs.id !== undefined && targetWs.idx !== undefined) {
                                 root.suppressShiftAnimation = true;
-                                NiriService.moveWorkspaceToIndex(sourceWs.idx, targetWs.idx);
+                                NiriService.moveWorkspaceToIndex(sourceWs.id, targetWs.idx);
                                 Qt.callLater(() => root.suppressShiftAnimation = false);
                             }
                         }
@@ -1313,14 +1301,15 @@ Item {
                             return;
 
                         if (mouse.button === Qt.LeftButton) {
-                            if (root.useExtWorkspace && (modelData?.id || modelData?.name)) {
-                                ExtWorkspaceService.activateWorkspace(modelData.id || modelData.name, modelData.groupID || "");
+                            if (root.useExtWorkspace) {
+                                if (typeof modelData?.activate === "function")
+                                    modelData.activate();
                             } else if (CompositorService.isNiri) {
-                                if (modelData && modelData.idx !== undefined) {
-                                    NiriService.switchToWorkspace(modelData.idx);
+                                if (modelData && modelData.id !== undefined) {
+                                    NiriService.switchToWorkspace(modelData.id);
                                 }
                             } else if (CompositorService.isHyprland && modelData?.id) {
-                                Hyprland.dispatch(`workspace ${modelData.id}`);
+                                HyprlandService.focusWorkspace(modelData.id);
                             } else if (CompositorService.isDwl && modelData?.tag !== undefined) {
                                 DwlService.switchToTag(root.screenName, modelData.tag);
                             } else if ((CompositorService.isSway || CompositorService.isScroll || CompositorService.isMiracle) && modelData?.num) {
@@ -1683,7 +1672,7 @@ Item {
                                                     if (!winId)
                                                         return;
                                                     if (CompositorService.isHyprland) {
-                                                        Hyprland.dispatch(`focuswindow address:${winId}`);
+                                                        HyprlandService.focusWindow(winId);
                                                     } else if (CompositorService.isNiri) {
                                                         NiriService.focusWindow(winId);
                                                     }
@@ -1702,7 +1691,7 @@ Item {
                                                 anchors.bottom: parent.bottom
                                                 z: 2
 
-                                                Text {
+                                                StyledText {
                                                     anchors.centerIn: parent
                                                     text: modelData.count
                                                     font.pixelSize: root.appIconSize * 0.44
@@ -1852,7 +1841,7 @@ Item {
                                                     if (!winId)
                                                         return;
                                                     if (CompositorService.isHyprland) {
-                                                        Hyprland.dispatch(`focuswindow address:${winId}`);
+                                                        HyprlandService.focusWindow(winId);
                                                     } else if (CompositorService.isNiri) {
                                                         NiriService.focusWindow(winId);
                                                     }
@@ -1871,7 +1860,7 @@ Item {
                                                 anchors.bottom: parent.bottom
                                                 z: 2
 
-                                                Text {
+                                                StyledText {
                                                     anchors.centerIn: parent
                                                     text: modelData.count
                                                     font.pixelSize: root.appIconSize * 0.44
@@ -1940,21 +1929,16 @@ Item {
                         delegateRoot.updateAllData();
                     }
                 }
-                Connections {
-                    target: ExtWorkspaceService
-                    enabled: root.useExtWorkspace
-                    function onStateChanged() {
+                property var _extWindowsetsTrigger: root.useExtWorkspace ? WindowManager.windowsets : null
+                on_ExtWindowsetsTriggerChanged: {
+                    if (root.useExtWorkspace)
                         delegateRoot.updateAllData();
-                    }
                 }
             }
         }
     }
 
     Component.onCompleted: {
-        if (useExtWorkspace && !DMSService.activeSubscriptions.includes("extworkspace")) {
-            DMSService.addSubscription("extworkspace");
-        }
         _updateBlurRegistration();
     }
 

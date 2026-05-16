@@ -259,7 +259,7 @@ Singleton {
     property bool frameLauncherArcExtender: false
     onFrameLauncherArcExtenderChanged: saveSettings()
     readonly property string frameModalEmergeSide: frameLauncherEmergeSide === "top" ? "bottom" : "top"
-    property string frameMode: "separate"
+    property string frameMode: "connected"
     onFrameModeChanged: saveSettings()
     property var connectedFrameBarStyleBackups: ({})
     onConnectedFrameBarStyleBackupsChanged: saveSettings()
@@ -497,7 +497,7 @@ Singleton {
     property int fontWeight: Font.Normal
     property real fontScale: 1.0
     property real dankBarFontScale: 1.0
-    property int textRenderType: SettingsData.TextRenderType.Native
+    property int textRenderType: SettingsData.TextRenderType.Qt
     property int textRenderQuality: SettingsData.TextRenderQuality.Default
 
     property bool notepadUseMonospace: true
@@ -720,6 +720,7 @@ Singleton {
     property string customPowerActionPowerOff: ""
 
     property bool updaterHideWidget: false
+    property bool updaterCheckOnStart: false
     property bool updaterUseCustomCommand: false
     property string updaterCustomCommand: ""
     property string updaterTerminalAdditionalParams: ""

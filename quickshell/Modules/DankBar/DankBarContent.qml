@@ -267,10 +267,10 @@ Item {
 
             if (nextIndex !== validIndex) {
                 const nextWorkspace = realWorkspaces[nextIndex];
-                if (!nextWorkspace || nextWorkspace.idx === undefined) {
+                if (!nextWorkspace || nextWorkspace.id === undefined) {
                     return;
                 }
-                NiriService.switchToWorkspace(nextWorkspace.idx);
+                NiriService.switchToWorkspace(nextWorkspace.id);
             }
         } else if (CompositorService.isHyprland) {
             const currentWs = getCurrentWorkspace();
@@ -279,7 +279,7 @@ Item {
             const nextIndex = direction > 0 ? Math.min(validIndex + 1, realWorkspaces.length - 1) : Math.max(validIndex - 1, 0);
 
             if (nextIndex !== validIndex) {
-                Hyprland.dispatch(`workspace ${realWorkspaces[nextIndex].id}`);
+                HyprlandService.focusWorkspace(realWorkspaces[nextIndex].id);
             }
         } else if (CompositorService.isDwl) {
             const currentTag = getCurrentWorkspace();

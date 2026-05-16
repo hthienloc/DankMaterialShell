@@ -358,8 +358,12 @@ Singleton {
 
             ordered.push.apply(ordered, arr);
         }
-
-        return ordered.map(x => x.wayland).filter(w => w !== null && w !== undefined);
+        return ordered.map(x => {
+            if (!x.wayland)
+                return null;
+            x.wayland.address = x.address;
+            return x.wayland;
+        }).filter(w => w !== null && w !== undefined);
     }
 
     function filterCurrentWorkspace(toplevels, screen) {
@@ -422,8 +426,7 @@ Singleton {
 
             const filtered = filterCurrentWorkspace(sortedToplevels, screenName);
             for (let i = 0; i < filtered.length; i++) {
-                const toplevel = filtered[i];
-                if (toplevel?.fullscreen && toplevel?.activated)
+                if (filtered[i]?.fullscreen)
                     return true;
             }
             return false;
@@ -683,7 +686,7 @@ Singleton {
         if (isNiri)
             return NiriService.powerOffMonitors();
         if (isHyprland)
-            return Hyprland.dispatch("dpms off");
+            return HyprlandService.dpmsOff();
         if (isDwl)
             return _dwlPowerOffMonitors();
         if (isSway || isScroll || isMiracle) {
@@ -702,7 +705,7 @@ Singleton {
         if (isNiri)
             return NiriService.powerOnMonitors();
         if (isHyprland)
-            return Hyprland.dispatch("dpms on");
+            return HyprlandService.dpmsOn();
         if (isDwl)
             return _dwlPowerOnMonitors();
         if (isSway || isScroll || isMiracle) {

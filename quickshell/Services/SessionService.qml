@@ -116,7 +116,7 @@ Singleton {
                 errorOutput = "";
                 return;
             }
-            ToastService.showError("Hibernate failed", errorOutput);
+            ToastService.showError(I18n.tr("Hibernate failed"), errorOutput);
             errorOutput = "";
         }
     }
@@ -327,7 +327,7 @@ Singleton {
                 return;
             }
 
-            Hyprland.dispatch("exit");
+            HyprlandService.exit();
         } else {
             Quickshell.execDetached(["sh", "-c", SettingsData.customPowerActionLogout]);
         }
