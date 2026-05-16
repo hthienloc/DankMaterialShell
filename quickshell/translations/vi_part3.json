@@ -1,0 +1,2872 @@
+[
+  {
+    "term": "Failed to move job",
+    "context": "Failed to move job",
+    "reference": "Services/CupsService.qml:658",
+    "comment": "",
+    "translation": "Không thể di chuyển công việc"
+  },
+  {
+    "term": "Failed to move to trash",
+    "context": "Failed to move to trash",
+    "reference": "Services/TrashService.qml:80",
+    "comment": "",
+    "translation": "Không thể chuyển vào thùng rác"
+  },
+  {
+    "term": "Failed to parse plugin_settings.json",
+    "context": "Failed to parse plugin_settings.json",
+    "reference": "Common/SettingsData.qml:1395",
+    "comment": "",
+    "translation": "Không thể phân tích plugin_settings.json"
+  },
+  {
+    "term": "Failed to parse session.json",
+    "context": "Failed to parse session.json",
+    "reference": "Common/SessionData.qml:261, Common/SessionData.qml:341",
+    "comment": "",
+    "translation": "Không thể phân tích session.json"
+  },
+  {
+    "term": "Failed to parse settings.json",
+    "context": "Failed to parse settings.json",
+    "reference": "Common/SettingsData.qml:1298, Common/SettingsData.qml:2798",
+    "comment": "",
+    "translation": "Không thể phân tích settings.json"
+  },
+  {
+    "term": "Failed to pause printer",
+    "context": "Failed to pause printer",
+    "reference": "Services/CupsService.qml:390",
+    "comment": "",
+    "translation": "Không thể tạm dừng máy in"
+  },
+  {
+    "term": "Failed to pin entry",
+    "context": "Failed to pin entry",
+    "reference": "Services/ClipboardService.qml:199",
+    "comment": "",
+    "translation": "Không thể ghim mục"
+  },
+  {
+    "term": "Failed to print test page",
+    "context": "Failed to print test page",
+    "reference": "Services/CupsService.qml:640",
+    "comment": "",
+    "translation": "Không thể in trang kiểm tra"
+  },
+  {
+    "term": "Failed to reject pairing",
+    "context": "Failed to reject pairing",
+    "reference": "dms-plugins/DankKDEConnect/DankKDEConnect.qml:170",
+    "comment": "Phone Connect error",
+    "translation": "Không thể từ chối ghép nối"
+  },
+  {
+    "term": "Failed to remove device",
+    "context": "Failed to remove device",
+    "reference": "Modules/ControlCenter/Details/BluetoothDetail.qml:725",
+    "comment": "",
+    "translation": "Không thể xóa thiết bị"
+  },
+  {
+    "term": "Failed to remove keybind",
+    "context": "Failed to remove keybind",
+    "reference": "Services/KeybindsService.qml:228",
+    "comment": "",
+    "translation": "Không thể xóa phím tắt"
+  },
+  {
+    "term": "Failed to remove printer from class",
+    "context": "Failed to remove printer from class",
+    "reference": "Services/CupsService.qml:727",
+    "comment": "",
+    "translation": "Không thể xóa máy in khỏi lớp"
+  },
+  {
+    "term": "Failed to restart audio system",
+    "context": "Failed to restart audio system",
+    "reference": "Services/AudioService.qml:309",
+    "comment": "",
+    "translation": "Không thể khởi động lại hệ thống âm thanh"
+  },
+  {
+    "term": "Failed to restart job",
+    "context": "Failed to restart job",
+    "reference": "Services/CupsService.qml:674",
+    "comment": "",
+    "translation": "Không thể khởi động lại công việc"
+  },
+  {
+    "term": "Failed to resume printer",
+    "context": "Failed to resume printer",
+    "reference": "Services/CupsService.qml:406",
+    "comment": "",
+    "translation": "Không thể tiếp tục máy in"
+  },
+  {
+    "term": "Failed to ring device",
+    "context": "Failed to ring device",
+    "reference": "dms-plugins/DankKDEConnect/DankKDEConnect.qml:96",
+    "comment": "Phone Connect error",
+    "translation": "Không thể rung thiết bị"
+  },
+  {
+    "term": "Failed to run 'dms greeter status'. Ensure DMS is installed and dms is in PATH.",
+    "context": "Failed to run 'dms greeter status'. Ensure DMS is installed and dms is in PATH.",
+    "reference": "Modules/Settings/GreeterTab.qml:274",
+    "comment": "greeter status error",
+    "translation": "Không thể chạy 'dms greeter status'. Đảm bảo DMS đã được cài đặt và dms nằm trong PATH."
+  },
+  {
+    "term": "Failed to save audio config",
+    "context": "Failed to save audio config",
+    "reference": "Services/AudioService.qml:194",
+    "comment": "",
+    "translation": "Không thể lưu cấu hình âm thanh"
+  },
+  {
+    "term": "Failed to save clipboard setting",
+    "context": "Failed to save clipboard setting",
+    "reference": "Modules/Settings/ClipboardTab.qml:210",
+    "comment": "",
+    "translation": "Không thể lưu cài đặt bộ nhớ tạm"
+  },
+  {
+    "term": "Failed to save keybind",
+    "context": "Failed to save keybind",
+    "reference": "Services/KeybindsService.qml:202",
+    "comment": "",
+    "translation": "Không thể lưu phím tắt"
+  },
+  {
+    "term": "Failed to save profile file",
+    "context": "Failed to save profile file",
+    "reference": "Modules/Settings/DisplayConfig/DisplayConfigState.qml:199",
+    "comment": "",
+    "translation": "Không thể lưu tệp hồ sơ"
+  },
+  {
+    "term": "Failed to send clipboard",
+    "context": "Failed to send clipboard",
+    "reference": "dms-plugins/DankKDEConnect/DankKDEConnect.qml:114",
+    "comment": "Phone Connect error",
+    "translation": "Không thể gửi bộ nhớ tạm"
+  },
+  {
+    "term": "Failed to send file",
+    "context": "Failed to send file",
+    "reference": "dms-plugins/DankKDEConnect/DankKDEConnect.qml:361, dms-plugins/DankKDEConnect/components/KDEConnectDetailContent.qml:421",
+    "comment": "Phone Connect error",
+    "translation": "Không thể gửi tệp"
+  },
+  {
+    "term": "Failed to send ping",
+    "context": "Failed to send ping",
+    "reference": "dms-plugins/DankKDEConnect/DankKDEConnect.qml:105",
+    "comment": "Phone Connect error",
+    "translation": "Không thể gửi ping"
+  },
+  {
+    "term": "Failed to set brightness",
+    "context": "Failed to set brightness",
+    "reference": "Services/DisplayService.qml:323",
+    "comment": "",
+    "translation": "Không thể đặt độ sáng"
+  },
+  {
+    "term": "Failed to set night mode location",
+    "context": "Failed to set night mode location",
+    "reference": "Services/DisplayService.qml:645",
+    "comment": "",
+    "translation": "Không thể đặt vị trí chế độ ban đêm"
+  },
+  {
+    "term": "Failed to set night mode schedule",
+    "context": "Failed to set night mode schedule",
+    "reference": "Services/DisplayService.qml:587",
+    "comment": "",
+    "translation": "Không thể đặt lịch chế độ ban đêm"
+  },
+  {
+    "term": "Failed to set night mode temperature",
+    "context": "Failed to set night mode temperature",
+    "reference": "Services/DisplayService.qml:526, Services/DisplayService.qml:577, Services/DisplayService.qml:615",
+    "comment": "",
+    "translation": "Không thể đặt nhiệt độ chế độ ban đêm"
+  },
+  {
+    "term": "Failed to set power profile",
+    "context": "Failed to set power profile",
+    "reference": "Modules/DankBar/Popouts/BatteryPopout.qml:30",
+    "comment": "",
+    "translation": "Không thể đặt cấu hình năng lượng"
+  },
+  {
+    "term": "Failed to set profile image",
+    "context": "Failed to set profile image",
+    "reference": "Services/PortalService.qml:145",
+    "comment": "",
+    "translation": "Không thể đặt ảnh hồ sơ"
+  },
+  {
+    "term": "Failed to set profile image: %1",
+    "context": "Failed to set profile image: %1",
+    "reference": "Services/PortalService.qml:154",
+    "comment": "",
+    "translation": "Không thể đặt ảnh hồ sơ: %1"
+  },
+  {
+    "term": "Failed to share",
+    "context": "Failed to share",
+    "reference": "dms-plugins/DankKDEConnect/DankKDEConnect.qml:341, dms-plugins/DankKDEConnect/DankKDEConnect.qml:349, dms-plugins/DankKDEConnect/components/KDEConnectDetailContent.qml:407",
+    "comment": "Phone Connect error",
+    "translation": "Không thể chia sẻ"
+  },
+  {
+    "term": "Failed to start connection to %1",
+    "context": "Failed to start connection to %1",
+    "reference": "Services/DMSNetworkService.qml:465",
+    "comment": "",
+    "translation": "Không thể bắt đầu kết nối với %1"
+  },
+  {
+    "term": "Failed to unpin entry",
+    "context": "Failed to unpin entry",
+    "reference": "Services/ClipboardService.qml:213",
+    "comment": "",
+    "translation": "Không thể bỏ ghim mục"
+  },
+  {
+    "term": "Failed to update VPN",
+    "context": "Failed to update VPN",
+    "reference": "Services/VPNService.qml:140",
+    "comment": "",
+    "translation": "Không thể cập nhật VPN"
+  },
+  {
+    "term": "Failed to update autoconnect",
+    "context": "Failed to update autoconnect",
+    "reference": "Services/DMSNetworkService.qml:937",
+    "comment": "",
+    "translation": "Không thể cập nhật tự động kết nối"
+  },
+  {
+    "term": "Failed to update description",
+    "context": "Failed to update description",
+    "reference": "Services/CupsService.qml:624",
+    "comment": "",
+    "translation": "Không thể cập nhật mô tả"
+  },
+  {
+    "term": "Failed to update location",
+    "context": "Failed to update location",
+    "reference": "Services/CupsService.qml:607",
+    "comment": "",
+    "translation": "Không thể cập nhật vị trí"
+  },
+  {
+    "term": "Failed to update sharing",
+    "context": "Failed to update sharing",
+    "reference": "Services/CupsService.qml:590",
+    "comment": "",
+    "translation": "Không thể cập nhật chia sẻ"
+  },
+  {
+    "term": "Failed to write temp file for validation",
+    "context": "Failed to write temp file for validation",
+    "reference": "Modules/Settings/DisplayConfig/DisplayConfigState.qml:1294",
+    "comment": "",
+    "translation": "Không thể ghi tệp tạm để xác thực"
+  },
+  {
+    "term": "Failed: %1",
+    "context": "Failed: %1",
+    "reference": "Modules/DankBar/Popouts/SystemUpdatePopout.qml:283",
+    "comment": "",
+    "translation": "Thất bại: %1"
+  },
+  {
+    "term": "Features",
+    "context": "Features",
+    "reference": "Modals/Greeter/GreeterWelcomePage.qml:75",
+    "comment": "greeter welcome page section header",
+    "translation": "Tính năng"
+  },
+  {
+    "term": "Feels",
+    "context": "Feels",
+    "reference": "dms-plugins/DankDesktopWeather/DankDesktopWeather.qml:401",
+    "comment": "",
+    "translation": "Cảm giác"
+  },
+  {
+    "term": "Feels Like",
+    "context": "Feels Like",
+    "reference": "Modules/Settings/TimeWeatherTab.qml:889",
+    "comment": "",
+    "translation": "Cảm giác như"
+  },
+  {
+    "term": "Feels Like %1°",
+    "context": "Feels Like %1°",
+    "reference": "Modules/DankDash/WeatherTab.qml:309, Modules/Settings/TimeWeatherTab.qml:776",
+    "comment": "weather feels like temperature",
+    "translation": "Cảm giác như %1°"
+  },
+  {
+    "term": "Fidelity",
+    "context": "Fidelity",
+    "reference": "Common/Theme.qml:491",
+    "comment": "matugen color scheme option",
+    "translation": "Trung thực"
+  },
+  {
+    "term": "Field",
+    "context": "Field",
+    "reference": "Modules/Settings/NotificationsTab.qml:545",
+    "comment": "",
+    "translation": "Trường"
+  },
+  {
+    "term": "File",
+    "context": "File",
+    "reference": "Services/CupsService.qml:137, Modals/DankLauncherV2/ResultItem.qml:215",
+    "comment": "",
+    "translation": "Tệp"
+  },
+  {
+    "term": "File Already Exists",
+    "context": "File Already Exists",
+    "reference": "Modals/FileBrowser/FileBrowserOverwriteDialog.qml:53",
+    "comment": "",
+    "translation": "Tệp đã tồn tại"
+  },
+  {
+    "term": "File Information",
+    "context": "File Information",
+    "reference": "Modals/FileBrowser/FileInfo.qml:137",
+    "comment": "",
+    "translation": "Thông tin tệp"
+  },
+  {
+    "term": "File manager used to open the trash. Pick \"custom\" to enter your own command.",
+    "context": "File manager used to open the trash. Pick \"custom\" to enter your own command.",
+    "reference": "Modules/Settings/DockTab.qml:529",
+    "comment": "",
+    "translation": "Trình quản lý tệp được sử dụng để mở thùng rác. Chọn \"tùy chỉnh\" để nhập lệnh của riêng bạn."
+  },
+  {
+    "term": "File received from",
+    "context": "File received from",
+    "reference": "dms-plugins/DankKDEConnect/DankKDEConnect.qml:79",
+    "comment": "Phone Connect file share notification",
+    "translation": "Tệp nhận từ"
+  },
+  {
+    "term": "File search requires dsearch\nInstall from github.com/AvengeMedia/danksearch",
+    "context": "File search requires dsearch\nInstall from github.com/AvengeMedia/danksearch",
+    "reference": "Modals/DankLauncherV2/ResultsList.qml:484",
+    "comment": "",
+    "translation": "File search requires dsearch\nInstall from github.com/AvengeMedia/danksearch"
+  },
+  {
+    "term": "Files",
+    "context": "Files",
+    "reference": "Modals/DankLauncherV2/Controller.qml:167, Modals/DankLauncherV2/Controller.qml:1028, Modals/DankLauncherV2/Controller.qml:1049, Modals/DankLauncherV2/LauncherContent.qml:358, Modals/DankLauncherV2/LauncherContent.qml:629, Modules/Settings/LauncherTab.qml:644",
+    "comment": "",
+    "translation": "Tệp"
+  },
+  {
+    "term": "Filesystem usage monitoring",
+    "context": "Filesystem usage monitoring",
+    "reference": "Modules/ControlCenter/Models/WidgetModel.qml:170",
+    "comment": "",
+    "translation": "Giám sát sử dụng hệ thống tệp"
+  },
+  {
+    "term": "Fill",
+    "context": "Fill",
+    "reference": "Modules/Settings/GreeterTab.qml:698, Modules/Settings/WallpaperTab.qml:312",
+    "comment": "wallpaper fill mode",
+    "translation": "Điền"
+  },
+  {
+    "term": "Find in Text",
+    "context": "Find in Text",
+    "reference": "Modules/Notepad/NotepadSettings.qml:185",
+    "comment": "",
+    "translation": "Tìm trong văn bản"
+  },
+  {
+    "term": "Find in note...",
+    "context": "Find in note...",
+    "reference": "Modules/Notepad/NotepadTextEditor.qml:381",
+    "comment": "",
+    "translation": "Tìm trong ghi chú..."
+  },
+  {
+    "term": "Fingerprint availability could not be confirmed.",
+    "context": "Fingerprint availability could not be confirmed.",
+    "reference": "Modules/Settings/GreeterTab.qml:49, Modules/Settings/LockScreenTab.qml:28",
+    "comment": "",
+    "translation": "Không thể xác nhận sự có mặt của dấu vân tay."
+  },
+  {
+    "term": "Fingerprint error",
+    "context": "Fingerprint error",
+    "reference": "Modules/Lock/LockScreenContent.qml:63",
+    "comment": "",
+    "translation": "Lỗi dấu vân tay"
+  },
+  {
+    "term": "Fingerprint not recognized (%1/%2). Please try again or use password.",
+    "context": "Fingerprint not recognized (%1/%2). Please try again or use password.",
+    "reference": "Modules/Lock/LockScreenContent.qml:67",
+    "comment": "",
+    "translation": "Không nhận dạng được dấu vân tay (%1/%2). Vui lòng thử lại hoặc sử dụng mật khẩu."
+  },
+  {
+    "term": "Fingerprint reader detected, but no prints are enrolled yet. You can enable this now and enroll later.",
+    "context": "Fingerprint reader detected, but no prints are enrolled yet. You can enable this now and enroll later.",
+    "reference": "Modules/Settings/LockScreenTab.qml:22",
+    "comment": "",
+    "translation": "Đã phát hiện đầu đọc dấu vân tay, nhưng chưa có dấu vân tay nào được đăng ký. Bạn có thể bật tính năng này bây giờ và đăng ký sau."
+  },
+  {
+    "term": "Fingerprint reader detected, but no prints are enrolled yet. You can enable this now and run Sync later.",
+    "context": "Fingerprint reader detected, but no prints are enrolled yet. You can enable this now and run Sync later.",
+    "reference": "Modules/Settings/GreeterTab.qml:43",
+    "comment": "",
+    "translation": "Đã phát hiện đầu đọc dấu vân tay, nhưng chưa có dấu vân tay nào được đăng ký. Bạn có thể bật tính năng này bây giờ và chạy Đồng bộ sau."
+  },
+  {
+    "term": "Finish",
+    "context": "Finish",
+    "reference": "Modals/Greeter/GreeterModal.qml:304",
+    "comment": "greeter finish button",
+    "translation": "Kết thúc"
+  },
+  {
+    "term": "First Day of Week",
+    "context": "First Day of Week",
+    "reference": "Modules/Settings/TimeWeatherTab.qml:102",
+    "comment": "",
+    "translation": "Ngày đầu tiên của tuần"
+  },
+  {
+    "term": "First Time Setup",
+    "context": "First Time Setup",
+    "reference": "Modules/Settings/KeybindsTab.qml:326, Modules/Settings/DisplayConfig/IncludeWarningBox.qml:48",
+    "comment": "",
+    "translation": "Thiết lập lần đầu"
+  },
+  {
+    "term": "Fit",
+    "context": "Fit",
+    "reference": "Modules/Settings/WallpaperTab.qml:312",
+    "comment": "wallpaper fill mode",
+    "translation": "Vừa vặn"
+  },
+  {
+    "term": "Fix Now",
+    "context": "Fix Now",
+    "reference": "Modules/Settings/ThemeColorsTab.qml:2345, Modules/Settings/WindowRulesTab.qml:367, Modules/Settings/KeybindsTab.qml:371, Modules/Settings/DisplayConfig/IncludeWarningBox.qml:84",
+    "comment": "",
+    "translation": "Sửa ngay"
+  },
+  {
+    "term": "Fixing...",
+    "context": "Fixing...",
+    "reference": "Modules/Settings/ThemeColorsTab.qml:2345, Modules/Settings/WindowRulesTab.qml:367, Modules/Settings/KeybindsTab.qml:368, Modules/Settings/DisplayConfig/IncludeWarningBox.qml:81",
+    "comment": "",
+    "translation": "Đang sửa..."
+  },
+  {
+    "term": "Flags",
+    "context": "Flags",
+    "reference": "Widgets/KeybindItem.qml:1552",
+    "comment": "",
+    "translation": "Cờ"
+  },
+  {
+    "term": "Flipped",
+    "context": "Flipped",
+    "reference": "Modules/Settings/DisplayConfig/OutputCard.qml:257, Modules/Settings/DisplayConfig/DisplayConfigState.qml:1801, Modules/Settings/DisplayConfig/DisplayConfigState.qml:1822",
+    "comment": "",
+    "translation": "Lật"
+  },
+  {
+    "term": "Flipped 180°",
+    "context": "Flipped 180°",
+    "reference": "Modules/Settings/DisplayConfig/OutputCard.qml:257, Modules/Settings/DisplayConfig/DisplayConfigState.qml:1805, Modules/Settings/DisplayConfig/DisplayConfigState.qml:1826",
+    "comment": "",
+    "translation": "Lật 180°"
+  },
+  {
+    "term": "Flipped 270°",
+    "context": "Flipped 270°",
+    "reference": "Modules/Settings/DisplayConfig/OutputCard.qml:257, Modules/Settings/DisplayConfig/DisplayConfigState.qml:1807, Modules/Settings/DisplayConfig/DisplayConfigState.qml:1828",
+    "comment": "",
+    "translation": "Lật 270°"
+  },
+  {
+    "term": "Flipped 90°",
+    "context": "Flipped 90°",
+    "reference": "Modules/Settings/DisplayConfig/OutputCard.qml:257, Modules/Settings/DisplayConfig/DisplayConfigState.qml:1803, Modules/Settings/DisplayConfig/DisplayConfigState.qml:1824",
+    "comment": "",
+    "translation": "Lật 90°"
+  },
+  {
+    "term": "Float",
+    "context": "Float",
+    "reference": "Modals/WindowRuleModal.qml:527, Modules/Settings/WindowRulesTab.qml:535",
+    "comment": "",
+    "translation": "Nổi"
+  },
+  {
+    "term": "Focus",
+    "context": "Focus",
+    "reference": "Modals/WindowRuleModal.qml:544, Modules/Settings/WindowRulesTab.qml:539",
+    "comment": "",
+    "translation": "Tiêu điểm"
+  },
+  {
+    "term": "Focus at Startup",
+    "context": "Focus at Startup",
+    "reference": "Modules/Settings/DisplayConfig/NiriOutputSettings.qml:70, Modules/Settings/DisplayConfig/DisplayConfigState.qml:1236",
+    "comment": "",
+    "translation": "Tập trung khi khởi động"
+  },
+  {
+    "term": "Focused Border",
+    "context": "Focused Border",
+    "reference": "Modules/Settings/WorkspacesTab.qml:354",
+    "comment": "",
+    "translation": "Viền tập trung"
+  },
+  {
+    "term": "Focused Color",
+    "context": "Focused Color",
+    "reference": "Modules/Settings/WorkspacesTab.qml:196",
+    "comment": "",
+    "translation": "Màu tập trung"
+  },
+  {
+    "term": "Focused Monitor Only",
+    "context": "Focused Monitor Only",
+    "reference": "Modules/Settings/NotificationsTab.qml:297",
+    "comment": "",
+    "translation": "Chỉ màn hình tập trung"
+  },
+  {
+    "term": "Focused Window",
+    "context": "Focused Window",
+    "reference": "Modules/Settings/WidgetsTab.qml:59",
+    "comment": "",
+    "translation": "Cửa sổ tập trung"
+  },
+  {
+    "term": "Focused monitor only",
+    "context": "Focused monitor only",
+    "reference": "Modules/Settings/DisplayWidgetsTab.qml:422",
+    "comment": "",
+    "translation": "Chỉ màn hình tập trung"
+  },
+  {
+    "term": "Fog",
+    "context": "Fog",
+    "reference": "Services/WeatherService.qml:126, Services/WeatherService.qml:127",
+    "comment": "",
+    "translation": "Sương mù"
+  },
+  {
+    "term": "Folder",
+    "context": "Folder",
+    "reference": "Modals/DankLauncherV2/ResultItem.qml:215",
+    "comment": "",
+    "translation": "Thư mục"
+  },
+  {
+    "term": "Folders",
+    "context": "Folders",
+    "reference": "Modals/DankLauncherV2/Controller.qml:1039, Modals/DankLauncherV2/Controller.qml:1049, Modals/DankLauncherV2/LauncherContent.qml:634, Modules/Settings/LauncherTab.qml:655",
+    "comment": "",
+    "translation": "Các thư mục"
+  },
+  {
+    "term": "Follow DMS background color",
+    "context": "Follow DMS background color",
+    "reference": "Modules/Settings/ThemeColorsTab.qml:2782",
+    "comment": "",
+    "translation": "Theo màu nền DMS"
+  },
+  {
+    "term": "Follow Monitor Focus",
+    "context": "Follow Monitor Focus",
+    "reference": "Modules/Settings/WorkspacesTab.qml:141",
+    "comment": "",
+    "translation": "Theo tiêu điểm màn hình"
+  },
+  {
+    "term": "Follow focus",
+    "context": "Follow focus",
+    "reference": "Widgets/KeybindItem.qml:1311",
+    "comment": "",
+    "translation": "Theo tiêu điểm"
+  },
+  {
+    "term": "Font",
+    "context": "Font",
+    "reference": "Modules/Settings/GreeterTab.qml:565",
+    "comment": "",
+    "translation": "Phông chữ"
+  },
+  {
+    "term": "Font Family",
+    "context": "Font Family",
+    "reference": "Modules/Notepad/NotepadSettings.qml:211",
+    "comment": "",
+    "translation": "Họ phông chữ"
+  },
+  {
+    "term": "Font Scale",
+    "context": "Font Scale",
+    "reference": "Modules/Settings/TypographyMotionTab.qml:183, Modules/Settings/DankBarTab.qml:909",
+    "comment": "",
+    "translation": "Tỷ lệ phông chữ"
+  },
+  {
+    "term": "Font Size",
+    "context": "Font Size",
+    "reference": "Modules/Notepad/NotepadSettings.qml:245",
+    "comment": "",
+    "translation": "Kích thước phông chữ"
+  },
+  {
+    "term": "Font Weight",
+    "context": "Font Weight",
+    "reference": "Modules/Settings/TypographyMotionTab.qml:114",
+    "comment": "",
+    "translation": "Độ đậm phông chữ"
+  },
+  {
+    "term": "Font used on the login screen",
+    "context": "Font used on the login screen",
+    "reference": "Modules/Settings/GreeterTab.qml:576",
+    "comment": "",
+    "translation": "Phông chữ sử dụng trên màn hình đăng nhập"
+  },
+  {
+    "term": "For 1 hour",
+    "context": "For 1 hour",
+    "reference": "Modules/Notifications/Center/DndDurationMenu.qml:73",
+    "comment": "",
+    "translation": "Trong 1 giờ"
+  },
+  {
+    "term": "For 15 minutes",
+    "context": "For 15 minutes",
+    "reference": "Modules/Notifications/Center/DndDurationMenu.qml:65",
+    "comment": "",
+    "translation": "Trong 15 phút"
+  },
+  {
+    "term": "For 3 hours",
+    "context": "For 3 hours",
+    "reference": "Modules/Notifications/Center/DndDurationMenu.qml:77",
+    "comment": "",
+    "translation": "Trong 3 giờ"
+  },
+  {
+    "term": "For 30 minutes",
+    "context": "For 30 minutes",
+    "reference": "Modules/Notifications/Center/DndDurationMenu.qml:69",
+    "comment": "",
+    "translation": "Trong 30 phút"
+  },
+  {
+    "term": "For 8 hours",
+    "context": "For 8 hours",
+    "reference": "Modules/Notifications/Center/DndDurationMenu.qml:81",
+    "comment": "",
+    "translation": "Trong 8 giờ"
+  },
+  {
+    "term": "Force HDR",
+    "context": "Force HDR",
+    "reference": "Modules/Settings/DisplayConfig/DisplayConfigState.qml:1256",
+    "comment": "",
+    "translation": "Bắt buộc HDR"
+  },
+  {
+    "term": "Force Kill (SIGKILL)",
+    "context": "Force Kill (SIGKILL)",
+    "reference": "Modules/ProcessList/ProcessContextMenu.qml:49",
+    "comment": "",
+    "translation": "Buộc đóng (SIGKILL)"
+  },
+  {
+    "term": "Force Wide Color",
+    "context": "Force Wide Color",
+    "reference": "Modules/Settings/DisplayConfig/DisplayConfigState.qml:1258",
+    "comment": "",
+    "translation": "Bắt buộc màu rộng"
+  },
+  {
+    "term": "Force terminal applications to always use dark color schemes",
+    "context": "Force terminal applications to always use dark color schemes",
+    "reference": "Modules/Settings/ThemeColorsTab.qml:2276",
+    "comment": "",
+    "translation": "Buộc các ứng dụng terminal luôn sử dụng bảng màu tối"
+  },
+  {
+    "term": "Forecast",
+    "context": "Forecast",
+    "reference": "dms-plugins/DankDesktopWeather/DankDesktopWeatherSettings.qml:27",
+    "comment": "",
+    "translation": "Dự báo"
+  },
+  {
+    "term": "Forecast Days",
+    "context": "Forecast Days",
+    "reference": "dms-plugins/DankDesktopWeather/DankDesktopWeatherSettings.qml:127",
+    "comment": "",
+    "translation": "Số ngày dự báo"
+  },
+  {
+    "term": "Forecast Not Available",
+    "context": "Forecast Not Available",
+    "reference": "Modules/DankDash/WeatherForecastCard.qml:115",
+    "comment": "",
+    "translation": "Dự báo không có sẵn"
+  },
+  {
+    "term": "Foreground Layers",
+    "context": "Foreground Layers",
+    "reference": "Modules/Settings/ThemeColorsTab.qml:1850",
+    "comment": "",
+    "translation": "Các lớp nền trước"
+  },
+  {
+    "term": "Forever",
+    "context": "Forever",
+    "reference": "Modules/Settings/NotificationsTab.qml:837, Modules/Settings/NotificationsTab.qml:852, Modules/Settings/NotificationsTab.qml:855",
+    "comment": "notification history retention option",
+    "translation": "Mãi mãi"
+  },
+  {
+    "term": "Forget",
+    "context": "Forget",
+    "reference": "Modules/Settings/NetworkTab.qml:1313",
+    "comment": "",
+    "translation": "Quên"
+  },
+  {
+    "term": "Forget \"%1\"?",
+    "context": "Forget \"%1\"?",
+    "reference": "Modules/Settings/NetworkTab.qml:1312",
+    "comment": "",
+    "translation": "Quên \"%1\"?"
+  },
+  {
+    "term": "Forget Device",
+    "context": "Forget Device",
+    "reference": "Modules/ControlCenter/Details/BluetoothDetail.qml:697",
+    "comment": "",
+    "translation": "Quên thiết bị"
+  },
+  {
+    "term": "Forget Network",
+    "context": "Forget Network",
+    "reference": "Modules/Settings/NetworkTab.qml:1311, Modules/ControlCenter/Details/NetworkDetail.qml:859",
+    "comment": "",
+    "translation": "Quên mạng"
+  },
+  {
+    "term": "Forgot network %1",
+    "context": "Forgot network %1",
+    "reference": "Services/DMSNetworkService.qml:538",
+    "comment": "",
+    "translation": "Đã quên mạng %1"
+  },
+  {
+    "term": "Format Legend",
+    "context": "Format Legend",
+    "reference": "Modules/Settings/TimeWeatherTab.qml:313",
+    "comment": "",
+    "translation": "Chú giải định dạng"
+  },
+  {
+    "term": "Free VRAM/memory when the launcher is closed. May cause a slight delay when reopening.",
+    "context": "Free VRAM/memory when the launcher is closed. May cause a slight delay when reopening.",
+    "reference": "Modules/Settings/LauncherTab.qml:426",
+    "comment": "",
+    "translation": "Giải phóng VRAM/bộ nhớ khi trình khởi chạy bị đóng. Có thể gây ra độ trễ nhẹ khi mở lại."
+  },
+  {
+    "term": "Freezing Drizzle",
+    "context": "Freezing Drizzle",
+    "reference": "Services/WeatherService.qml:131, Services/WeatherService.qml:132",
+    "comment": "",
+    "translation": "Mưa phùn đóng băng"
+  },
+  {
+    "term": "Frequency",
+    "context": "Frequency",
+    "reference": "Modules/Settings/NetworkTab.qml:1423",
+    "comment": "",
+    "translation": "Tần số"
+  },
+  {
+    "term": "Fruit Salad",
+    "context": "Fruit Salad",
+    "reference": "Common/Theme.qml:495",
+    "comment": "matugen color scheme option",
+    "translation": "Salad trái cây"
+  },
+  {
+    "term": "Full Command:",
+    "context": "Full Command:",
+    "reference": "Modules/ProcessList/ProcessesView.qml:681",
+    "comment": "process detail label",
+    "translation": "Lệnh đầy đủ:"
+  },
+  {
+    "term": "Full Content",
+    "context": "Full Content",
+    "reference": "Modules/Settings/LockScreenTab.qml:148, Modules/Settings/NotificationsTab.qml:729",
+    "comment": "lock screen notification mode option",
+    "translation": "Nội dung đầy đủ"
+  },
+  {
+    "term": "Full Day & Month",
+    "context": "Full Day & Month",
+    "reference": "Modules/Settings/GreeterTab.qml:426, Modules/Settings/TimeWeatherTab.qml:131, Modules/Settings/TimeWeatherTab.qml:166, Modules/Settings/TimeWeatherTab.qml:182, Modules/Settings/TimeWeatherTab.qml:218, Modules/Settings/TimeWeatherTab.qml:253, Modules/Settings/TimeWeatherTab.qml:269",
+    "comment": "date format option",
+    "translation": "Ngày & tháng đầy đủ"
+  },
+  {
+    "term": "Full with Year",
+    "context": "Full with Year",
+    "reference": "Modules/Settings/GreeterTab.qml:418, Modules/Settings/TimeWeatherTab.qml:131, Modules/Settings/TimeWeatherTab.qml:158, Modules/Settings/TimeWeatherTab.qml:180, Modules/Settings/TimeWeatherTab.qml:218, Modules/Settings/TimeWeatherTab.qml:245, Modules/Settings/TimeWeatherTab.qml:267",
+    "comment": "date format option",
+    "translation": "Đầy đủ với năm"
+  },
+  {
+    "term": "Fullscreen",
+    "context": "Fullscreen",
+    "reference": "Modals/WindowRuleModal.qml:535, Modules/Settings/WindowRulesTab.qml:538",
+    "comment": "",
+    "translation": "Toàn màn hình"
+  },
+  {
+    "term": "Fullscreen Only",
+    "context": "Fullscreen Only",
+    "reference": "Modules/Settings/DisplayConfig/OutputCard.qml:280, Modules/Settings/DisplayConfig/OutputCard.qml:284, Modules/Settings/DisplayConfig/OutputCard.qml:293",
+    "comment": "",
+    "translation": "Chỉ toàn màn hình"
+  },
+  {
+    "term": "Fully Charged",
+    "context": "Fully Charged",
+    "reference": "Services/BatteryService.qml:142",
+    "comment": "battery status",
+    "translation": "Đã sạc đầy"
+  },
+  {
+    "term": "Fun",
+    "context": "Fun",
+    "reference": "Widgets/DankIconPicker.qml:59",
+    "comment": "",
+    "translation": "Vui vẻ"
+  },
+  {
+    "term": "G: grid • Z/X: size",
+    "context": "G: grid • Z/X: size",
+    "reference": "Modules/Plugins/DesktopPluginWrapper.qml:752",
+    "comment": "Widget grid keyboard hints",
+    "translation": "G: Lưới • Z/X: kích thước"
+  },
+  {
+    "term": "GPU",
+    "context": "GPU",
+    "reference": "Modules/Settings/DesktopWidgetSettings/SystemMonitorSettings.qml:138",
+    "comment": "",
+    "translation": "GPU"
+  },
+  {
+    "term": "GPU Monitoring",
+    "context": "GPU Monitoring",
+    "reference": "Modules/ProcessList/SystemView.qml:117",
+    "comment": "gpu section header in system monitor",
+    "translation": "Giám sát GPU"
+  },
+  {
+    "term": "GPU Temperature",
+    "context": "GPU Temperature",
+    "reference": "Modules/Settings/WidgetsTab.qml:140, Modules/Settings/DesktopWidgetSettings/SystemMonitorSettings.qml:116",
+    "comment": "",
+    "translation": "Nhiệt độ GPU"
+  },
+  {
+    "term": "GPU temperature display",
+    "context": "GPU temperature display",
+    "reference": "Modules/Settings/WidgetsTab.qml:141",
+    "comment": "",
+    "translation": "Hiển thị nhiệt độ GPU"
+  },
+  {
+    "term": "GTK, Qt, IDEs, more",
+    "context": "GTK, Qt, IDEs, more",
+    "reference": "Modals/Greeter/GreeterWelcomePage.qml:99",
+    "comment": "greeter feature card description",
+    "translation": "GTK, Qt, IDEs, và hơn thế nữa"
+  },
+  {
+    "term": "Games",
+    "context": "Games",
+    "reference": "Services/AppSearchService.qml:643",
+    "comment": "",
+    "translation": "Trò chơi"
+  },
+  {
+    "term": "Gamma Control",
+    "context": "Gamma Control",
+    "reference": "Modals/Settings/SettingsSidebar.qml:219, Modules/Settings/GammaControlTab.qml:64",
+    "comment": "",
+    "translation": "Điều khiển Gamma"
+  },
+  {
+    "term": "Gamma control not available. Requires DMS API v6+.",
+    "context": "Gamma control not available. Requires DMS API v6+.",
+    "reference": "Modules/Settings/GammaControlTab.qml:77",
+    "comment": "",
+    "translation": "Điều khiển Gamma không khả dụng. Yêu cầu DMS API v6+."
+  },
+  {
+    "term": "Generate baseline GTK3/4 or QT5/QT6 (requires qt6ct-kde) configurations to follow DMS colors. Only needed once.<br /><br />It is recommended to configure <a href=\"https://github.com/AvengeMedia/DankMaterialShell/blob/master/README.md#Theming\" style=\"text-decoration:none; color:%1;\">adw-gtk3</a> prior to applying GTK themes.",
+    "context": "Generate baseline GTK3/4 or QT5/QT6 (requires qt6ct-kde) configurations to follow DMS colors. Only needed once.<br /><br />It is recommended to configure <a href=\"https://github.com/AvengeMedia/DankMaterialShell/blob/master/README.md#Theming\" style=\"text-decoration:none; color:%1;\">adw-gtk3</a> prior to applying GTK themes.",
+    "reference": "Modules/Settings/ThemeColorsTab.qml:2990",
+    "comment": "",
+    "translation": "Tạo cấu hình GTK3/4 hoặc QT5/QT6 cơ bản (yêu cầu qt6ct-kde) để theo màu DMS. Chỉ cần một lần.<br /><br />Khuyến nghị cấu hình <a href=\"https://github.com/AvengeMedia/DankMaterialShell/blob/master/README.md#Theming\" style=\"text-decoration:none; color:%1;\">adw-gtk3</a> trước khi áp dụng các chủ đề GTK."
+  },
+  {
+    "term": "Generic",
+    "context": "Generic",
+    "reference": "Modules/Settings/ThemeColorsTab.qml:289, Modules/Settings/ThemeColorsTab.qml:289",
+    "comment": "theme category option",
+    "translation": "Chung"
+  },
+  {
+    "term": "Get Started",
+    "context": "Get Started",
+    "reference": "Modals/Greeter/GreeterModal.qml:295",
+    "comment": "greeter first page button",
+    "translation": "Bắt đầu"
+  },
+  {
+    "term": "GitHub",
+    "context": "GitHub",
+    "reference": "Modules/Settings/AboutTab.qml:306",
+    "comment": "",
+    "translation": "GitHub"
+  },
+  {
+    "term": "Globally scale all animation durations",
+    "context": "Globally scale all animation durations",
+    "reference": "Modules/Settings/TypographyMotionTab.qml:243",
+    "comment": "",
+    "translation": "Chia tỷ lệ thời lượng hoạt ảnh trên toàn cục"
+  },
+  {
+    "term": "Golden Hour",
+    "context": "Golden Hour",
+    "reference": "Services/WeatherService.qml:250, Services/WeatherService.qml:265",
+    "comment": "",
+    "translation": "Giờ vàng"
+  },
+  {
+    "term": "Good",
+    "context": "Good",
+    "reference": "Modules/Settings/TimeWeatherTab.qml:1134",
+    "comment": "",
+    "translation": "Tốt"
+  },
+  {
+    "term": "Goth Corner Radius",
+    "context": "Goth Corner Radius",
+    "reference": "Modules/Settings/DankBarTab.qml:1037",
+    "comment": "",
+    "translation": "Bán kính góc Gothic"
+  },
+  {
+    "term": "Goth Corners",
+    "context": "Goth Corners",
+    "reference": "Modules/Settings/DankBarTab.qml:1012",
+    "comment": "",
+    "translation": "Góc Gothic"
+  },
+  {
+    "term": "Gradually fade the screen before locking with a configurable grace period",
+    "context": "Gradually fade the screen before locking with a configurable grace period",
+    "reference": "Modules/Settings/PowerSleepTab.qml:75",
+    "comment": "",
+    "translation": "Mờ dần màn hình trước khi khóa với một khoảng thời gian ân hạn có thể cấu hình"
+  },
+  {
+    "term": "Gradually fade the screen before turning off monitors with a configurable grace period",
+    "context": "Gradually fade the screen before turning off monitors with a configurable grace period",
+    "reference": "Modules/Settings/PowerSleepTab.qml:84",
+    "comment": "",
+    "translation": "Mờ dần màn hình trước khi tắt màn hình với một khoảng thời gian ân hạn có thể cấu hình"
+  },
+  {
+    "term": "Graph Time Range",
+    "context": "Graph Time Range",
+    "reference": "Modules/Settings/DesktopWidgetSettings/SystemMonitorSettings.qml:48",
+    "comment": "",
+    "translation": "Phạm vi thời gian biểu đồ"
+  },
+  {
+    "term": "Graphics",
+    "context": "Graphics",
+    "reference": "Services/AppSearchService.qml:644, Services/AppSearchService.qml:645",
+    "comment": "",
+    "translation": "Đồ họa"
+  },
+  {
+    "term": "Greeter",
+    "context": "Greeter",
+    "reference": "Modals/Settings/SettingsSidebar.qml:299",
+    "comment": "",
+    "translation": "Màn hình đăng nhập"
+  },
+  {
+    "term": "Greeter Appearance",
+    "context": "Greeter Appearance",
+    "reference": "Modules/Settings/GreeterTab.qml:561",
+    "comment": "",
+    "translation": "Ngoại hình màn hình đăng nhập"
+  },
+  {
+    "term": "Greeter Behavior",
+    "context": "Greeter Behavior",
+    "reference": "Modules/Settings/GreeterTab.qml:720",
+    "comment": "",
+    "translation": "Hành vi màn hình đăng nhập"
+  },
+  {
+    "term": "Greeter Status",
+    "context": "Greeter Status",
+    "reference": "Modules/Settings/GreeterTab.qml:447",
+    "comment": "",
+    "translation": "Trạng thái màn hình đăng nhập"
+  },
+  {
+    "term": "Greeter activated. greetd is now enabled.",
+    "context": "Greeter activated. greetd is now enabled.",
+    "reference": "Modules/Settings/GreeterTab.qml:381",
+    "comment": "",
+    "translation": "Màn hình đăng nhập đã kích hoạt. greetd hiện đã được bật."
+  },
+  {
+    "term": "Greeter font",
+    "context": "Greeter font",
+    "reference": "Modules/Settings/GreeterTab.qml:575",
+    "comment": "",
+    "translation": "Phông chữ màn hình đăng nhập"
+  },
+  {
+    "term": "Greeter only — does not affect main clock",
+    "context": "Greeter only — does not affect main clock",
+    "reference": "Modules/Settings/GreeterTab.qml:602",
+    "comment": "",
+    "translation": "Chỉ màn hình đăng nhập — không ảnh hưởng đến đồng hồ chính"
+  },
+  {
+    "term": "Greeter only — format for the date on the login screen",
+    "context": "Greeter only — format for the date on the login screen",
+    "reference": "Modules/Settings/GreeterTab.qml:636",
+    "comment": "",
+    "translation": "Chỉ màn hình đăng nhập — định dạng cho ngày trên màn hình đăng nhập"
+  },
+  {
+    "term": "Grid",
+    "context": "Grid",
+    "reference": "Modules/Settings/DesktopWidgetSettings/SystemMonitorSettings.qml:351, Modules/Settings/DesktopWidgetSettings/SystemMonitorSettings.qml:355, Modules/Settings/DesktopWidgetSettings/SystemMonitorSettings.qml:364, Modules/DankBar/Popouts/DWLLayoutPopout.qml:48",
+    "comment": "",
+    "translation": "Lưới"
+  },
+  {
+    "term": "Grid Columns",
+    "context": "Grid Columns",
+    "reference": "Modules/Settings/LauncherTab.qml:350",
+    "comment": "",
+    "translation": "Cột lưới"
+  },
+  {
+    "term": "Grid: OFF",
+    "context": "Grid: OFF",
+    "reference": "Modules/Plugins/DesktopPluginWrapper.qml:722",
+    "comment": "Widget grid snap status",
+    "translation": "Lưới: TẮT"
+  },
+  {
+    "term": "Grid: ON",
+    "context": "Grid: ON",
+    "reference": "Modules/Plugins/DesktopPluginWrapper.qml:722",
+    "comment": "Widget grid snap status",
+    "translation": "Lưới: BẬT"
+  },
+  {
+    "term": "Group",
+    "context": "Group",
+    "reference": "Modules/Settings/DesktopWidgetInstanceCard.qml:240",
+    "comment": "",
+    "translation": "Nhóm"
+  },
+  {
+    "term": "Group Workspace Apps",
+    "context": "Group Workspace Apps",
+    "reference": "Modules/Settings/WorkspacesTab.qml:121",
+    "comment": "",
+    "translation": "Nhóm ứng dụng không gian làm việc"
+  },
+  {
+    "term": "Group by App",
+    "context": "Group by App",
+    "reference": "Modules/Settings/WidgetsTabSection.qml:2275, Modules/Settings/DockTab.qml:157",
+    "comment": "",
+    "translation": "Nhóm theo ứng dụng"
+  },
+  {
+    "term": "Group multiple windows of the same app together with a window count indicator",
+    "context": "Group multiple windows of the same app together with a window count indicator",
+    "reference": "Modules/Settings/DockTab.qml:158",
+    "comment": "",
+    "translation": "Nhóm nhiều cửa sổ của cùng một ứng dụng với một chỉ báo số lượng cửa sổ"
+  },
+  {
+    "term": "Group removed",
+    "context": "Group removed",
+    "reference": "Modules/Settings/DesktopWidgetsTab.qml:237",
+    "comment": "",
+    "translation": "Nhóm đã bị xóa"
+  },
+  {
+    "term": "Group repeated application icons in unfocused workspaces",
+    "context": "Group repeated application icons in unfocused workspaces",
+    "reference": "Modules/Settings/WorkspacesTab.qml:122",
+    "comment": "",
+    "translation": "Nhóm các biểu tượng ứng dụng lặp lại trong các không gian làm việc không tập trung"
+  },
+  {
+    "term": "Groups",
+    "context": "Groups",
+    "reference": "Modules/Settings/DesktopWidgetsTab.qml:112",
+    "comment": "",
+    "translation": "Các nhóm"
+  },
+  {
+    "term": "HDR (EDID)",
+    "context": "HDR (EDID)",
+    "reference": "Modules/Settings/DisplayConfig/HyprlandOutputSettings.qml:145, Modules/Settings/DisplayConfig/HyprlandOutputSettings.qml:155, Modules/Settings/DisplayConfig/HyprlandOutputSettings.qml:166",
+    "comment": "",
+    "translation": "HDR (EDID)"
+  },
+  {
+    "term": "HDR Tone Mapping",
+    "context": "HDR Tone Mapping",
+    "reference": "Modules/Settings/DisplayConfig/HyprlandOutputSettings.qml:229",
+    "comment": "",
+    "translation": "Ánh xạ tông màu HDR"
+  },
+  {
+    "term": "HDR mode is experimental. Verify your monitor supports HDR before enabling.",
+    "context": "HDR mode is experimental. Verify your monitor supports HDR before enabling.",
+    "reference": "Modules/Settings/DisplayConfig/HyprlandOutputSettings.qml:208",
+    "comment": "",
+    "translation": "Chế độ HDR đang thử nghiệm. Xác minh màn hình của bạn hỗ trợ HDR trước khi bật."
+  },
+  {
+    "term": "HSV",
+    "context": "HSV",
+    "reference": "Modals/DankColorPickerModal.qml:692",
+    "comment": "",
+    "translation": "HSV"
+  },
+  {
+    "term": "HTML copied to clipboard",
+    "context": "HTML copied to clipboard",
+    "reference": "Modules/Notepad/NotepadTextEditor.qml:284",
+    "comment": "",
+    "translation": "HTML đã sao chép vào bộ nhớ tạm"
+  },
+  {
+    "term": "Health",
+    "context": "Health",
+    "reference": "Modules/ControlCenter/Details/BatteryDetail.qml:141, Modules/DankBar/Popouts/BatteryPopout.qml:298, Modules/DankBar/Popouts/BatteryPopout.qml:454",
+    "comment": "",
+    "translation": "Sức khỏe"
+  },
+  {
+    "term": "Heavy Rain",
+    "context": "Heavy Rain",
+    "reference": "Services/WeatherService.qml:135, Services/WeatherService.qml:137, Services/WeatherService.qml:144",
+    "comment": "",
+    "translation": "Mưa lớn"
+  },
+  {
+    "term": "Heavy Snow",
+    "context": "Heavy Snow",
+    "reference": "Services/WeatherService.qml:140",
+    "comment": "",
+    "translation": "Tuyết dày"
+  },
+  {
+    "term": "Heavy Snow Showers",
+    "context": "Heavy Snow Showers",
+    "reference": "Services/WeatherService.qml:146",
+    "comment": "",
+    "translation": "Mưa tuyết dày"
+  },
+  {
+    "term": "Height",
+    "context": "Height",
+    "reference": "Modules/Settings/WindowRulesTab.qml:543",
+    "comment": "",
+    "translation": "Chiều cao"
+  },
+  {
+    "term": "Held",
+    "context": "Held",
+    "reference": "Services/CupsService.qml:761",
+    "comment": "",
+    "translation": "Đã giữ"
+  },
+  {
+    "term": "Help",
+    "context": "Help",
+    "reference": "Modules/Settings/DesktopWidgetsTab.qml:614",
+    "comment": "",
+    "translation": "Trợ giúp"
+  },
+  {
+    "term": "Hex",
+    "context": "Hex",
+    "reference": "Modals/DankColorPickerModal.qml:567",
+    "comment": "",
+    "translation": "Hex"
+  },
+  {
+    "term": "Hibernate",
+    "context": "Hibernate",
+    "reference": "Modals/PowerMenuModal.qml:210, Modules/Lock/LockPowerMenu.qml:128, Modules/Settings/PowerSleepTab.qml:344, Modules/Settings/PowerSleepTab.qml:411",
+    "comment": "",
+    "translation": "Ngủ đông"
+  },
+  {
+    "term": "Hidden",
+    "context": "Hidden",
+    "reference": "Modules/Settings/NetworkTab.qml:1228",
+    "comment": "",
+    "translation": "Bị ẩn"
+  },
+  {
+    "term": "Hidden (%1)",
+    "context": "Hidden (%1)",
+    "reference": "Modules/Settings/AudioTab.qml:265, Modules/Settings/AudioTab.qml:409",
+    "comment": "count of hidden audio devices",
+    "translation": "Bị ẩn (%1)"
+  },
+  {
+    "term": "Hidden Apps",
+    "context": "Hidden Apps",
+    "reference": "Modules/Settings/LauncherTab.qml:913",
+    "comment": "",
+    "translation": "Ứng dụng bị ẩn"
+  },
+  {
+    "term": "Hidden Network",
+    "context": "Hidden Network",
+    "reference": "Modals/WifiPasswordModal.qml:252",
+    "comment": "",
+    "translation": "Mạng bị ẩn"
+  },
+  {
+    "term": "Hidden apps won't appear in the launcher. Right-click an app and select 'Hide App' to hide it.",
+    "context": "Hidden apps won't appear in the launcher. Right-click an app and select 'Hide App' to hide it.",
+    "reference": "Modules/Settings/LauncherTab.qml:943",
+    "comment": "",
+    "translation": "Các ứng dụng bị ẩn sẽ không xuất hiện trong trình khởi chạy. Nhấp chuột phải vào ứng dụng và chọn 'Ẩn ứng dụng' để ẩn nó."
+  },
+  {
+    "term": "Hide",
+    "context": "Hide",
+    "reference": "Modules/Settings/DisplayConfigTab.qml:473",
+    "comment": "",
+    "translation": "Ẩn"
+  },
+  {
+    "term": "Hide 3rd Party",
+    "context": "Hide 3rd Party",
+    "reference": "Modules/Settings/PluginBrowser.qml:273",
+    "comment": "",
+    "translation": "Ẩn bên thứ 3"
+  },
+  {
+    "term": "Hide App",
+    "context": "Hide App",
+    "reference": "Modals/DankLauncherV2/LauncherContextMenu.qml:112",
+    "comment": "",
+    "translation": "Ẩn ứng dụng"
+  },
+  {
+    "term": "Hide Delay",
+    "context": "Hide Delay",
+    "reference": "Modules/Settings/DankBarTab.qml:622",
+    "comment": "",
+    "translation": "Độ trễ ẩn"
+  },
+  {
+    "term": "Hide Indicators",
+    "context": "Hide Indicators",
+    "reference": "Modules/Settings/WidgetsTabSection.qml:2669",
+    "comment": "",
+    "translation": "Ẩn các chỉ báo"
+  },
+  {
+    "term": "Hide When Typing",
+    "context": "Hide When Typing",
+    "reference": "Modules/Settings/ThemeColorsTab.qml:2389",
+    "comment": "",
+    "translation": "Ẩn khi đang nhập"
+  },
+  {
+    "term": "Hide When Windows Open",
+    "context": "Hide When Windows Open",
+    "reference": "Modules/Settings/DankBarTab.qml:645",
+    "comment": "",
+    "translation": "Ẩn khi có cửa sổ mở"
+  },
+  {
+    "term": "Hide cursor after inactivity (0 = disabled)",
+    "context": "Hide cursor after inactivity (0 = disabled)",
+    "reference": "Modules/Settings/ThemeColorsTab.qml:2436",
+    "comment": "",
+    "translation": "Ẩn con trỏ sau khi không hoạt động (0 = tắt)"
+  },
+  {
+    "term": "Hide cursor when pressing keyboard keys",
+    "context": "Hide cursor when pressing keyboard keys",
+    "reference": "Modules/Settings/ThemeColorsTab.qml:2390",
+    "comment": "",
+    "translation": "Ẩn con trỏ khi nhấn phím trên bàn phím"
+  },
+  {
+    "term": "Hide cursor when using touch input",
+    "context": "Hide cursor when using touch input",
+    "reference": "Modules/Settings/ThemeColorsTab.qml:2419",
+    "comment": "",
+    "translation": "Ẩn con trỏ khi sử dụng đầu vào cảm ứng"
+  },
+  {
+    "term": "Hide device",
+    "context": "Hide device",
+    "reference": "Modules/Settings/Widgets/DeviceAliasRow.qml:142",
+    "comment": "",
+    "translation": "Ẩn thiết bị"
+  },
+  {
+    "term": "Hide notification content until expanded",
+    "context": "Hide notification content until expanded",
+    "reference": "Modules/Notifications/Center/NotificationSettings.qml:316",
+    "comment": "",
+    "translation": "Ẩn nội dung thông báo cho đến khi mở rộng"
+  },
+  {
+    "term": "Hide notification content until expanded; popups show collapsed by default",
+    "context": "Hide notification content until expanded; popups show collapsed by default",
+    "reference": "Modules/Settings/NotificationsTab.qml:289",
+    "comment": "",
+    "translation": "Ẩn nội dung thông báo cho đến khi mở rộng; cửa sổ bật lên hiển thị thu gọn theo mặc định"
+  },
+  {
+    "term": "Hide on Touch",
+    "context": "Hide on Touch",
+    "reference": "Modules/Settings/ThemeColorsTab.qml:2418",
+    "comment": "",
+    "translation": "Ẩn khi chạm"
+  },
+  {
+    "term": "High-fidelity palette that preserves source hues.",
+    "context": "High-fidelity palette that preserves source hues.",
+    "reference": "Common/Theme.qml:492",
+    "comment": "",
+    "translation": "Bảng màu trung thực cao giữ nguyên tông màu nguồn."
+  },
+  {
+    "term": "Highlight Active Workspace App",
+    "context": "Highlight Active Workspace App",
+    "reference": "Modules/Settings/WorkspacesTab.qml:131",
+    "comment": "",
+    "translation": "Làm nổi bật ứng dụng không gian làm việc đang hoạt động"
+  },
+  {
+    "term": "Highlight the currently focused app inside workspace indicators",
+    "context": "Highlight the currently focused app inside workspace indicators",
+    "reference": "Modules/Settings/WorkspacesTab.qml:132",
+    "comment": "",
+    "translation": "Làm nổi bật ứng dụng hiện đang được tập trung trong các chỉ báo không gian làm việc"
+  },
+  {
+    "term": "History",
+    "context": "History",
+    "reference": "Modals/Clipboard/ClipboardHeader.qml:60, Modules/Notifications/Center/NotificationHeader.qml:189",
+    "comment": "notification center tab",
+    "translation": "Lịch sử"
+  },
+  {
+    "term": "History Retention",
+    "context": "History Retention",
+    "reference": "Modules/Settings/NotificationsTab.qml:832",
+    "comment": "notification history retention settings label",
+    "translation": "Giữ lại lịch sử"
+  },
+  {
+    "term": "History Settings",
+    "context": "History Settings",
+    "reference": "Modules/Settings/NotificationsTab.qml:803, Modules/Settings/ClipboardTab.qml:278, Modules/Notifications/Center/NotificationSettings.qml:340",
+    "comment": "",
+    "translation": "Cài đặt lịch sử"
+  },
+  {
+    "term": "History cleared. %1 pinned entries kept.",
+    "context": "History cleared. %1 pinned entries kept.",
+    "reference": "Services/ClipboardService.qml:232",
+    "comment": "",
+    "translation": "Lịch sử đã xóa. Giữ lại %1 mục đã ghim."
+  },
+  {
+    "term": "Hold Duration",
+    "context": "Hold Duration",
+    "reference": "Modules/Settings/PowerSleepTab.qml:518",
+    "comment": "",
+    "translation": "Thời lượng giữ"
+  },
+  {
+    "term": "Hold longer to confirm",
+    "context": "Hold longer to confirm",
+    "reference": "Modals/PowerMenuModal.qml:792, Modules/Lock/LockPowerMenu.qml:800",
+    "comment": "",
+    "translation": "Giữ lâu hơn để xác nhận"
+  },
+  {
+    "term": "Hold to Confirm Power Actions",
+    "context": "Hold to Confirm Power Actions",
+    "reference": "Modules/Settings/PowerSleepTab.qml:505",
+    "comment": "",
+    "translation": "Giữ để xác nhận hành động nguồn"
+  },
+  {
+    "term": "Hold to confirm (%1 ms)",
+    "context": "Hold to confirm (%1 ms)",
+    "reference": "Modals/PowerMenuModal.qml:795, Modals/PowerMenuModal.qml:799, Modules/Lock/LockPowerMenu.qml:803, Modules/Lock/LockPowerMenu.qml:807",
+    "comment": "",
+    "translation": "Giữ để xác nhận (%1 ms)"
+  },
+  {
+    "term": "Hold to confirm (%1s)",
+    "context": "Hold to confirm (%1s)",
+    "reference": "Modals/PowerMenuModal.qml:796, Modals/PowerMenuModal.qml:800, Modules/Lock/LockPowerMenu.qml:804, Modules/Lock/LockPowerMenu.qml:808",
+    "comment": "",
+    "translation": "Giữ để xác nhận (%1s)"
+  },
+  {
+    "term": "Home",
+    "context": "Home",
+    "reference": "Modals/FileBrowser/FileBrowserContent.qml:248",
+    "comment": "",
+    "translation": "Trang chủ"
+  },
+  {
+    "term": "Host",
+    "context": "Host",
+    "reference": "Modules/Settings/PrinterTab.qml:501",
+    "comment": "Label for printer IP address or hostname input field",
+    "translation": "Máy chủ"
+  },
+  {
+    "term": "Hostname",
+    "context": "Hostname",
+    "reference": "Modules/ProcessList/SystemView.qml:60",
+    "comment": "system info label",
+    "translation": "Tên máy chủ"
+  },
+  {
+    "term": "Hot Corners",
+    "context": "Hot Corners",
+    "reference": "Modules/Settings/DisplayConfig/NiriOutputSettings.qml:77, Modules/Settings/DisplayConfig/DisplayConfigState.qml:1238",
+    "comment": "",
+    "translation": "Góc nóng"
+  },
+  {
+    "term": "Hotkey overlay title (optional)",
+    "context": "Hotkey overlay title (optional)",
+    "reference": "Widgets/KeybindItem.qml:1538",
+    "comment": "",
+    "translation": "Tiêu đề lớp phủ phím nóng (tùy chọn)"
+  },
+  {
+    "term": "Hour",
+    "context": "Hour",
+    "reference": "Modules/Settings/ThemeColorsTab.qml:1142, Modules/Settings/GammaControlTab.qml:232",
+    "comment": "",
+    "translation": "Giờ"
+  },
+  {
+    "term": "Hourly",
+    "context": "Hourly",
+    "reference": "Modules/DankDash/WeatherTab.qml:860",
+    "comment": "",
+    "translation": "Hàng giờ"
+  },
+  {
+    "term": "Hourly Forecast Count",
+    "context": "Hourly Forecast Count",
+    "reference": "dms-plugins/DankDesktopWeather/DankDesktopWeatherSettings.qml:142",
+    "comment": "",
+    "translation": "Số lượng dự báo hàng giờ"
+  },
+  {
+    "term": "How often the server polls for new updates.",
+    "context": "How often the server polls for new updates.",
+    "reference": "Modules/Settings/SystemUpdaterTab.qml:86",
+    "comment": "",
+    "translation": "Tần suất máy chủ kiểm tra các bản cập nhật mới."
+  },
+  {
+    "term": "How often to change wallpaper",
+    "context": "How often to change wallpaper",
+    "reference": "Modules/Settings/WallpaperTab.qml:1010",
+    "comment": "",
+    "translation": "Tần suất thay đổi hình nền"
+  },
+  {
+    "term": "How the background image is scaled",
+    "context": "How the background image is scaled",
+    "reference": "Modules/Settings/GreeterTab.qml:693",
+    "comment": "",
+    "translation": "Cách thu phóng hình nền"
+  },
+  {
+    "term": "Humidity",
+    "context": "Humidity",
+    "reference": "dms-plugins/DankDesktopWeather/DankDesktopWeather.qml:413, Modules/DankDash/WeatherTab.qml:84, Modules/DankDash/WeatherForecastCard.qml:80, Modules/Settings/TimeWeatherTab.qml:933",
+    "comment": "",
+    "translation": "Độ ẩm"
+  },
+  {
+    "term": "Hyprland Discord Server",
+    "context": "Hyprland Discord Server",
+    "reference": "Modules/Settings/AboutTab.qml:98",
+    "comment": "",
+    "translation": "Máy chủ Discord Hyprland"
+  },
+  {
+    "term": "Hyprland Layout Overrides",
+    "context": "Hyprland Layout Overrides",
+    "reference": "Modules/Settings/ThemeColorsTab.qml:2033",
+    "comment": "",
+    "translation": "Ghi đè bố cục Hyprland"
+  },
+  {
+    "term": "Hyprland Options",
+    "context": "Hyprland Options",
+    "reference": "Modals/WindowRuleModal.qml:928",
+    "comment": "",
+    "translation": "Tùy chọn Hyprland"
+  },
+  {
+    "term": "Hyprland Website",
+    "context": "Hyprland Website",
+    "reference": "Modules/Settings/AboutTab.qml:71",
+    "comment": "",
+    "translation": "Trang web Hyprland"
+  },
+  {
+    "term": "I Understand",
+    "context": "I Understand",
+    "reference": "Modules/Settings/PluginBrowser.qml:838",
+    "comment": "",
+    "translation": "Tôi hiểu"
+  },
+  {
+    "term": "IP",
+    "context": "IP",
+    "reference": "Modules/Settings/NetworkTab.qml:582",
+    "comment": "",
+    "translation": "IP"
+  },
+  {
+    "term": "IP Address:",
+    "context": "IP Address:",
+    "reference": "Modules/Settings/NetworkTab.qml:945",
+    "comment": "",
+    "translation": "Địa chỉ IP:"
+  },
+  {
+    "term": "IP address or hostname",
+    "context": "IP address or hostname",
+    "reference": "Modules/Settings/PrinterTab.qml:511",
+    "comment": "Placeholder text for manual printer address input",
+    "translation": "Địa chỉ IP hoặc tên máy chủ"
+  },
+  {
+    "term": "ISO Date",
+    "context": "ISO Date",
+    "reference": "Modules/Settings/GreeterTab.qml:422, Modules/Settings/TimeWeatherTab.qml:131, Modules/Settings/TimeWeatherTab.qml:162, Modules/Settings/TimeWeatherTab.qml:181, Modules/Settings/TimeWeatherTab.qml:218, Modules/Settings/TimeWeatherTab.qml:249, Modules/Settings/TimeWeatherTab.qml:268",
+    "comment": "date format option",
+    "translation": "Ngày ISO"
+  },
+  {
+    "term": "Icon",
+    "context": "Icon",
+    "reference": "Modals/DankLauncherV2/LauncherContent.qml:903, Modules/Settings/DockTab.qml:247",
+    "comment": "",
+    "translation": "Biểu tượng"
+  },
+  {
+    "term": "Icon Scale",
+    "context": "Icon Scale",
+    "reference": "Modules/Settings/DankBarTab.qml:934",
+    "comment": "",
+    "translation": "Tỷ lệ biểu tượng"
+  },
+  {
+    "term": "Icon Size",
+    "context": "Icon Size",
+    "reference": "Modules/Settings/DockTab.qml:578, Modules/Settings/WorkspacesTab.qml:109",
+    "comment": "",
+    "translation": "Kích thước biểu tượng"
+  },
+  {
+    "term": "Icon Size %",
+    "context": "Icon Size %",
+    "reference": "Modules/Settings/WidgetsTabSection.qml:2911",
+    "comment": "",
+    "translation": "% kích thước biểu tượng"
+  },
+  {
+    "term": "Icon Theme",
+    "context": "Icon Theme",
+    "reference": "Modules/Settings/ThemeColorsTab.qml:2474, Modules/Settings/ThemeColorsTab.qml:2482",
+    "comment": "",
+    "translation": "Chủ đề biểu tượng"
+  },
+  {
+    "term": "Idle",
+    "context": "Idle",
+    "reference": "Services/CupsService.qml:778",
+    "comment": "",
+    "translation": "Nhàn rỗi"
+  },
+  {
+    "term": "Idle Inhibitor",
+    "context": "Idle Inhibitor",
+    "reference": "Modules/Settings/WidgetsTab.qml:190, Modules/Settings/OSDTab.qml:125",
+    "comment": "",
+    "translation": "Bộ ức chế nhàn rỗi"
+  },
+  {
+    "term": "Idle Settings",
+    "context": "Idle Settings",
+    "reference": "Modules/Settings/PowerSleepTab.qml:34",
+    "comment": "",
+    "translation": "Cài đặt nhàn rỗi"
+  },
+  {
+    "term": "Idle monitoring not supported - requires newer Quickshell version",
+    "context": "Idle monitoring not supported - requires newer Quickshell version",
+    "reference": "Modules/Settings/PowerSleepTab.qml:375",
+    "comment": "",
+    "translation": "Giám sát nhàn rỗi không được hỗ trợ - yêu cầu phiên bản Quickshell mới hơn"
+  },
+  {
+    "term": "If the field is hidden, it will appear as soon as a key is pressed.",
+    "context": "If the field is hidden, it will appear as soon as a key is pressed.",
+    "reference": "Modules/Settings/LockScreenTab.qml:130",
+    "comment": "",
+    "translation": "Nếu trường bị ẩn, nó sẽ xuất hiện ngay khi nhấn phím."
+  },
+  {
+    "term": "Ignore Completely",
+    "context": "Ignore Completely",
+    "reference": "Modules/Settings/NotificationsTab.qml:127",
+    "comment": "notification rule action option",
+    "translation": "Bỏ qua hoàn toàn"
+  },
+  {
+    "term": "Image",
+    "context": "Image",
+    "reference": "Modals/Clipboard/ClipboardEntry.qml:116",
+    "comment": "",
+    "translation": "Hình ảnh"
+  },
+  {
+    "term": "Image copied to clipboard",
+    "context": "Image copied to clipboard",
+    "reference": "Services/ClipboardService.qml:108",
+    "comment": "",
+    "translation": "Hình ảnh đã sao chép vào bộ nhớ tạm"
+  },
+  {
+    "term": "Import",
+    "context": "Import",
+    "reference": "Widgets/VpnDetailContent.qml:89, Modules/Settings/NetworkTab.qml:1592",
+    "comment": "",
+    "translation": "Nhập"
+  },
+  {
+    "term": "Import VPN",
+    "context": "Import VPN",
+    "reference": "Widgets/VpnDetailContent.qml:28, Modules/Settings/NetworkTab.qml:76",
+    "comment": "",
+    "translation": "Nhập VPN"
+  },
+  {
+    "term": "Inactive Monitor Color",
+    "context": "Inactive Monitor Color",
+    "reference": "Modules/Settings/LockScreenTab.qml:415, Modules/Settings/LockScreenTab.qml:446",
+    "comment": "",
+    "translation": "Màu màn hình không hoạt động"
+  },
+  {
+    "term": "Include AUR updates",
+    "context": "Include AUR updates",
+    "reference": "Modules/Settings/SystemUpdaterTab.qml:105",
+    "comment": "",
+    "translation": "Bao gồm bản cập nhật AUR"
+  },
+  {
+    "term": "Include Files in All Tab",
+    "context": "Include Files in All Tab",
+    "reference": "Modules/Settings/LauncherTab.qml:893",
+    "comment": "",
+    "translation": "Bao gồm tệp trong tab Tất cả"
+  },
+  {
+    "term": "Include Flatpak updates",
+    "context": "Include Flatpak updates",
+    "reference": "Modules/Settings/SystemUpdaterTab.qml:97",
+    "comment": "",
+    "translation": "Bao gồm bản cập nhật Flatpak"
+  },
+  {
+    "term": "Include Folders in All Tab",
+    "context": "Include Folders in All Tab",
+    "reference": "Modules/Settings/LauncherTab.qml:902",
+    "comment": "",
+    "translation": "Bao gồm thư mục trong tab Tất cả"
+  },
+  {
+    "term": "Include Transitions",
+    "context": "Include Transitions",
+    "reference": "Modules/Settings/WallpaperTab.qml:1201",
+    "comment": "",
+    "translation": "Bao gồm hiệu ứng chuyển tiếp"
+  },
+  {
+    "term": "Include desktop actions (shortcuts) in search results.",
+    "context": "Include desktop actions (shortcuts) in search results.",
+    "reference": "Modules/Settings/LauncherTab.qml:876",
+    "comment": "",
+    "translation": "Bao gồm các hành động trên màn hình (phím tắt) trong kết quả tìm kiếm."
+  },
+  {
+    "term": "Incompatible Plugins Loaded",
+    "context": "Incompatible Plugins Loaded",
+    "reference": "Modules/Settings/PluginsTab.qml:168",
+    "comment": "",
+    "translation": "Đã tải plugin không tương thích"
+  },
+  {
+    "term": "Incorrect password",
+    "context": "Incorrect password",
+    "reference": "Modals/WifiPasswordModal.qml:369, Modules/Greetd/GreeterContent.qml:245",
+    "comment": "",
+    "translation": "Mật khẩu sai"
+  },
+  {
+    "term": "Incorrect password - attempt %1 of %2 (lockout may follow)",
+    "context": "Incorrect password - attempt %1 of %2 (lockout may follow)",
+    "reference": "Modules/Greetd/GreeterContent.qml:241",
+    "comment": "",
+    "translation": "Mật khẩu sai - thử lần %1 trên %2 (có thể bị khóa sau đó)"
+  },
+  {
+    "term": "Incorrect password - next failures may trigger account lockout",
+    "context": "Incorrect password - next failures may trigger account lockout",
+    "reference": "Modules/Greetd/GreeterContent.qml:243",
+    "comment": "",
+    "translation": "Mật khẩu sai - những lần thất bại tiếp theo có thể gây khóa tài khoản"
+  },
+  {
+    "term": "Incorrect password - try again",
+    "context": "Incorrect password - try again",
+    "reference": "Modules/Lock/LockScreenContent.qml:61",
+    "comment": "",
+    "translation": "Mật khẩu sai - thử lại"
+  },
+  {
+    "term": "Indicator Style",
+    "context": "Indicator Style",
+    "reference": "Modules/Settings/DockTab.qml:176",
+    "comment": "",
+    "translation": "Kiểu chỉ báo"
+  },
+  {
+    "term": "Individual Batteries",
+    "context": "Individual Batteries",
+    "reference": "Modules/DankBar/Popouts/BatteryPopout.qml:358",
+    "comment": "",
+    "translation": "Các pin riêng lẻ"
+  },
+  {
+    "term": "Individual bar configuration",
+    "context": "Individual bar configuration",
+    "reference": "Modules/Settings/DisplayWidgetsTab.qml:19",
+    "comment": "",
+    "translation": "Cấu hình thanh riêng lẻ"
+  },
+  {
+    "term": "Info",
+    "context": "Info",
+    "reference": "Modals/Greeter/GreeterDoctorPage.qml:270",
+    "comment": "greeter doctor page status card",
+    "translation": "Thông tin"
+  },
+  {
+    "term": "Inherit",
+    "context": "Inherit",
+    "reference": "Modules/Settings/DisplayConfig/NiriOutputSettings.qml:87, Modules/Settings/DisplayConfig/NiriOutputSettings.qml:92, Modules/Settings/DisplayConfig/NiriOutputSettings.qml:97, Modules/Settings/DisplayConfig/NiriOutputSettings.qml:101, Modules/Settings/DisplayConfig/NiriOutputSettings.qml:225, Modules/Settings/DisplayConfig/NiriOutputSettings.qml:262, Modules/Settings/DisplayConfig/NiriOutputSettings.qml:312",
+    "comment": "",
+    "translation": "Kế thừa"
+  },
+  {
+    "term": "Inherit Global (Default)",
+    "context": "Inherit Global (Default)",
+    "reference": "Modules/Settings/DankBarTab.qml:1419, Modules/Settings/DankBarTab.qml:1427",
+    "comment": "bar shadow direction source option",
+    "translation": "Kế thừa toàn cục (Mặc định)"
+  },
+  {
+    "term": "Inhibitable",
+    "context": "Inhibitable",
+    "reference": "Widgets/KeybindItem.qml:1773",
+    "comment": "",
+    "translation": "Có thể ức chế"
+  },
+  {
+    "term": "Input Devices",
+    "context": "Input Devices",
+    "reference": "Modules/Settings/AudioTab.qml:319, Modules/ControlCenter/Details/AudioInputDetail.qml:37",
+    "comment": "",
+    "translation": "Thiết bị đầu vào"
+  },
+  {
+    "term": "Input Volume Slider",
+    "context": "Input Volume Slider",
+    "reference": "Modules/ControlCenter/Models/WidgetModel.qml:153",
+    "comment": "",
+    "translation": "Thanh trượt âm lượng đầu vào"
+  },
+  {
+    "term": "Insert your security key...",
+    "context": "Insert your security key...",
+    "reference": "Modules/Lock/LockScreenContent.qml:51",
+    "comment": "",
+    "translation": "Chèn khóa bảo mật của bạn..."
+  },
+  {
+    "term": "Install",
+    "context": "Install",
+    "reference": "Modules/Settings/PluginBrowser.qml:121, Modules/Settings/PluginBrowser.qml:634, Modules/Settings/GreeterTab.qml:120, Modules/Settings/GreeterTab.qml:166, Modules/Settings/ThemeBrowser.qml:120, Modules/Settings/ThemeBrowser.qml:648",
+    "comment": "install action button",
+    "translation": "Cài đặt"
+  },
+  {
+    "term": "Install Greeter",
+    "context": "Install Greeter",
+    "reference": "Modules/Settings/GreeterTab.qml:164",
+    "comment": "greeter action confirmation",
+    "translation": "Cài đặt màn hình đăng nhập"
+  },
+  {
+    "term": "Install Plugin",
+    "context": "Install Plugin",
+    "reference": "Modules/Settings/PluginBrowser.qml:119",
+    "comment": "plugin installation dialog title",
+    "translation": "Cài đặt Plugin"
+  },
+  {
+    "term": "Install Theme",
+    "context": "Install Theme",
+    "reference": "Modules/Settings/ThemeBrowser.qml:118",
+    "comment": "theme installation dialog title",
+    "translation": "Cài đặt Chủ đề"
+  },
+  {
+    "term": "Install color themes from the DMS theme registry",
+    "context": "Install color themes from the DMS theme registry",
+    "reference": "Modules/Settings/ThemeBrowser.qml:290",
+    "comment": "theme browser description",
+    "translation": "Cài đặt chủ đề màu từ sổ đăng ký chủ đề DMS"
+  },
+  {
+    "term": "Install complete. Greeter has been installed.",
+    "context": "Install complete. Greeter has been installed.",
+    "reference": "Modules/Settings/GreeterTab.qml:379",
+    "comment": "",
+    "translation": "Cài đặt hoàn tất. Màn hình đăng nhập đã được cài đặt."
+  },
+  {
+    "term": "Install failed: %1",
+    "context": "Install failed: %1",
+    "reference": "Modules/Settings/PluginBrowser.qml:85, Modules/Settings/ThemeBrowser.qml:68",
+    "comment": "installation error",
+    "translation": "Cài đặt thất bại: %1"
+  },
+  {
+    "term": "Install matugen package for dynamic theming",
+    "context": "Install matugen package for dynamic theming",
+    "reference": "Modules/Settings/ThemeColorsTab.qml:485",
+    "comment": "matugen installation hint",
+    "translation": "Cài đặt gói matugen để có chủ đề động"
+  },
+  {
+    "term": "Install plugin '%1' from the DMS registry?",
+    "context": "Install plugin '%1' from the DMS registry?",
+    "reference": "Modules/Settings/PluginBrowser.qml:120",
+    "comment": "plugin installation confirmation",
+    "translation": "Cài đặt plugin '%1' từ sổ đăng ký DMS?"
+  },
+  {
+    "term": "Install plugins from the DMS plugin registry",
+    "context": "Install plugins from the DMS plugin registry",
+    "reference": "Modules/Settings/PluginBrowser.qml:321",
+    "comment": "plugin browser description",
+    "translation": "Cài đặt plugin từ sổ đăng ký plugin DMS"
+  },
+  {
+    "term": "Install the DMS greeter? A terminal will open for sudo authentication.",
+    "context": "Install the DMS greeter? A terminal will open for sudo authentication.",
+    "reference": "Modules/Settings/GreeterTab.qml:165",
+    "comment": "",
+    "translation": "Cài đặt màn hình đăng nhập DMS? Một thiết bị đầu cuối sẽ mở để xác thực sudo."
+  },
+  {
+    "term": "Install theme '%1' from the DMS registry?",
+    "context": "Install theme '%1' from the DMS registry?",
+    "reference": "Modules/Settings/ThemeBrowser.qml:119",
+    "comment": "theme installation confirmation",
+    "translation": "Install theme '%1' from the DMS registry?"
+  },
+  {
+    "term": "Installation and PAM setup: see the ",
+    "context": "Installation and PAM setup: see the ",
+    "reference": "Modules/Settings/GreeterTab.qml:765",
+    "comment": "",
+    "translation": "Cài đặt và thiết lập PAM: xem tại "
+  },
+  {
+    "term": "Installed",
+    "context": "Installed",
+    "reference": "Modules/Settings/PluginBrowser.qml:630, Modules/Settings/ThemeBrowser.qml:651",
+    "comment": "installed status",
+    "translation": "Đã cài đặt"
+  },
+  {
+    "term": "Installed: %1",
+    "context": "Installed: %1",
+    "reference": "Modules/Settings/PluginBrowser.qml:88, Modules/Settings/ThemeBrowser.qml:71",
+    "comment": "installation success",
+    "translation": "Đã cài đặt: %1"
+  },
+  {
+    "term": "Installing: %1",
+    "context": "Installing: %1",
+    "reference": "Modules/Settings/PluginBrowser.qml:82, Modules/Settings/ThemeBrowser.qml:65",
+    "comment": "installation progress",
+    "translation": "Đang cài đặt: %1"
+  },
+  {
+    "term": "Intelligent Auto-hide",
+    "context": "Intelligent Auto-hide",
+    "reference": "Modules/Settings/DockTab.qml:66",
+    "comment": "",
+    "translation": "Tự động ẩn thông minh"
+  },
+  {
+    "term": "Intensity",
+    "context": "Intensity",
+    "reference": "Modules/Settings/DankBarTab.qml:1390",
+    "comment": "shadow intensity slider",
+    "translation": "Cường độ"
+  },
+  {
+    "term": "Interface:",
+    "context": "Interface:",
+    "reference": "Modules/Settings/NetworkTab.qml:925",
+    "comment": "",
+    "translation": "Giao diện:"
+  },
+  {
+    "term": "Interlock Open",
+    "context": "Interlock Open",
+    "reference": "Services/CupsService.qml:807",
+    "comment": "",
+    "translation": "Khóa liên động mở"
+  },
+  {
+    "term": "Internet",
+    "context": "Internet",
+    "reference": "Services/AppSearchService.qml:646, Services/AppSearchService.qml:647, Services/AppSearchService.qml:648",
+    "comment": "",
+    "translation": "Internet"
+  },
+  {
+    "term": "Interval",
+    "context": "Interval",
+    "reference": "Modules/Settings/WallpaperTab.qml:956, Modules/Settings/WallpaperTab.qml:1009",
+    "comment": "wallpaper cycling mode tab",
+    "translation": "Khoảng thời gian"
+  },
+  {
+    "term": "Invalid configuration",
+    "context": "Invalid configuration",
+    "reference": "Modules/Settings/DisplayConfig/DisplayConfigState.qml:1302",
+    "comment": "",
+    "translation": "Cấu hình không hợp lệ"
+  },
+  {
+    "term": "Invert on mode change",
+    "context": "Invert on mode change",
+    "reference": "Modules/Settings/LauncherTab.qml:300",
+    "comment": "",
+    "translation": "Đảo ngược khi đổi chế độ"
+  },
+  {
+    "term": "Iris Bloom",
+    "context": "Iris Bloom",
+    "reference": "Modules/Settings/WallpaperTab.qml:1171",
+    "comment": "wallpaper transition option",
+    "translation": "Hoa diên vĩ nở"
+  },
+  {
+    "term": "Isolate Displays",
+    "context": "Isolate Displays",
+    "reference": "Modules/Settings/DockTab.qml:148",
+    "comment": "",
+    "translation": "Cách ly màn hình"
+  },
+  {
+    "term": "Jobs",
+    "context": "Jobs",
+    "reference": "Modules/Settings/PrinterTab.qml:1339, Modules/ControlCenter/BuiltinPlugins/CupsWidget.qml:183",
+    "comment": "",
+    "translation": "Công việc"
+  },
+  {
+    "term": "Jobs: ",
+    "context": "Jobs: ",
+    "reference": "Modules/ControlCenter/BuiltinPlugins/CupsWidget.qml:19",
+    "comment": "",
+    "translation": "Công việc: "
+  },
+  {
+    "term": "Keep Awake",
+    "context": "Keep Awake",
+    "reference": "Modules/ControlCenter/Models/WidgetModel.qml:93, Modules/ControlCenter/Components/DragDropGrid.qml:641",
+    "comment": "",
+    "translation": "Giữ thức"
+  },
+  {
+    "term": "Keep Changes",
+    "context": "Keep Changes",
+    "reference": "Modals/DisplayConfirmationModal.qml:168",
+    "comment": "",
+    "translation": "Giữ các thay đổi"
+  },
+  {
+    "term": "Keeping Awake",
+    "context": "Keeping Awake",
+    "reference": "Modules/ControlCenter/Components/DragDropGrid.qml:641",
+    "comment": "",
+    "translation": "Đang giữ thức"
+  },
+  {
+    "term": "Kernel",
+    "context": "Kernel",
+    "reference": "Modules/ProcessList/SystemView.qml:68",
+    "comment": "system info label",
+    "translation": "Hạt nhân"
+  },
+  {
+    "term": "Key",
+    "context": "Key",
+    "reference": "Widgets/KeybindItem.qml:621",
+    "comment": "",
+    "translation": "Khóa"
+  },
+  {
+    "term": "Keybind Sources",
+    "context": "Keybind Sources",
+    "reference": "dms-plugins/DankLauncherKeys/DankLauncherKeysSettings.qml:144",
+    "comment": "",
+    "translation": "Nguồn phím tắt"
+  },
+  {
+    "term": "Keybinds",
+    "context": "Keybinds",
+    "reference": "Modals/Greeter/GreeterCompletePage.qml:413",
+    "comment": "greeter settings link",
+    "translation": "Phím tắt"
+  },
+  {
+    "term": "Keybinds Search Settings",
+    "context": "Keybinds Search Settings",
+    "reference": "dms-plugins/DankLauncherKeys/DankLauncherKeysSettings.qml:70",
+    "comment": "",
+    "translation": "Cài đặt tìm kiếm phím tắt"
+  },
+  {
+    "term": "Keybinds shown alongside regular search results",
+    "context": "Keybinds shown alongside regular search results",
+    "reference": "dms-plugins/DankLauncherKeys/DankLauncherKeysSettings.qml:107",
+    "comment": "",
+    "translation": "Các phím tắt hiển thị cùng với kết quả tìm kiếm thông thường"
+  },
+  {
+    "term": "Keyboard Layout Name",
+    "context": "Keyboard Layout Name",
+    "reference": "Modules/Settings/WidgetsTab.qml:226",
+    "comment": "",
+    "translation": "Tên bố cục bàn phím"
+  },
+  {
+    "term": "Keyboard Shortcuts",
+    "context": "Keyboard Shortcuts",
+    "reference": "Modals/Settings/SettingsSidebar.qml:200, Modals/Settings/SettingsSidebar.qml:566, Modals/Clipboard/ClipboardHeader.qml:68, Modules/Settings/KeybindsTab.qml:232",
+    "comment": "",
+    "translation": "Phím tắt bàn phím"
+  },
+  {
+    "term": "Keys",
+    "context": "Keys",
+    "reference": "Widgets/KeybindItem.qml:534",
+    "comment": "",
+    "translation": "Phím"
+  },
+  {
+    "term": "Kill",
+    "context": "Kill",
+    "reference": "Modals/MuxModal.qml:102, Modals/MuxModal.qml:593",
+    "comment": "",
+    "translation": "Đóng"
+  },
+  {
+    "term": "Kill Process",
+    "context": "Kill Process",
+    "reference": "Modules/ProcessList/ProcessContextMenu.qml:42",
+    "comment": "",
+    "translation": "Đóng tiến trình"
+  },
+  {
+    "term": "Kill Session",
+    "context": "Kill Session",
+    "reference": "Modals/MuxModal.qml:100",
+    "comment": "",
+    "translation": "Đóng phiên"
+  },
+  {
+    "term": "Ko-fi",
+    "context": "Ko-fi",
+    "reference": "Modules/Settings/AboutTab.qml:322, Modules/Settings/AboutTab.qml:330",
+    "comment": "",
+    "translation": "Ko-fi"
+  },
+  {
+    "term": "LED device",
+    "context": "LED device",
+    "reference": "Modules/ControlCenter/Details/BrightnessDetail.qml:335",
+    "comment": "",
+    "translation": "Thiết bị LED"
+  },
+  {
+    "term": "LabWC IRC Channel",
+    "context": "LabWC IRC Channel",
+    "reference": "Modules/Settings/AboutTab.qml:108",
+    "comment": "",
+    "translation": "Kênh IRC LabWC"
+  },
+  {
+    "term": "LabWC Website",
+    "context": "LabWC Website",
+    "reference": "Modules/Settings/AboutTab.qml:81",
+    "comment": "",
+    "translation": "Trang web LabWC"
+  },
+  {
+    "term": "Large",
+    "context": "Large",
+    "reference": "Modules/Settings/WidgetsTabSection.qml:2083",
+    "comment": "",
+    "translation": "Lớn"
+  },
+  {
+    "term": "Largest",
+    "context": "Largest",
+    "reference": "Modules/Settings/WidgetsTabSection.qml:2088",
+    "comment": "",
+    "translation": "Lớn nhất"
+  },
+  {
+    "term": "Last hour",
+    "context": "Last hour",
+    "reference": "Modules/Notifications/Center/HistoryNotificationList.qml:92",
+    "comment": "notification history filter",
+    "translation": "Giờ trước"
+  },
+  {
+    "term": "Last launched %1",
+    "context": "Last launched %1",
+    "reference": "Modules/Settings/LauncherTab.qml:1270",
+    "comment": "",
+    "translation": "Khởi chạy lần cuối %1"
+  },
+  {
+    "term": "Last launched %1 day ago",
+    "context": "Last launched %1 day ago",
+    "reference": "Modules/Settings/LauncherTab.qml:1269",
+    "comment": "",
+    "translation": "Khởi chạy lần cuối %1 ngày trước"
+  },
+  {
+    "term": "Last launched %1 days ago",
+    "context": "Last launched %1 days ago",
+    "reference": "Modules/Settings/LauncherTab.qml:1269",
+    "comment": "",
+    "translation": "Khởi chạy lần cuối %1 ngày trước"
+  },
+  {
+    "term": "Last launched %1 hour ago",
+    "context": "Last launched %1 hour ago",
+    "reference": "Modules/Settings/LauncherTab.qml:1267",
+    "comment": "",
+    "translation": "Khởi chạy lần cuối %1 giờ trước"
+  },
+  {
+    "term": "Last launched %1 hours ago",
+    "context": "Last launched %1 hours ago",
+    "reference": "Modules/Settings/LauncherTab.qml:1267",
+    "comment": "",
+    "translation": "Khởi chạy lần cuối %1 giờ trước"
+  },
+  {
+    "term": "Last launched %1 minute ago",
+    "context": "Last launched %1 minute ago",
+    "reference": "Modules/Settings/LauncherTab.qml:1265",
+    "comment": "",
+    "translation": "Khởi chạy lần cuối %1 phút trước"
+  },
+  {
+    "term": "Last launched %1 minutes ago",
+    "context": "Last launched %1 minutes ago",
+    "reference": "Modules/Settings/LauncherTab.qml:1265",
+    "comment": "",
+    "translation": "Khởi chạy lần cuối %1 phút trước"
+  },
+  {
+    "term": "Last launched just now",
+    "context": "Last launched just now",
+    "reference": "Modules/Settings/LauncherTab.qml:1263",
+    "comment": "",
+    "translation": "Vừa khởi chạy"
+  },
+  {
+    "term": "Latitude",
+    "context": "Latitude",
+    "reference": "Modules/Settings/ThemeColorsTab.qml:1287, Modules/Settings/GammaControlTab.qml:379, Modules/Settings/TimeWeatherTab.qml:502",
+    "comment": "",
+    "translation": "Vĩ độ"
+  },
+  {
+    "term": "Launch",
+    "context": "Launch",
+    "reference": "Modals/DankLauncherV2/LauncherContextMenu.qml:154, Modals/DankLauncherV2/Controller.qml:1102, Modals/DankLauncherV2/Controller.qml:1507",
+    "comment": "",
+    "translation": "Khởi chạy"
+  },
+  {
+    "term": "Launch Prefix",
+    "context": "Launch Prefix",
+    "reference": "Modules/Settings/LauncherTab.qml:311",
+    "comment": "",
+    "translation": "Tiền tố khởi chạy"
+  },
+  {
+    "term": "Launch on dGPU",
+    "context": "Launch on dGPU",
+    "reference": "Modals/DankLauncherV2/LauncherContextMenu.qml:146, Modals/DankLauncherV2/ActionPanel.qml:61, Modules/Dock/DockContextMenu.qml:304, Modules/DankBar/Widgets/AppsDockContextMenu.qml:410",
+    "comment": "",
+    "translation": "Khởi chạy trên dGPU"
+  },
+  {
+    "term": "Launch on dGPU by default",
+    "context": "Launch on dGPU by default",
+    "reference": "Modals/DankLauncherV2/LauncherContent.qml:987",
+    "comment": "",
+    "translation": "Mặc định khởi chạy trên dGPU"
+  },
+  {
+    "term": "Launcher",
+    "context": "Launcher",
+    "reference": "Modals/Settings/SettingsSidebar.qml:192",
+    "comment": "",
+    "translation": "Trình khởi chạy"
+  },
+  {
+    "term": "Launcher Button",
+    "context": "Launcher Button",
+    "reference": "Modules/Settings/DockTab.qml:226",
+    "comment": "",
+    "translation": "Nút trình khởi chạy"
+  },
+  {
+    "term": "Launcher Button Logo",
+    "context": "Launcher Button Logo",
+    "reference": "Modules/Settings/LauncherTab.qml:36",
+    "comment": "",
+    "translation": "Logo nút trình khởi chạy"
+  },
+  {
+    "term": "Layer Outline Opacity",
+    "context": "Layer Outline Opacity",
+    "reference": "Modules/Settings/ThemeColorsTab.qml:1862",
+    "comment": "",
+    "translation": "Độ mờ đường viền lớp"
+  },
+  {
+    "term": "Layout",
+    "context": "Layout",
+    "reference": "Modules/Settings/WidgetsTab.qml:37, Modules/Settings/DisplayConfig/DisplayConfigState.qml:1240, Modules/Settings/DesktopWidgetSettings/SystemMonitorSettings.qml:350, Modules/DankBar/Popouts/DWLLayoutPopout.qml:167",
+    "comment": "",
+    "translation": "Bố cục"
+  },
+  {
+    "term": "Layout Overrides",
+    "context": "Layout Overrides",
+    "reference": "Modules/Settings/DisplayConfig/NiriOutputSettings.qml:193",
+    "comment": "",
+    "translation": "Ghi đè bố cục"
+  },
+  {
+    "term": "Layout and module positions on the greeter are synced from your shell (e.g. bar config). Run Sync to apply.",
+    "context": "Layout and module positions on the greeter are synced from your shell (e.g. bar config). Run Sync to apply.",
+    "reference": "Modules/Settings/GreeterTab.qml:708",
+    "comment": "",
+    "translation": "Bố cục và vị trí mô-đun trên màn hình đăng nhập được đồng bộ hóa từ shell của bạn (vd: cấu hình bar). Chạy Đồng bộ để áp dụng."
+  },
+  {
+    "term": "Left",
+    "context": "Left",
+    "reference": "Modules/Settings/DockTab.qml:102, Modules/Settings/DankBarTab.qml:288, Modules/Settings/DankBarTab.qml:435, Modules/DankBar/Popouts/BatteryPopout.qml:520",
+    "comment": "",
+    "translation": "Trái"
+  },
+  {
+    "term": "Left Center",
+    "context": "Left Center",
+    "reference": "Modules/Settings/OSDTab.qml:47, Modules/Settings/OSDTab.qml:54, Modules/Settings/OSDTab.qml:68",
+    "comment": "screen position option",
+    "translation": "Giữa trái"
+  },
+  {
+    "term": "Left Section",
+    "context": "Left Section",
+    "reference": "Modules/Settings/WidgetsTab.qml:967",
+    "comment": "",
+    "translation": "Phần bên trái"
+  },
+  {
+    "term": "Light Direction",
+    "context": "Light Direction",
+    "reference": "Modules/Settings/ThemeColorsTab.qml:1726",
+    "comment": "",
+    "translation": "Hướng sáng"
+  },
+  {
+    "term": "Light Mode",
+    "context": "Light Mode",
+    "reference": "Modules/Settings/ThemeColorsTab.qml:1415, Modules/Settings/ThemeColorsTab.qml:1485, Modules/Settings/WallpaperTab.qml:392",
+    "comment": "",
+    "translation": "Chế độ sáng"
+  },
+  {
+    "term": "Light Rain",
+    "context": "Light Rain",
+    "reference": "Services/WeatherService.qml:133, Services/WeatherService.qml:136, Services/WeatherService.qml:142",
+    "comment": "",
+    "translation": "Mưa nhỏ"
+  },
+  {
+    "term": "Light Snow",
+    "context": "Light Snow",
+    "reference": "Services/WeatherService.qml:138",
+    "comment": "",
+    "translation": "Tuyết nhỏ"
+  },
+  {
+    "term": "Light Snow Showers",
+    "context": "Light Snow Showers",
+    "reference": "Services/WeatherService.qml:145",
+    "comment": "",
+    "translation": "Mưa tuyết nhỏ"
+  },
+  {
+    "term": "Light mode base",
+    "context": "Light mode base",
+    "reference": "Modules/Settings/ThemeColorsTab.qml:2731",
+    "comment": "",
+    "translation": "Nền chế độ sáng"
+  },
+  {
+    "term": "Light mode harmony",
+    "context": "Light mode harmony",
+    "reference": "Modules/Settings/ThemeColorsTab.qml:2765",
+    "comment": "",
+    "translation": "Hài hòa chế độ sáng"
+  },
+  {
+    "term": "Line",
+    "context": "Line",
+    "reference": "Modules/Settings/DockTab.qml:177",
+    "comment": "dock indicator style option",
+    "translation": "Dòng"
+  },
+  {
+    "term": "Line: %1",
+    "context": "Line: %1",
+    "reference": "Modules/Notepad/NotepadTextEditor.qml:859",
+    "comment": "",
+    "translation": "Dòng: %1"
+  },
+  {
+    "term": "Linear",
+    "context": "Linear",
+    "reference": "Modules/ControlCenter/Details/BrightnessDetail.qml:445",
+    "comment": "",
+    "translation": "Tuyến tính"
+  },
+  {
+    "term": "Lines: %1",
+    "context": "Lines: %1",
+    "reference": "Modules/Notepad/NotepadTextEditor.qml:860",
+    "comment": "",
+    "translation": "Số dòng: %1"
+  },
+  {
+    "term": "List",
+    "context": "List",
+    "reference": "Modules/Settings/DesktopWidgetSettings/SystemMonitorSettings.qml:351, Modules/Settings/DesktopWidgetSettings/SystemMonitorSettings.qml:357, Modules/Settings/DesktopWidgetSettings/SystemMonitorSettings.qml:367",
+    "comment": "",
+    "translation": "Danh sách"
+  },
+  {
+    "term": "Lively palette with saturated accents.",
+    "context": "Lively palette with saturated accents.",
+    "reference": "Common/Theme.qml:480",
+    "comment": "",
+    "translation": "Bảng màu sống động với điểm nhấn bão hòa."
+  },
+  {
+    "term": "Load Average",
+    "context": "Load Average",
+    "reference": "Modules/ProcessList/SystemView.qml:84",
+    "comment": "system info label",
+    "translation": "Trung bình tải"
+  },
+  {
+    "term": "Loading codecs...",
+    "context": "Loading codecs...",
+    "reference": "Modules/ControlCenter/Details/BluetoothCodecSelector.qml:224",
+    "comment": "",
+    "translation": "Đang tải codec..."
+  },
+  {
+    "term": "Loading keybinds...",
+    "context": "Loading keybinds...",
+    "reference": "Modules/Settings/KeybindsTab.qml:582",
+    "comment": "",
+    "translation": "Đang tải phím tắt..."
+  },
+  {
+    "term": "Loading trending...",
+    "context": "Loading trending...",
+    "reference": "dms-plugins/DankStickerSearch/DankStickerSearch.qml:153, dms-plugins/DankGifSearch/DankGifSearch.qml:96",
+    "comment": "",
+    "translation": "Đang tải xu hướng..."
+  },
+  {
+    "term": "Loading...",
+    "context": "Loading...",
+    "reference": "Widgets/VpnProfileDelegate.qml:220, Modules/Settings/PluginBrowser.qml:389, Modules/Settings/PrinterTab.qml:707, Modules/Settings/ThemeBrowser.qml:357, Modules/Settings/NetworkTab.qml:681, Modules/Settings/NetworkTab.qml:1398, Modules/Settings/NetworkTab.qml:1884, Modules/DankDash/Overview/WeatherOverviewCard.qml:31",
+    "comment": "loading indicator",
+    "translation": "Đang tải..."
+  },
+  {
+    "term": "Local",
+    "context": "Local",
+    "reference": "Services/CupsService.qml:131",
+    "comment": "",
+    "translation": "Cục bộ"
+  },
+  {
+    "term": "Locale",
+    "context": "Locale",
+    "reference": "Modals/Settings/SettingsSidebar.qml:252",
+    "comment": "",
+    "translation": "Ngôn ngữ"
+  },
+  {
+    "term": "Locale Settings",
+    "context": "Locale Settings",
+    "reference": "Modules/Settings/LocaleTab.qml:48",
+    "comment": "",
+    "translation": "Cài đặt ngôn ngữ"
+  },
+  {
+    "term": "Location",
+    "context": "Location",
+    "reference": "Modules/Settings/ThemeColorsTab.qml:1098, Modules/Settings/GammaControlTab.qml:188, Modules/Settings/PrinterTab.qml:775, Modules/Settings/PrinterTab.qml:1164",
+    "comment": "theme auto mode tab",
+    "translation": "Vị trí"
+  },
+  {
+    "term": "Location Search",
+    "context": "Location Search",
+    "reference": "Modules/Settings/TimeWeatherTab.qml:602",
+    "comment": "",
+    "translation": "Tìm kiếm vị trí"
+  },
+  {
+    "term": "Lock",
+    "context": "Lock",
+    "reference": "Modals/PowerMenuModal.qml:198, Modules/Settings/PowerSleepTab.qml:411",
+    "comment": "",
+    "translation": "Khóa"
+  },
+  {
+    "term": "Lock Screen",
+    "context": "Lock Screen",
+    "reference": "Modals/Greeter/GreeterWelcomePage.qml:158, Modals/Settings/SettingsSidebar.qml:293, Modules/Settings/NotificationsTab.qml:721",
+    "comment": "greeter feature card title | lock screen notifications settings card",
+    "translation": "Màn hình khóa"
+  },
+  {
+    "term": "Lock Screen Display",
+    "context": "Lock Screen Display",
+    "reference": "Modules/Settings/LockScreenTab.qml:348",
+    "comment": "",
+    "translation": "Hiển thị màn hình khóa"
+  },
+  {
+    "term": "Lock Screen Format",
+    "context": "Lock Screen Format",
+    "reference": "Modules/Settings/TimeWeatherTab.qml:216",
+    "comment": "",
+    "translation": "Định dạng màn hình khóa"
+  },
+  {
+    "term": "Lock Screen behaviour",
+    "context": "Lock Screen behaviour",
+    "reference": "Modules/Settings/LockScreenTab.qml:162",
+    "comment": "",
+    "translation": "Hành vi màn hình khóa"
+  },
+  {
+    "term": "Lock Screen layout",
+    "context": "Lock Screen layout",
+    "reference": "Modules/Settings/LockScreenTab.qml:83",
+    "comment": "",
+    "translation": "Bố cục màn hình khóa"
+  },
+  {
+    "term": "Lock at startup",
+    "context": "Lock at startup",
+    "reference": "Modules/Settings/LockScreenTab.qml:210",
+    "comment": "",
+    "translation": "Khóa khi khởi động"
+  },
+  {
+    "term": "Lock before suspend",
+    "context": "Lock before suspend",
+    "reference": "Modules/Settings/PowerSleepTab.qml:92, Modules/Settings/LockScreenTab.qml:191",
+    "comment": "",
+    "translation": "Khóa trước khi tạm dừng"
+  },
+  {
+    "term": "Lock fade grace period",
+    "context": "Lock fade grace period",
+    "reference": "Modules/Settings/PowerSleepTab.qml:106",
+    "comment": "",
+    "translation": "Thời gian ân hạn làm mờ khóa"
+  },
+  {
+    "term": "Lock screen authentication changes apply automatically and may open a terminal when sudo authentication is required.",
+    "context": "Lock screen authentication changes apply automatically and may open a terminal when sudo authentication is required.",
+    "reference": "Modules/Settings/LockScreenTab.qml:217",
+    "comment": "",
+    "translation": "Thay đổi xác thực màn hình khóa áp dụng tự động và có thể mở một thiết bị đầu cuối khi yêu cầu xác thực sudo."
+  },
+  {
+    "term": "Locked",
+    "context": "Locked",
+    "reference": "Widgets/KeybindItem.qml:1601",
+    "comment": "",
+    "translation": "Đã khóa"
+  },
+  {
+    "term": "Log Out",
+    "context": "Log Out",
+    "reference": "Modals/PowerMenuModal.qml:186, Modules/Lock/LockPowerMenu.qml:110, Modules/Settings/PowerSleepTab.qml:411, Modules/Settings/PowerSleepTab.qml:417",
+    "comment": "",
+    "translation": "Đăng xuất"
+  },
+  {
+    "term": "Logging in...",
+    "context": "Logging in...",
+    "reference": "Modules/Greetd/GreeterContent.qml:1015",
+    "comment": "",
+    "translation": "Đang đăng nhập..."
+  },
+  {
+    "term": "Login",
+    "context": "Login",
+    "reference": "Modules/Settings/SoundsTab.qml:98",
+    "comment": "",
+    "translation": "Đăng nhập"
+  },
+  {
+    "term": "Login Authentication",
+    "context": "Login Authentication",
+    "reference": "Modules/Settings/GreeterTab.qml:524",
+    "comment": "",
+    "translation": "Xác thực đăng nhập"
+  },
+  {
+    "term": "Long",
+    "context": "Long",
+    "reference": "Modules/Settings/TypographyMotionTab.qml:212, Modules/Settings/TypographyMotionTab.qml:315, Modules/Settings/TypographyMotionTab.qml:399, Modules/Settings/NotificationsTab.qml:337",
+    "comment": "",
+    "translation": "Dài"
+  },
+  {
+    "term": "Long Text",
+    "context": "Long Text",
+    "reference": "Modals/Clipboard/ClipboardEntry.qml:118",
+    "comment": "",
+    "translation": "Văn bản dài"
+  },
+  {
+    "term": "Long press",
+    "context": "Long press",
+    "reference": "Widgets/KeybindItem.qml:1645",
+    "comment": "",
+    "translation": "Nhấn giữ"
+  },
+  {
+    "term": "Longitude",
+    "context": "Longitude",
+    "reference": "Modules/Settings/ThemeColorsTab.qml:1310, Modules/Settings/GammaControlTab.qml:402, Modules/Settings/TimeWeatherTab.qml:551",
+    "comment": "",
+    "translation": "Kinh độ"
+  },
+  {
+    "term": "Low Priority",
+    "context": "Low Priority",
+    "reference": "Modules/Settings/NotificationsTab.qml:146, Modules/Settings/NotificationsTab.qml:751, Modules/Settings/NotificationsTab.qml:874, Modules/Notifications/Center/NotificationSettings.qml:181, Modules/Notifications/Center/NotificationSettings.qml:364",
+    "comment": "notification rule urgency option",
+    "translation": "Mức độ ưu tiên thấp"
+  },
+  {
+    "term": "MAC",
+    "context": "MAC",
+    "reference": "Modules/Settings/NetworkTab.qml:592",
+    "comment": "",
+    "translation": "MAC"
+  },
+  {
+    "term": "MTU",
+    "context": "MTU",
+    "reference": "Widgets/VpnProfileDelegate.qml:69, Modules/Settings/NetworkTab.qml:1930",
+    "comment": "",
+    "translation": "MTU"
+  },
+  {
+    "term": "Make sure KDE Connect or Valent is running on your other devices",
+    "context": "Make sure KDE Connect or Valent is running on your other devices",
+    "reference": "dms-plugins/DankKDEConnect/components/EmptyState.qml:18",
+    "comment": "Phone Connect hint message",
+    "translation": "Đảm bảo KDE Connect hoặc Valent đang chạy trên các thiết bị khác của bạn"
+  },
+  {
+    "term": "Manage and configure plugins for extending DMS functionality",
+    "context": "Manage and configure plugins for extending DMS functionality",
+    "reference": "Modules/Settings/PluginsTab.qml:80",
+    "comment": "",
+    "translation": "Quản lý và cấu hình các plugin để mở rộng chức năng DMS"
+  },
+  {
+    "term": "Manage up to 4 independent bar configurations. Each bar has its own position, widgets, styling, and display assignment.",
+    "context": "Manage up to 4 independent bar configurations. Each bar has its own position, widgets, styling, and display assignment.",
+    "reference": "Modules/Settings/DankBarTab.qml:220",
+    "comment": "",
+    "translation": "Quản lý tối đa 4 cấu hình thanh độc lập. Mỗi thanh có vị trí, tiện ích, kiểu dáng và việc gán màn hình riêng."
+  },
+  {
+    "term": "Management",
+    "context": "Management",
+    "reference": "Modules/ControlCenter/Details/BatteryDetail.qml:87",
+    "comment": "",
+    "translation": "Quản lý"
+  },
+  {
+    "term": "MangoWC Layout Overrides",
+    "context": "MangoWC Layout Overrides",
+    "reference": "Modules/Settings/ThemeColorsTab.qml:2136",
+    "comment": "",
+    "translation": "Ghi đè bố cục MangoWC"
+  },
+  {
+    "term": "Manual",
+    "context": "Manual",
+    "reference": "Modules/Settings/DankBarTab.qml:1419, Modules/Settings/DankBarTab.qml:1425, Modules/Settings/DankBarTab.qml:1435",
+    "comment": "bar shadow direction source option",
+    "translation": "Thủ công"
+  },
+  {
+    "term": "Manual Coordinates",
+    "context": "Manual Coordinates",
+    "reference": "Modules/Settings/ThemeColorsTab.qml:1272, Modules/Settings/GammaControlTab.qml:367",
+    "comment": "",
+    "translation": "Tọa độ thủ công"
+  },
+  {
+    "term": "Manual Direction",
+    "context": "Manual Direction",
+    "reference": "Modules/Settings/DankBarTab.qml:1449",
+    "comment": "bar manual shadow direction",
+    "translation": "Hướng thủ công"
+  },
+  {
+    "term": "Manual Gap Size",
+    "context": "Manual Gap Size",
+    "reference": "Modules/Settings/DankBarTab.qml:834",
+    "comment": "",
+    "translation": "Kích thước khoảng cách thủ công"
+  },
+  {
+    "term": "Manual Show/Hide",
+    "context": "Manual Show/Hide",
+    "reference": "Modules/Settings/DankBarTab.qml:663",
+    "comment": "",
+    "translation": "Hiện/Ẩn thủ công"
+  },
+  {
+    "term": "Map window class names to icon names for proper icon display",
+    "context": "Map window class names to icon names for proper icon display",
+    "reference": "Modules/Settings/RunningAppsTab.qml:54",
+    "comment": "",
+    "translation": "Ánh xạ tên lớp cửa sổ với tên biểu tượng để hiển thị biểu tượng chính xác"
+  },
+  {
+    "term": "Margin",
+    "context": "Margin",
+    "reference": "Modules/Settings/DockTab.qml:615",
+    "comment": "",
+    "translation": "Lề"
+  },
+  {
+    "term": "Marker Supply Empty",
+    "context": "Marker Supply Empty",
+    "reference": "Services/CupsService.qml:792",
+    "comment": "",
+    "translation": "Nguồn mực cạn"
+  },
+  {
+    "term": "Marker Supply Low",
+    "context": "Marker Supply Low",
+    "reference": "Services/CupsService.qml:791",
+    "comment": "",
+    "translation": "Nguồn mực thấp"
+  },
+  {
+    "term": "Marker Waste Almost Full",
+    "context": "Marker Waste Almost Full",
+    "reference": "Services/CupsService.qml:793",
+    "comment": "",
+    "translation": "Thùng mực thải gần đầy"
+  },
+  {
+    "term": "Marker Waste Full",
+    "context": "Marker Waste Full",
+    "reference": "Services/CupsService.qml:794",
+    "comment": "",
+    "translation": "Thùng mực thải đầy"
+  },
+  {
+    "term": "Match Criteria",
+    "context": "Match Criteria",
+    "reference": "Modals/WindowRuleModal.qml:464",
+    "comment": "",
+    "translation": "Tiêu chí khớp"
+  },
+  {
+    "term": "Matches profile: %1",
+    "context": "Matches profile: %1",
+    "reference": "Modules/Settings/DisplayConfigTab.qml:323",
+    "comment": "",
+    "translation": "Khớp với cấu hình: %1"
+  },
+  {
+    "term": "Material Colors",
+    "context": "Material Colors",
+    "reference": "Modals/DankColorPickerModal.qml:417",
+    "comment": "",
+    "translation": "Màu Material"
+  },
+  {
+    "term": "Material Design inspired color themes",
+    "context": "Material Design inspired color themes",
+    "reference": "Modules/Settings/ThemeColorsTab.qml:249",
+    "comment": "generic theme description",
+    "translation": "Chủ đề màu lấy cảm hứng từ Material Design"
+  },
+  {
+    "term": "Material colors generated from wallpaper",
+    "context": "Material colors generated from wallpaper",
+    "reference": "Modules/Settings/ThemeColorsTab.qml:244",
+    "comment": "dynamic theme description",
+    "translation": "Màu Material được tạo từ hình nền"
+  },
+  {
+    "term": "Material inspired shadows and elevation on modals, popouts, and dialogs",
+    "context": "Material inspired shadows and elevation on modals, popouts, and dialogs",
+    "reference": "Modules/Settings/ThemeColorsTab.qml:1649",
+    "comment": "",
+    "translation": "Đổ bóng và độ cao lấy cảm hứng từ Material trên các modal, cửa sổ bật lên và hộp thoại"
+  }
+]
