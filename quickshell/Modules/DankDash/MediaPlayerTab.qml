@@ -866,7 +866,34 @@ Item {
             anchors.fill: parent
             hoverEnabled: true
             cursorShape: Qt.PointingHandCursor
-            onClicked: {
+            acceptedButtons: Qt.LeftButton | Qt.RightButton
+            onPressed: mouse => {
+                if (mouse.button === Qt.RightButton) {
+                    mouse.accepted = true;
+                }
+            }
+            onWheel: wheelEvent => {
+                if (AudioService.sink?.audio) {
+                    SessionData.suppressOSDTemporarily();
+                    const delta = wheelEvent.angleDelta.y;
+                    const current = Math.round(AudioService.sink.audio.volume * 100);
+                    const maxVol = AudioService.sinkMaxVolume;
+                    const newVolume = delta > 0 ? Math.min(maxVol, current + 5) : Math.max(0, current - 5);
+                    AudioService.sink.audio.muted = false;
+                    AudioService.sink.audio.volume = newVolume / 100;
+                    AudioService.playVolumeChangeSoundIfEnabled();
+                    wheelEvent.accepted = true;
+                }
+            }
+            onClicked: mouse => {
+                if (mouse.button === Qt.RightButton) {
+                    if (AudioService.sink?.audio) {
+                        SessionData.suppressOSDTemporarily();
+                        AudioService.sink.audio.muted = !AudioService.sink.audio.muted;
+                    }
+                    mouse.accepted = true;
+                    return;
+                }
                 if (devicesExpanded) {
                     const sinks = AudioService.getAvailableSinks();
                     if (sinks && sinks.length > 1) {

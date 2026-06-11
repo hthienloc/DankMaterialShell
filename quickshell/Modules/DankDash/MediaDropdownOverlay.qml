@@ -383,7 +383,36 @@ Item {
                                 anchors.fill: parent
                                 hoverEnabled: true
                                 cursorShape: Qt.PointingHandCursor
-                                onClicked: {
+                                acceptedButtons: Qt.LeftButton | Qt.RightButton
+                                onPressed: mouse => {
+                                    if (mouse.button === Qt.RightButton) {
+                                        mouse.accepted = true;
+                                    }
+                                }
+                                onWheel: wheelEvent => {
+                                    if (modelData && modelData.audio) {
+                                        SessionData.suppressOSDTemporarily();
+                                        const delta = wheelEvent.angleDelta.y;
+                                        const current = Math.round(modelData.audio.volume * 100);
+                                        const maxVol = AudioService.getMaxVolumePercent(modelData);
+                                        const newVolume = delta > 0 ? Math.min(maxVol, current + 5) : Math.max(0, current - 5);
+                                        modelData.audio.muted = false;
+                                        modelData.audio.volume = newVolume / 100;
+                                        if (modelData === AudioService.sink) {
+                                            AudioService.playVolumeChangeSoundIfEnabled();
+                                        }
+                                        wheelEvent.accepted = true;
+                                    }
+                                }
+                                onClicked: mouse => {
+                                    if (mouse.button === Qt.RightButton) {
+                                        if (modelData && modelData.audio) {
+                                            SessionData.suppressOSDTemporarily();
+                                            modelData.audio.muted = !modelData.audio.muted;
+                                        }
+                                        mouse.accepted = true;
+                                        return;
+                                    }
                                     if (modelData && modelData.name) {
                                         AudioService.setDefaultSinkByName(modelData.name);
                                         root.deviceSelected(modelData);

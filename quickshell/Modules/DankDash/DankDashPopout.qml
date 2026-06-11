@@ -109,7 +109,6 @@ DankPopout {
                 root.__hideDropdowns();
             }
             onDeviceSelected: device => {
-                root.__hideDropdowns();
             }
         }
     }
