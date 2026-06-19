@@ -605,6 +605,8 @@ Singleton {
     property bool batteryNotifyLow: false
     property int batteryNotificationType: 0
     property bool batteryAutoPowerSaver: false
+    property bool showBatteryPercent: true
+    property bool showBatteryTime: false
     property bool lockBeforeSuspend: false
     property bool loginctlLockIntegration: true
     property bool fadeToLockEnabled: true

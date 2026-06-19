@@ -11,6 +11,37 @@ BasePill {
 
     property bool batteryPopupVisible: false
     property var popoutTarget: null
+    property var widgetData: null
+    readonly property bool showPercent: widgetData?.showBatteryPercent !== undefined ? widgetData.showBatteryPercent : SettingsData.showBatteryPercent
+    readonly property bool showTime: widgetData?.showBatteryTime !== undefined ? widgetData.showBatteryTime : SettingsData.showBatteryTime
+
+    readonly property string batteryTimeText: {
+        const time = BatteryService.formatTimeRemaining();
+        return time !== "Unknown" ? time : "";
+    }
+
+    readonly property string horizontalDisplayText: {
+        if (showPercent && showTime && batteryTimeText) {
+            return `${BatteryService.batteryLevel}% (${batteryTimeText})`;
+        }
+        if (showPercent) {
+            return `${BatteryService.batteryLevel}%`;
+        }
+        if (showTime && batteryTimeText) {
+            return batteryTimeText;
+        }
+        return "";
+    }
+
+    readonly property string verticalDisplayText: {
+        if (showPercent) {
+            return BatteryService.batteryLevel.toString();
+        }
+        if (showTime && batteryTimeText) {
+            return batteryTimeText;
+        }
+        return "";
+    }
 
     property real touchpadAccumulator: 0
 
@@ -66,11 +97,11 @@ BasePill {
                 }
 
                 StyledText {
-                    text: BatteryService.batteryLevel.toString()
+                    text: battery.verticalDisplayText
                     font.pixelSize: Theme.barTextSize(battery.barThickness, battery.barConfig?.fontScale, battery.barConfig?.maximizeWidgetText)
                     color: Theme.widgetTextColor
                     anchors.horizontalCenter: parent.horizontalCenter
-                    visible: BatteryService.batteryAvailable
+                    visible: BatteryService.batteryAvailable && battery.verticalDisplayText !== ""
                 }
             }
 
@@ -102,11 +133,11 @@ BasePill {
                 }
 
                 StyledText {
-                    text: `${BatteryService.batteryLevel}%`
+                    text: battery.horizontalDisplayText
                     font.pixelSize: Theme.barTextSize(battery.barThickness, battery.barConfig?.fontScale, battery.barConfig?.maximizeWidgetText)
                     color: Theme.widgetTextColor
                     anchors.verticalCenter: parent.verticalCenter
-                    visible: BatteryService.batteryAvailable
+                    visible: BatteryService.batteryAvailable && battery.horizontalDisplayText !== ""
                 }
             }
         }
