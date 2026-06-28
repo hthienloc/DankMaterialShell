@@ -121,6 +121,126 @@ Item {
                     onToggled: checked => SettingsData.set("audioDeviceScrollVolumeEnabled", checked)
                 }
             }
+
+            SettingsCard {
+                width: parent.width
+                iconName: "do_not_disturb_on"
+                title: I18n.tr("Excluded Media Players")
+                settingKey: "mediaExcludePlayers"
+                tags: ["media", "music", "exclude", "ignore", "player", "mpris", "anki"]
+
+                Column {
+                    width: parent.width
+                    spacing: Theme.spacingM
+
+                    StyledText {
+                        text: I18n.tr("Prevent specific applications from displaying in the media controllers (e.g., Anki, browser audio streams). Matches identity case-insensitively.")
+                        font.pixelSize: Theme.fontSizeSmall
+                        color: Theme.surfaceVariantText
+                        wrapMode: Text.WordWrap
+                        width: parent.width
+                    }
+
+                    Row {
+                        width: parent.width
+                        spacing: Theme.spacingS
+
+                        DankTextField {
+                            id: newExcludePlayerField
+                            width: parent.width - addBtn.width - Theme.spacingS
+                            height: 36
+                            placeholderText: I18n.tr("App name or identity (e.g., Anki)")
+                            font.pixelSize: Theme.fontSizeSmall
+                            onAccepted: {
+                                if (text.trim() !== "") {
+                                    SettingsData.addMediaExcludePlayer(text.trim());
+                                    text = "";
+                                }
+                            }
+                        }
+
+                        DankActionButton {
+                            id: addBtn
+                            buttonSize: 36
+                            iconName: "add"
+                            iconSize: 20
+                            backgroundColor: Theme.primary
+                            iconColor: Theme.onPrimary
+                            onClicked: {
+                                if (newExcludePlayerField.text.trim() !== "") {
+                                    SettingsData.addMediaExcludePlayer(newExcludePlayerField.text.trim());
+                                    newExcludePlayerField.text = "";
+                                }
+                            }
+                        }
+                    }
+
+                    Column {
+                        width: parent.width
+                        spacing: Theme.spacingS
+
+                        Repeater {
+                            model: SettingsData.mediaExcludePlayers
+
+                            delegate: Rectangle {
+                                width: parent.width
+                                height: 48
+                                radius: Theme.cornerRadius
+                                color: Theme.withAlpha(Theme.surfaceContainer, 0.5)
+
+                                Row {
+                                    anchors.fill: parent
+                                    anchors.leftMargin: Theme.spacingM
+                                    anchors.rightMargin: Theme.spacingS
+                                    spacing: Theme.spacingM
+
+                                    Row {
+                                        width: parent.width - deleteBtn.width - Theme.spacingS
+                                        height: parent.height
+                                        spacing: Theme.spacingS
+
+                                        StyledIcon {
+                                            iconName: "music_off"
+                                            size: 20
+                                            color: Theme.surfaceVariantText
+                                            anchors.verticalCenter: parent.verticalCenter
+                                        }
+
+                                        StyledText {
+                                            text: modelData
+                                            font.pixelSize: Theme.fontSizeSmall
+                                            color: Theme.surfaceText
+                                            anchors.verticalCenter: parent.verticalCenter
+                                        }
+                                    }
+
+                                    DankActionButton {
+                                        id: deleteBtn
+                                        buttonSize: 32
+                                        iconName: "delete"
+                                        iconSize: 18
+                                        iconColor: Theme.error
+                                        backgroundColor: "transparent"
+                                        anchors.verticalCenter: parent.verticalCenter
+                                        onClicked: SettingsData.removeMediaExcludePlayer(index)
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    StyledText {
+                        visible: !SettingsData.mediaExcludePlayers || SettingsData.mediaExcludePlayers.length === 0
+                        text: I18n.tr("No excluded players configured")
+                        font.pixelSize: Theme.fontSizeSmall
+                        font.italic: true
+                        color: Theme.surfaceVariantText
+                        horizontalAlignment: Text.AlignHCenter
+                        width: parent.width
+                        topPadding: Theme.spacingS
+                    }
+                }
+            }
         }
     }
 }

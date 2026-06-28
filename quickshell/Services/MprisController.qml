@@ -9,7 +9,21 @@ import qs.Common
 Singleton {
     id: root
 
-    readonly property list<MprisPlayer> availablePlayers: Mpris.players.values
+    readonly property var availablePlayers: {
+        const players = Mpris.players.values;
+        const excluded = SettingsData.mediaExcludePlayers || [];
+        if (excluded.length === 0)
+            return players;
+        return players.filter(p => {
+            const identity = (p.identity || "").toLowerCase();
+            const desktopEntry = ("desktopEntry" in p && p.desktopEntry) ? String(p.desktopEntry).toLowerCase() : "";
+            return !excluded.some(ex => {
+                const exLower = String(ex).toLowerCase().trim();
+                if (!exLower) return false;
+                return identity.includes(exLower) || desktopEntry.includes(exLower);
+            });
+        });
+    }
     property MprisPlayer activePlayer: null
     property real activePlayerStableLength: 0
 

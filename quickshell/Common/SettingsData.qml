@@ -448,6 +448,7 @@ Singleton {
     property string audioScrollMode: "volume"
     property int audioWheelScrollAmount: 5
     property bool audioDeviceScrollVolumeEnabled: false
+    property var mediaExcludePlayers: []
     property bool clockCompactMode: false
     property int focusedWindowSize: 1
     property bool focusedWindowCompactMode: false
@@ -3059,6 +3060,24 @@ Singleton {
             return;
         subs.splice(index, 1);
         appIdSubstitutions = subs;
+        saveSettings();
+    }
+
+    function addMediaExcludePlayer(identity) {
+        var list = JSON.parse(JSON.stringify(mediaExcludePlayers || []));
+        if (list.indexOf(identity) >= 0)
+            return;
+        list.push(identity);
+        mediaExcludePlayers = list;
+        saveSettings();
+    }
+
+    function removeMediaExcludePlayer(index) {
+        var list = JSON.parse(JSON.stringify(mediaExcludePlayers || []));
+        if (index < 0 || index >= list.length)
+            return;
+        list.splice(index, 1);
+        mediaExcludePlayers = list;
         saveSettings();
     }
 
