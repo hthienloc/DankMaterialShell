@@ -399,6 +399,19 @@ func (m *Manager) ListInstalled() ([]string, error) {
 }
 
 // getPluginID reads the plugin.json file and returns the plugin ID
+func (m *Manager) GetPluginVersion(pluginID string) string {
+	pluginPath, err := m.findInstalledPath(pluginID)
+	if err != nil || pluginPath == "" {
+		return ""
+	}
+
+	manifest := m.getPluginManifest(pluginPath)
+	if manifest == nil {
+		return ""
+	}
+	return manifest.Version
+}
+
 func (m *Manager) getPluginID(pluginPath string) string {
 	manifest := m.getPluginManifest(pluginPath)
 	if manifest == nil {
@@ -423,8 +436,9 @@ func (m *Manager) getPluginManifest(pluginPath string) *pluginManifest {
 }
 
 type pluginManifest struct {
-	ID   string `json:"id"`
-	Name string `json:"name"`
+	ID      string `json:"id"`
+	Name    string `json:"name"`
+	Version string `json:"version"`
 }
 
 func (m *Manager) GetPluginsDir() string {
@@ -554,28 +568,27 @@ func (m *Manager) findInDirByIDOrName(dir, idOrName string) (string, error) {
 	return "", nil
 }
 
-func (m *Manager) HasUpdates(pluginID string, plugin Plugin) (bool, error) {
+func (m *Manager) HasUpdates(pluginID string, plugin Plugin) (hasUpdates bool, localVersion string, remoteVersion string, err error) {
 	pluginPath, err := m.findInstalledPath(pluginID)
 	if err != nil {
-		return false, fmt.Errorf("failed to find plugin: %w", err)
+		return false, "", "", fmt.Errorf("failed to find plugin: %w", err)
 	}
 
 	if pluginPath == "" {
-		return false, fmt.Errorf("plugin not installed: %s", pluginID)
+		return false, "", "", fmt.Errorf("plugin not installed: %s", pluginID)
 	}
 
 	if strings.HasPrefix(pluginPath, "/etc/xdg/quickshell/dms-plugins") {
-		return false, nil
+		return false, "", "", nil
 	}
 
 	metaPath := pluginPath + ".meta"
 	metaExists, err := afero.Exists(m.fs, metaPath)
 	if err != nil {
-		return false, fmt.Errorf("failed to check metadata: %w", err)
+		return false, "", "", fmt.Errorf("failed to check metadata: %w", err)
 	}
 
 	if metaExists {
-		// Plugin is from a monorepo, check the repo directory
 		reposDir := filepath.Join(m.pluginsDir, ".repos")
 		repoName := m.getRepoName(plugin.Repo)
 		repoPath := filepath.Join(reposDir, repoName)
@@ -583,6 +596,5 @@ func (m *Manager) HasUpdates(pluginID string, plugin Plugin) (bool, error) {
 		return m.gitClient.HasUpdates(repoPath)
 	}
 
-	// Plugin is a standalone repo
 	return m.gitClient.HasUpdates(pluginPath)
 }

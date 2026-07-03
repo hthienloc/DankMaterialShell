@@ -18,7 +18,7 @@ type PluginInfo struct {
 	Note         string   `json:"note,omitempty"`
 	HasUpdate    bool     `json:"hasUpdate,omitempty"`
 	RequiresDMS  string   `json:"requires_dms,omitempty"`
-	DiffURL      string   `json:"diffUrl,omitempty"`
+	DiffURL          string   `json:"diffUrl,omitempty"`
 	Upvotes      int      `json:"upvotes,omitempty"`
 	Status       []string `json:"status,omitempty"`
 	IssueURL     string   `json:"issueUrl,omitempty"`

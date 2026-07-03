@@ -46,13 +46,13 @@ func HandleListInstalled(conn net.Conn, req models.Request) {
 	for _, id := range installedNames {
 		if plugin, ok := pluginMap[id]; ok {
 			hasUpdate := false
-			if hasUpdates, err := manager.HasUpdates(id, plugin); err == nil {
+			if hasUpdates, _, _, err := manager.HasUpdates(id, plugin); err == nil {
 				hasUpdate = hasUpdates
 			}
 
 			info := pluginInfoFromPlugin(plugin)
-			info.HasUpdate = hasUpdate
-			info.DiffURL = getGitDiffURL(manager.GetPluginsDir(), plugin.ID, plugin.Repo)
+ 			info.HasUpdate = hasUpdate
+ 			info.DiffURL = getGitDiffURL(manager.GetPluginsDir(), plugin.ID, plugin.Repo)
 			result = append(result, info)
 		} else {
 			result = append(result, PluginInfo{
