@@ -753,6 +753,9 @@ Singleton {
     property int batteryLowThreshold: 20
     property bool batteryNotifyLow: false
     property int batteryNotificationType: 0
+    property int batteryChargeLimitNotificationType: 0
+    property int batteryLowNotificationType: 0
+    property int batteryCriticalNotificationType: 1
     property bool batteryAutoPowerSaver: false
     property bool showBatteryPercent: true
     property bool showBatteryPercentOnlyOnBattery: false
