@@ -65,7 +65,7 @@ Item {
     function open() {
         closeTimer.stop();
         isClosing = false;
-        const focusedScreen = CompositorService.getFocusedScreen();
+        const focusedScreen = root.targetScreen ?? CompositorService.getFocusedScreen();
         const screenChanged = focusedScreen && contentWindow.screen !== focusedScreen;
         if (focusedScreen) {
             if (screenChanged)
