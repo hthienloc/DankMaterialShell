@@ -463,8 +463,7 @@ Item {
                     interactive: true
                     flickDeceleration: 1500
                     maximumFlickVelocity: 2000
-                    boundsBehavior: Flickable.DragAndOvershootBounds
-                    boundsMovement: Flickable.FollowBoundsBehavior
+                    boundsBehavior: Flickable.StopAtBounds
                     pressDelay: 0
                     flickableDirection: Flickable.VerticalFlick
 
