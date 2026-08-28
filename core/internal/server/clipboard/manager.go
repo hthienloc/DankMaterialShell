@@ -1005,6 +1005,40 @@ func (m *Manager) DeleteEntry(id uint64) error {
 	return err
 }
 
+func (m *Manager) DeleteEntries(ids []uint64) (int, error) {
+	if m.db == nil {
+		return 0, fmt.Errorf("database not available")
+	}
+	if len(ids) == 0 {
+		return 0, nil
+	}
+
+	deleted := 0
+	err := m.db.Update(func(tx *bolt.Tx) error {
+		b := tx.Bucket([]byte("clipboard"))
+		for _, id := range ids {
+			key := itob(id)
+			if b.Get(key) == nil {
+				continue
+			}
+			if err := b.Delete(key); err != nil {
+				return err
+			}
+			deleted++
+		}
+		return nil
+	})
+	if err != nil {
+		return 0, err
+	}
+
+	if deleted > 0 {
+		m.updateState()
+		m.notifySubscribers()
+	}
+	return deleted, nil
+}
+
 func (m *Manager) TouchEntry(id uint64) error {
 	if m.db == nil {
 		return fmt.Errorf("database not available")

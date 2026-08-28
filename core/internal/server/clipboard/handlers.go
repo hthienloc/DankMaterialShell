@@ -19,6 +19,8 @@ func HandleRequest(conn *models.Conn, req models.Request, m *Manager) {
 		handleGetEntry(conn, req, m)
 	case "clipboard.deleteEntry":
 		handleDeleteEntry(conn, req, m)
+	case "clipboard.deleteEntries":
+		handleDeleteEntries(conn, req, m)
 	case "clipboard.clearHistory":
 		handleClearHistory(conn, req, m)
 	case "clipboard.copy":
@@ -101,6 +103,35 @@ func handleDeleteEntry(conn *models.Conn, req models.Request, m *Manager) {
 	}
 
 	models.Respond(conn, req.ID, models.SuccessResult{Success: true, Message: "entry deleted"})
+}
+
+func handleDeleteEntries(conn *models.Conn, req models.Request, m *Manager) {
+	rawIDs, ok := req.Params["ids"].([]any)
+	if !ok {
+		models.RespondError(conn, req.ID, "missing or invalid 'ids' parameter")
+		return
+	}
+
+	ids := make([]uint64, 0, len(rawIDs))
+	for _, rawID := range rawIDs {
+		id, ok := rawID.(float64)
+		if !ok || id < 0 || id != float64(uint64(id)) {
+			models.RespondError(conn, req.ID, "invalid entry ID")
+			return
+		}
+		ids = append(ids, uint64(id))
+	}
+
+	deleted, err := m.DeleteEntries(ids)
+	if err != nil {
+		models.RespondError(conn, req.ID, err.Error())
+		return
+	}
+
+	models.Respond(conn, req.ID, map[string]any{
+		"success": true,
+		"deleted": deleted,
+	})
 }
 
 func handleClearHistory(conn *models.Conn, req models.Request, m *Manager) {

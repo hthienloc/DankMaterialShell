@@ -130,15 +130,29 @@ FocusScope {
         ClipboardService.unpinEntry(entry);
     }
 
-    function clearAll() {
-        ClipboardService.clearAll();
+    function clearAll(entries) {
+        ClipboardService.clearAll(entries);
     }
 
     function confirmClearAll() {
-        const hasPinned = pinnedCount > 0;
-        const message = hasPinned ? I18n.tr("This will delete all unpinned entries. %1 pinned entries will be kept.").arg(pinnedCount) : I18n.tr("This will permanently delete all clipboard history.");
-        clearConfirmDialog.show(I18n.tr("Clear History?"), message, function () {
-            clearAll();
+        const entries = activeTab === "saved" ? pinnedEntries : unpinnedEntries;
+        if (!entries || entries.length === 0) {
+            return;
+        }
+
+        const hasFilter = searchText.trim().length > 0 || activeFilter !== "all";
+        let message;
+        if (hasFilter) {
+            message = activeTab === "saved" ? I18n.tr("This will permanently delete %1 filtered saved clipboard entries.").arg(entries.length) : I18n.tr("This will permanently delete %1 filtered recent clipboard entries.").arg(entries.length);
+        } else if (activeTab === "saved") {
+            message = I18n.tr("This will permanently delete all saved clipboard entries.");
+        } else {
+            const hasPinned = pinnedCount > 0;
+            message = hasPinned ? I18n.tr("This will delete all unpinned entries. %1 pinned entries will be kept.").arg(pinnedCount) : I18n.tr("This will permanently delete all clipboard history.");
+        }
+
+        clearConfirmDialog.show(activeTab === "saved" ? I18n.tr("Clear Saved Items?") : I18n.tr("Clear History?"), message, function () {
+            clearAll(entries);
             hide();
         }, function () {});
     }

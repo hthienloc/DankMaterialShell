@@ -344,6 +344,34 @@ func TestHandleGetEntry_MissingIDReturnsNullResult(t *testing.T) {
 	assert.Nil(t, resp.Result)
 }
 
+func TestDeleteEntries_DeletesOnlyRequestedEntries(t *testing.T) {
+	m := newTestManagerWithDB(t)
+
+	store := func(text string, pinned bool) uint64 {
+		err := m.storeEntry(Entry{
+			Data:      []byte(text),
+			MimeType:  "text/plain",
+			Preview:   text,
+			Size:      len(text),
+			Timestamp: time.Now().Truncate(time.Second),
+			Pinned:    pinned,
+		})
+		require.NoError(t, err)
+		entries := m.GetHistory()
+		return entries[0].ID
+	}
+
+	firstID := store("first", false)
+	secondID := store("second", true)
+	thirdID := store("third", false)
+
+	deleted, err := m.DeleteEntries([]uint64{firstID, secondID, firstID, 999999})
+	require.NoError(t, err)
+	assert.Equal(t, 2, deleted)
+	assert.Len(t, m.GetHistory(), 1)
+	assert.Equal(t, thirdID, m.GetHistory()[0].ID)
+}
+
 func TestUnpinEntry_KeepsTopUnpinnedDuplicate(t *testing.T) {
 	m := newTestManagerWithDB(t)
 

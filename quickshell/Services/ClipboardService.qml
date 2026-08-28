@@ -331,7 +331,27 @@ Singleton {
         });
     }
 
-    function clearAll() {
+    function clearAll(entries) {
+        if (entries !== undefined && entries !== null) {
+            const ids = entries.filter(entry => entry && entry.id !== undefined).map(entry => entry.id);
+            if (ids.length === 0) {
+                return;
+            }
+            DMSService.sendRequest("clipboard.deleteEntries", {
+                "ids": ids
+            }, function (response) {
+                if (response.error) {
+                    log.warn("Failed to clear filtered entries:", response.error);
+                    return;
+                }
+                refresh();
+                historyCleared();
+                const deleted = response.result?.deleted ?? ids.length;
+                ToastService.showInfo(I18n.tr("%1 clipboard entries cleared").arg(deleted));
+            });
+            return;
+        }
+
         const hasPinned = pinnedCount > 0;
         const savedCount = pinnedCount;
         DMSService.sendRequest("clipboard.clearHistory", null, function (response) {

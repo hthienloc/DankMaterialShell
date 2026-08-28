@@ -48,8 +48,8 @@ DankPopout {
         });
     }
 
-    function clearAll() {
-        ClipboardService.clearAll();
+    function clearAll(entries) {
+        ClipboardService.clearAll(entries);
     }
 
     popupWidth: ClipboardConstants.popoutWidth
