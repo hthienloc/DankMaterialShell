@@ -22,6 +22,7 @@ Item {
 
             SettingsCard {
                 width: parent.width
+                // Explicit visible prevents extract_settings_index.py from inheriting child row's isNiri conditionKey
                 visible: true
                 iconName: "tune"
                 title: I18n.tr("On-screen Displays")
@@ -155,7 +156,7 @@ Item {
 
                 SettingsToggleRow {
                     settingKey: "osdWorkspaceEnabled"
-                    text: I18n.tr("Workspace Switch")
+                    text: I18n.tr("Workspace Switch", "toggle label for workspace change OSD")
                     visible: CompositorService.isNiri
                     checked: SettingsData.osdWorkspaceEnabled
                     onToggled: checked => SettingsData.set("osdWorkspaceEnabled", checked)
