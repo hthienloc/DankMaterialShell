@@ -156,7 +156,6 @@ Item {
                 SettingsToggleRow {
                     settingKey: "osdWorkspaceEnabled"
                     text: I18n.tr("Workspace Switch")
-                    description: I18n.tr("Show on-screen display when switching workspaces")
                     visible: CompositorService.isNiri
                     checked: SettingsData.osdWorkspaceEnabled
                     onToggled: checked => SettingsData.set("osdWorkspaceEnabled", checked)
