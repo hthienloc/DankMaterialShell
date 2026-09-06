@@ -1035,7 +1035,7 @@ Singleton {
             root._uninstallingStderr = "";
 
             if (exitCode === 0) {
-                ToastService.showInfo(I18n.tr("%1 was uninstalled", "toast message when app uninstallation succeeds").arg(appName));
+                ToastService.showInfo(I18n.tr("Uninstalled: %1", "uninstallation success").arg(appName));
                 if (appId) {
                     SessionData.removePinnedApp(appId);
                     SessionData.removeBarPinnedApp(appId);
@@ -1043,7 +1043,7 @@ Singleton {
                 root.refreshApplications();
             } else {
                 ToastService.showError(
-                    I18n.tr("Failed to uninstall %1", "toast error message when app uninstallation fails").arg(appName),
+                    I18n.tr("Uninstall failed: %1", "uninstallation error").arg(appName),
                     err
                 );
             }
@@ -1070,6 +1070,6 @@ Singleton {
         flatpakUninstallProc.command = ["flatpak", "uninstall", "-y", "--app", flatpakId];
         flatpakUninstallProc.running = true;
 
-        ToastService.showInfo(I18n.tr("Uninstalling %1…", "toast message when app uninstallation starts").arg(_uninstallingAppName));
+        ToastService.showInfo(I18n.tr("Uninstalling: %1", "uninstallation progress").arg(_uninstallingAppName));
     }
 }
