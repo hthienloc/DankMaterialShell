@@ -8064,6 +8064,32 @@
     ]
   },
   {
+    "section": "osdWorkspaceEnabled",
+    "label": "Workspace Switch",
+    "tabIndex": 18,
+    "category": "On-screen Displays",
+    "keywords": [
+      "desktop",
+      "desktops",
+      "display",
+      "displays",
+      "indicator",
+      "monitor",
+      "osd",
+      "output",
+      "popup",
+      "screen",
+      "show",
+      "switch",
+      "switching",
+      "virtual",
+      "workspace",
+      "workspaces"
+    ],
+    "description": "Show on-screen display when switching workspaces",
+    "conditionKey": "isNiri"
+  },
+  {
     "section": "appIdSubstitutions",
     "label": "App ID Substitutions",
     "tabIndex": 19,
