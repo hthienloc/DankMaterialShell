@@ -30,7 +30,7 @@ MediaChromeBase {
     artSize: DashMetrics.mediaArtSizeDash
     surfaceColor: Theme.foregroundColor(Theme.hostSurface)
     baseHeight: Math.max(DashMetrics.tabMinHeight, padding * 2 + (compact ? naturalArtSize + Theme.spacingXL + paneMinHeight : Math.max(naturalArtSize, paneMinHeight)))
-    focusTargets: (viewToggle.visible ? [viewToggle] : []).concat(artTransportLoader.item?.focusTargets ?? [], [playerButton], sourceGroup.focusTargets, transport.focusTargets, seekbar.canSeek && root.hasSeekbar ? [seekbar] : [])
+    focusTargets: transport.focusTargets.concat(seekbar.canSeek && root.hasSeekbar ? [seekbar] : [], [playerButton], sourceGroup.focusTargets, artTransportLoader.item?.focusTargets ?? [], viewToggle.visible ? [viewToggle] : [])
     panelButtons: [playerButton].concat(sourceGroup.panelButtons)
     inlineVolume: true
 
@@ -102,6 +102,7 @@ MediaChromeBase {
                     anchors.centerIn: parent
                     size: "small"
                     checkEnabled: false
+                    arrowKeysSelect: false
                     enabled: !!root.presentation
                     labelOnlySelected: true
                     maximumWidth: art.width - (Theme.spacingM + Theme.spacingXS) * 2

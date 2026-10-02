@@ -142,6 +142,12 @@ FocusScope {
     }
 
     Keys.onPressed: event => {
+        if (event.key === Qt.Key_Escape || event.key === Qt.Key_V) {
+            root.player?.toggleLyrics();
+            event.accepted = true;
+            return;
+        }
+
         switch (event.key) {
         case Qt.Key_Up:
             scrollBy(-Theme.listItemHeight);

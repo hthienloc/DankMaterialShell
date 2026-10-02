@@ -97,13 +97,23 @@ Item {
         id: lyricsFocusTimer
         interval: 0
         onTriggered: {
-            if (!root.live || !root.lyricsOpener?.visible || !root.lyricsOpener.enabled)
+            if (!root.live)
                 return;
-            if (typeof root.lyricsOpener.requestFocus === "function") {
-                root.lyricsOpener.requestFocus(false, Qt.OtherFocusReason);
+            if (root.lyricsOpener?.visible && root.lyricsOpener.enabled) {
+                if (typeof root.lyricsOpener.requestFocus === "function") {
+                    root.lyricsOpener.requestFocus(false, Qt.OtherFocusReason);
+                    return;
+                }
+                root.lyricsOpener.forceActiveFocus(Qt.OtherFocusReason);
                 return;
             }
-            root.lyricsOpener.forceActiveFocus(Qt.OtherFocusReason);
+            if (root.focusTarget) {
+                if (typeof root.focusTarget.requestFocus === "function") {
+                    root.focusTarget.requestFocus(false, Qt.OtherFocusReason);
+                    return;
+                }
+                root.focusTarget.forceActiveFocus(Qt.OtherFocusReason);
+            }
         }
     }
 
@@ -239,6 +249,10 @@ Item {
         if (event.key === Qt.Key_F6)
             return cycleFocus(!!(event.modifiers & Qt.ShiftModifier));
         if (event.key === Qt.Key_Escape) {
+            if (lyricsOpen) {
+                toggleLyrics();
+                return true;
+            }
             if (panel === "")
                 return false;
             const panelId = panel;
@@ -250,6 +264,13 @@ Item {
             return true;
         if (!activePlayer)
             return false;
+
+        if (event.key === Qt.Key_V) {
+            if (!lyricsEnabled)
+                return false;
+            toggleLyrics();
+            return true;
+        }
 
         if (event.key >= Qt.Key_0 && event.key <= Qt.Key_9) {
             if (!activePlayer.canSeek || stableLength <= 0)
