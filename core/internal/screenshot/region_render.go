@@ -694,7 +694,7 @@ func (r *RegionSelector) drawScrollBar(data []byte, stride, bufW, bufH int, form
 	r.fillRect(data, stride, bufW, bufH, s.barX, s.barY, s.barW, s.barH,
 		style.BackgroundR, style.BackgroundG, style.BackgroundB, 245, format)
 
-	labelY := s.doneY + (s.btnH-fontCharH)/2
+	labelY := s.doneY + (s.btnH-hudLineHeight(1, fontCharH))/2
 	r.fillRect(data, stride, bufW, bufH, s.doneX, s.doneY, s.doneW, s.btnH,
 		style.AccentR, style.AccentG, style.AccentB, 255, format)
 	r.drawText(data, stride, bufW, bufH, s.doneX+12, labelY, "done", 10, 10, 10, format)
@@ -771,13 +771,13 @@ func (r *RegionSelector) hudDimensions(bufW, bufH, scale int) (hudX, hudY, hudW,
 		return 0, 0, 0, 0
 	}
 	scale = scaleFactor(float64(scale))
-	charH := fontCharH * scale
+	charH := hudLineHeight(scale, fontCharH*scale)
 	padding, itemSpacing := 12*scale, 24*scale
 	margin := 20 * scale
 
 	items := r.hudItems()
 	totalW := 0
-	step := fontStep * scale
+	step := hudAdvance(scale, fontStep*scale)
 	for i, item := range items {
 		totalW += item.width(step)
 		if i < len(items)-1 {
@@ -804,7 +804,7 @@ func (r *RegionSelector) drawHUD(data []byte, stride, bufW, bufH int, format uin
 		style.BackgroundR, style.BackgroundG, style.BackgroundB, style.BackgroundA, format)
 
 	padding, itemSpacing := 12*scale, 24*scale
-	step := fontStep * scale
+	step := hudAdvance(scale, fontStep*scale)
 	items := r.hudItems()
 
 	tx, ty := hudX+padding, hudY+padding
@@ -870,8 +870,8 @@ func (r *RegionSelector) drawVLine(data []byte, stride, bufW, bufH, x, y, length
 func labelRect(b selectionRenderBounds, bufW, bufH int) (dirtyRect, string) {
 	scale := scaleFactor(b.scaleX)
 	text := b.labelText
-	charH := fontCharH * scale
-	step := fontStep * scale
+	charH := hudLineHeight(scale, fontCharH*scale)
+	step := hudAdvance(scale, fontStep*scale)
 	textW := len(text) * step
 	padX := 4 * scale
 	padY := 2 * scale
@@ -932,6 +932,10 @@ func (r *RegionSelector) drawText(data []byte, stride, bufW, bufH, x, y int, tex
 
 func (r *RegionSelector) drawTextScaled(data []byte, stride, bufW, bufH, x, y int, text string, cr, cg, cb uint8, format uint32, scale int) {
 	scale = scaleFactor(float64(scale))
+	if hudFace(scale) != nil {
+		hudDrawText(data, stride, bufW, bufH, x, y, text, cr, cg, cb, format, scale)
+		return
+	}
 	step := fontStep * scale
 	for i, ch := range text {
 		r.drawChar(data, stride, bufW, bufH, x+i*step, y, ch, cr, cg, cb, format, scale)
