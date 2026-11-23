@@ -52,7 +52,7 @@ DesktopWidgetInstanceSettings {
         }
     }
 
-    Loader {
+    cards: Loader {
         width: parent.width
         active: root.settingsPath !== ""
         source: root.settingsPath
