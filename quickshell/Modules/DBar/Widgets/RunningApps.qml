@@ -157,7 +157,10 @@ BasePill {
         return "";
     }
 
-    visible: windowCount > 0
+    readonly property string screenName: parentScreen?.name ?? ""
+    readonly property bool editingPlaceholder: windowCount === 0 && !(barConfig?.island ?? false) && BarWidgetService.editingBarId !== "" && BarWidgetService.editingBarId === (barConfig?.id ?? "") && BarWidgetService.editingScreenName === screenName
+
+    visible: windowCount > 0 || editingPlaceholder
 
     property real scrollAccumulator: 0
     property real touchpadThreshold: 500
@@ -196,13 +199,23 @@ BasePill {
 
     content: Component {
         Item {
-            implicitWidth: layoutLoader.item ? layoutLoader.item.implicitWidth : 0
-            implicitHeight: layoutLoader.item ? layoutLoader.item.implicitHeight : 0
+            implicitWidth: root.editingPlaceholder ? placeholderIcon.width : (layoutLoader.item ? layoutLoader.item.implicitWidth : 0)
+            implicitHeight: root.editingPlaceholder ? placeholderIcon.height : (layoutLoader.item ? layoutLoader.item.implicitHeight : 0)
 
             Loader {
                 id: layoutLoader
                 anchors.centerIn: parent
+                visible: !root.editingPlaceholder
                 sourceComponent: root.isVerticalOrientation ? columnLayout : rowLayout
+            }
+
+            DIcon {
+                id: placeholderIcon
+                anchors.centerIn: parent
+                visible: root.editingPlaceholder
+                name: "apps"
+                size: root.appIconSize
+                color: root.contentColor
             }
         }
     }
