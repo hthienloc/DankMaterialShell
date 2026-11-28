@@ -229,7 +229,7 @@ BasePill {
                         anchors.verticalCenter: parent.verticalCenter
                         name: root.editingPlaceholder ? "window" : "sports_esports"
                         color: root.contentColor
-                        visible: root.editingPlaceholder || (root.showIcon && activeWindow && activeWindow.appId && horizontalAppIcon.status !== Image.Ready && Paths.isSteamApp(activeWindow.appId))
+                        visible: root.showIcon && (root.editingPlaceholder || (activeWindow && activeWindow.appId && horizontalAppIcon.status !== Image.Ready && Paths.isSteamApp(activeWindow.appId)))
                     }
 
                     StyledText {
