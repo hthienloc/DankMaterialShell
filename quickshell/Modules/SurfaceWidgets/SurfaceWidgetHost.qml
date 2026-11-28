@@ -59,6 +59,7 @@ Loader {
     readonly property bool orientationMatches: (axis?.isVertical ?? false) === isInColumn
 
     property bool revealDisabled: false
+    property bool editingBar: false
     readonly property bool widgetEnabled: revealDisabled || widgetData?.enabled !== false
     readonly property bool loadedOnDemand: BarWidgetService.onDemandWidgetIds.includes(widgetId)
     readonly property string componentKey: widgetId === "music" && SettingsData.widgetOption("music", widgetData, "mediaStyle") === "activity" ? "music:activity" : widgetId
@@ -84,7 +85,7 @@ Loader {
         restoreMode: Binding.RestoreBinding
     }
 
-    readonly property var forwardedProperties: ["parentScreen", "section", "widgetThickness", "barThickness", "barSpacing", "barConfig", "blurBarWindow", "axis", "widgetData", "isFirst", "isLast", "sectionSpacing", "sectionAvailablePrimarySize", "isLeftBarEdge", "isRightBarEdge", "isTopBarEdge", "isBottomBarEdge", "crossEdgeExtension", "segmentRole", "surfaceContext", "hostContext", "allottedPrimarySize"]
+    readonly property var forwardedProperties: ["parentScreen", "section", "widgetThickness", "barThickness", "barSpacing", "barConfig", "blurBarWindow", "axis", "widgetData", "isFirst", "isLast", "sectionSpacing", "sectionAvailablePrimarySize", "isLeftBarEdge", "isRightBarEdge", "isTopBarEdge", "isBottomBarEdge", "crossEdgeExtension", "segmentRole", "surfaceContext", "hostContext", "allottedPrimarySize", "editingBar"]
 
     function forwardProperty(name) {
         if (!item || !(name in item))
@@ -177,6 +178,7 @@ Loader {
     }
     onHostContextChanged: forwardProperty("hostContext")
     onAllottedPrimarySizeChanged: forwardProperty("allottedPrimarySize")
+    onEditingBarChanged: forwardProperty("editingBar")
     onRegistrationIdChanged: registerWidgetIfEligible()
     onWidgetIdChanged: registerWidgetIfEligible()
     onItemChanged: {

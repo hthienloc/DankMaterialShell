@@ -157,8 +157,8 @@ BasePill {
         return "";
     }
 
-    readonly property string screenName: parentScreen?.name ?? ""
-    readonly property bool editingPlaceholder: windowCount === 0 && !(barConfig?.island ?? false) && BarWidgetService.editingBarId !== "" && BarWidgetService.editingBarId === (barConfig?.id ?? "") && BarWidgetService.editingScreenName === screenName
+    property bool editingBar: false
+    readonly property bool editingPlaceholder: windowCount === 0 && editingBar
 
     visible: windowCount > 0 || editingPlaceholder
 

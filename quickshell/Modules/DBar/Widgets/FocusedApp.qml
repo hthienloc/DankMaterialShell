@@ -103,7 +103,8 @@ BasePill {
             return false;
         return CompositorService.windowOnActiveWorkspace(screenName, activeWindow, popoutVisible);
     }
-    readonly property bool editingPlaceholder: !(barConfig?.island ?? false) && BarWidgetService.editingBarId !== "" && BarWidgetService.editingBarId === (barConfig?.id ?? "") && BarWidgetService.editingScreenName === screenName
+    property bool editingBar: false
+    readonly property bool editingPlaceholder: editingBar
     readonly property bool shown: hasWindowsOnCurrentWorkspace || editingPlaceholder
 
     width: shown ? (isVerticalOrientation ? barThickness : (effectiveHorizontalInnerWidth > 0 ? visualWidth : 0)) : 0
@@ -236,7 +237,7 @@ BasePill {
                         id: appText
                         text: {
                             if (root.editingPlaceholder)
-                                return I18n.tr("Focused window");
+                                return I18n.tr("Focused window", "Placeholder label for the focused window bar widget while editing the bar");
                             if (!root.showAppName || !activeWindow || !activeWindow.appId)
                                 return "";
                             return Paths.getAppName(activeWindow.appId, activeDesktopEntry);
