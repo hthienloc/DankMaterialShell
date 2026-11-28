@@ -22,7 +22,7 @@ BasePill {
     readonly property real appNameMaxWidth: maxWidth / 3
     property real allottedPrimarySize: 0
     property real availableWidth: allottedPrimarySize > 0 ? allottedPrimarySize : maxWidth
-    readonly property real naturalPrimarySize: isVerticalOrientation ? height : !hasWindowsOnCurrentWorkspace ? 0 : Theme.pxCeil(Math.min(contentItem?.naturalWidth ?? 0, maxWidth - horizontalPadding * 2) + horizontalPadding * 2, dpr)
+    readonly property real naturalPrimarySize: isVerticalOrientation ? height : !shown ? 0 : Theme.pxCeil(Math.min(contentItem?.naturalWidth ?? 0, maxWidth - horizontalPadding * 2) + horizontalPadding * 2, dpr)
     readonly property real minimumPrimarySize: isVerticalOrientation ? height : Math.min(naturalPrimarySize, Theme.snap((contentItem?.minimumWidth ?? 0) + horizontalPadding * 2, dpr))
     readonly property real effectiveHorizontalWidth: Math.max(0, Math.min(maxWidth, availableWidth))
     readonly property real effectiveHorizontalInnerWidth: Math.max(0, effectiveHorizontalWidth - horizontalPadding * 2)
@@ -103,15 +103,17 @@ BasePill {
             return false;
         return CompositorService.windowOnActiveWorkspace(screenName, activeWindow, popoutVisible);
     }
+    readonly property bool editingPlaceholder: !(barConfig?.island ?? false) && BarWidgetService.editingBarId !== "" && BarWidgetService.editingBarId === (barConfig?.id ?? "") && BarWidgetService.editingScreenName === screenName
+    readonly property bool shown: hasWindowsOnCurrentWorkspace || editingPlaceholder
 
-    width: hasWindowsOnCurrentWorkspace ? (isVerticalOrientation ? barThickness : (effectiveHorizontalInnerWidth > 0 ? visualWidth : 0)) : 0
-    height: hasWindowsOnCurrentWorkspace ? (isVerticalOrientation ? visualHeight : barThickness) : 0
-    visible: hasWindowsOnCurrentWorkspace && (isVerticalOrientation || effectiveHorizontalInnerWidth > 0)
+    width: shown ? (isVerticalOrientation ? barThickness : (effectiveHorizontalInnerWidth > 0 ? visualWidth : 0)) : 0
+    height: shown ? (isVerticalOrientation ? visualHeight : barThickness) : 0
+    visible: shown && (isVerticalOrientation || effectiveHorizontalInnerWidth > 0)
 
     content: Component {
         Item {
-            readonly property bool iconShown: horizontalAppIcon.visible || horizontalSteamIcon.visible
-            readonly property real appTextNatural: appText.visible ? Math.min(appText.implicitWidth, root.appNameMaxWidth) : 0
+            readonly property bool iconShown: horizontalAppIcon.visible || horizontalFallbackIcon.visible
+            readonly property real appTextNatural: appText.visible ? (root.editingPlaceholder ? appText.implicitWidth : Math.min(appText.implicitWidth, root.appNameMaxWidth)) : 0
             readonly property real naturalWidth: {
                 const parts = [];
                 if (iconShown)
@@ -126,7 +128,7 @@ BasePill {
             }
             readonly property real minimumWidth: (iconShown ? contentRow.iconSize + contentRow.spacing : 0) + Math.min(root.textSize * 4, appText.visible ? appTextNatural : titleText.visible ? titleText.implicitWidth : 0)
             implicitWidth: {
-                if (!root.hasWindowsOnCurrentWorkspace)
+                if (!root.shown)
                     return 0;
                 if (root.isVerticalOrientation)
                     return root.contentThickness;
@@ -141,7 +143,7 @@ BasePill {
                 anchors.centerIn: parent
                 width: 18
                 height: 18
-                visible: root.isVerticalOrientation && activeWindow && status === Image.Ready
+                visible: root.isVerticalOrientation && !root.editingPlaceholder && activeWindow && status === Image.Ready
                 source: {
                     if (!activeWindow || !activeWindow.appId)
                         return "";
@@ -163,14 +165,14 @@ BasePill {
             DIcon {
                 anchors.centerIn: parent
                 size: 18
-                name: "sports_esports"
+                name: root.editingPlaceholder ? "window" : "sports_esports"
                 color: root.contentColor
-                visible: root.isVerticalOrientation && activeWindow && activeWindow.appId && appIcon.status !== Image.Ready && Paths.isSteamApp(activeWindow.appId)
+                visible: root.isVerticalOrientation && (root.editingPlaceholder || (activeWindow && activeWindow.appId && appIcon.status !== Image.Ready && Paths.isSteamApp(activeWindow.appId)))
             }
 
             StyledText {
                 anchors.centerIn: parent
-                visible: root.isVerticalOrientation && activeWindow && activeWindow.appId && appIcon.status !== Image.Ready && !Paths.isSteamApp(activeWindow.appId)
+                visible: root.isVerticalOrientation && !root.editingPlaceholder && activeWindow && activeWindow.appId && appIcon.status !== Image.Ready && !Paths.isSteamApp(activeWindow.appId)
                 text: {
                     if (!activeWindow || !activeWindow.appId)
                         return "?";
@@ -201,7 +203,7 @@ BasePill {
                         width: contentRow.iconSize
                         height: contentRow.iconSize
                         anchors.verticalCenter: parent.verticalCenter
-                        visible: root.showIcon && activeWindow && status === Image.Ready
+                        visible: !root.editingPlaceholder && root.showIcon && activeWindow && status === Image.Ready
                         source: {
                             if (!activeWindow || !activeWindow.appId)
                                 return "";
@@ -221,18 +223,20 @@ BasePill {
                     }
 
                     DIcon {
-                        id: horizontalSteamIcon
+                        id: horizontalFallbackIcon
                         width: contentRow.iconSize
                         size: contentRow.iconSize
                         anchors.verticalCenter: parent.verticalCenter
-                        name: "sports_esports"
+                        name: root.editingPlaceholder ? "window" : "sports_esports"
                         color: root.contentColor
-                        visible: root.showIcon && activeWindow && activeWindow.appId && horizontalAppIcon.status !== Image.Ready && Paths.isSteamApp(activeWindow.appId)
+                        visible: root.editingPlaceholder || (root.showIcon && activeWindow && activeWindow.appId && horizontalAppIcon.status !== Image.Ready && Paths.isSteamApp(activeWindow.appId))
                     }
 
                     StyledText {
                         id: appText
                         text: {
+                            if (root.editingPlaceholder)
+                                return I18n.tr("Focused window");
                             if (!root.showAppName || !activeWindow || !activeWindow.appId)
                                 return "";
                             return Paths.getAppName(activeWindow.appId, activeDesktopEntry);
@@ -245,13 +249,9 @@ BasePill {
                         maximumLineCount: 1
                         width: {
                             const sp = contentRow.spacing;
-                            let used = 0;
-                            if (horizontalAppIcon.visible)
-                                used += horizontalAppIcon.width + sp;
-                            else if (horizontalSteamIcon.visible)
-                                used += horizontalSteamIcon.width + sp;
+                            const used = iconShown ? contentRow.iconSize + sp : 0;
                             const budget = Math.max(0, root.effectiveHorizontalInnerWidth - used);
-                            return Math.min(implicitWidth, root.appNameMaxWidth, budget);
+                            return root.editingPlaceholder ? Math.min(implicitWidth, budget) : Math.min(implicitWidth, root.appNameMaxWidth, budget);
                         }
                         visible: text.length > 0
                     }
@@ -283,11 +283,7 @@ BasePill {
                         maximumLineCount: 1
                         width: {
                             const sp = contentRow.spacing;
-                            let used = 0;
-                            if (horizontalAppIcon.visible)
-                                used += horizontalAppIcon.width + sp;
-                            else if (horizontalSteamIcon.visible)
-                                used += horizontalSteamIcon.width + sp;
+                            let used = iconShown ? contentRow.iconSize + sp : 0;
                             if (appText.visible)
                                 used += appText.width + sp;
                             if (appSeparator.visible)
@@ -295,7 +291,7 @@ BasePill {
                             const budget = root.effectiveHorizontalInnerWidth - used;
                             return Math.min(implicitWidth, Math.max(0, budget));
                         }
-                        visible: text.length > 0
+                        visible: !root.editingPlaceholder && text.length > 0
                     }
                 }
             }
