@@ -10,12 +10,13 @@ BasePill {
 
     property var widgetData: null
     property bool isActive: false
+    property bool editingBar: false
 
     readonly property bool hasUpdates: SystemUpdateService.updateCount > 0
     readonly property bool isChecking: SystemUpdateService.isChecking
     readonly property bool isClean: SystemUpdateService.sysupdateAvailable && !hasUpdates && !isChecking && !SystemUpdateService.hasError
     readonly property bool hideWhenIdle: widgetData?.hideWhenIdle === true
-    readonly property bool shouldHide: hideWhenIdle && isClean
+    readonly property bool shouldHide: !editingBar && hideWhenIdle && isClean
 
     width: shouldHide ? 0 : (isVerticalOrientation ? barThickness : visualWidth)
     height: shouldHide ? 0 : (isVerticalOrientation ? visualHeight : barThickness)

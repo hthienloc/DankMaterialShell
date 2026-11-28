@@ -7,12 +7,15 @@ import qs.DCommon.Widgets
 BasePill {
     id: root
 
-    opacity: DMSService.capsLockState ? 1 : 0
+    property bool editingBar: false
+    readonly property bool shown: DMSService.capsLockState || editingBar
+
+    opacity: shown ? 1 : 0
 
     states: [
         State {
             name: "hidden_horizontal"
-            when: !DMSService.capsLockState && !isVerticalOrientation
+            when: !shown && !isVerticalOrientation
             PropertyChanges {
                 target: root
                 width: 0
@@ -20,7 +23,7 @@ BasePill {
         },
         State {
             name: "hidden_vertical"
-            when: !DMSService.capsLockState && isVerticalOrientation
+            when: !shown && isVerticalOrientation
             PropertyChanges {
                 target: root
                 height: 0

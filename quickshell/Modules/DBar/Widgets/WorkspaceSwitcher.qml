@@ -249,7 +249,9 @@ BasePill {
         return getWorkspaceIndexFallback(modelData, index);
     }
 
-    readonly property bool shouldShow: workspaces.available
+    property bool editingBar: false
+    readonly property bool editingPlaceholder: editingBar && !workspaces.available
+    readonly property bool shouldShow: workspaces.available || editingBar
 
     width: shouldShow ? (isVertical ? barThickness : visualWidth) : 0
     height: shouldShow ? (isVertical ? visualHeight : barThickness) : 0
@@ -257,8 +259,17 @@ BasePill {
 
     content: Component {
         Item {
-            implicitWidth: workspaceRow.implicitWidth
-            implicitHeight: workspaceRow.implicitHeight
+            implicitWidth: root.editingPlaceholder ? placeholderIcon.width : workspaceRow.implicitWidth
+            implicitHeight: root.editingPlaceholder ? placeholderIcon.height : workspaceRow.implicitHeight
+
+            DIcon {
+                id: placeholderIcon
+                anchors.centerIn: parent
+                visible: root.editingPlaceholder
+                name: "view_module"
+                size: Theme.barIconSize(root.barThickness, undefined, root.barConfig?.maximizeWidgetIcons, root.barConfig?.iconScale)
+                color: root.contentColor
+            }
         }
     }
 

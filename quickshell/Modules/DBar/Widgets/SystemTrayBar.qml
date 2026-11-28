@@ -17,6 +17,7 @@ BasePill {
 
     property var parentWindow: null
     property var widgetData: null
+    property bool editingBar: false
     property string section: "right"
     // A same-named binding inside the overflow grid would resolve to its own property.
     readonly property var overflowPopoutRef: overflowPopoutLoader.item
@@ -334,7 +335,8 @@ BasePill {
     property bool suppressShiftAnimation: false
     readonly property bool hasHiddenItems: hiddenBarItems.length > 0
     readonly property bool inlineExpanded: hasHiddenItems && !useOverflowPopup && menuOpen
-    visible: allTrayItems.length > 0
+    readonly property bool editingPlaceholder: editingBar && allTrayItems.length === 0
+    visible: allTrayItems.length > 0 || editingPlaceholder
     opacity: visible ? 1 : 0
 
     Behavior on opacity {
@@ -477,13 +479,23 @@ BasePill {
                 return Math.max(primaryAxis ? root._basePrimarySize : 0, measured ?? 0);
             }
 
-            implicitWidth: resolvedImplicitSize(!root.isVerticalOrientation, layoutItem?.implicitWidth)
-            implicitHeight: resolvedImplicitSize(root.isVerticalOrientation, layoutItem?.implicitHeight)
+            implicitWidth: root.editingPlaceholder ? placeholderIcon.width : resolvedImplicitSize(!root.isVerticalOrientation, layoutItem?.implicitWidth)
+            implicitHeight: root.editingPlaceholder ? placeholderIcon.height : resolvedImplicitSize(root.isVerticalOrientation, layoutItem?.implicitHeight)
 
             Loader {
                 id: layoutLoader
                 anchors.centerIn: parent
+                visible: !root.editingPlaceholder
                 sourceComponent: root.isVerticalOrientation ? columnComp : rowComp
+            }
+
+            DIcon {
+                id: placeholderIcon
+                anchors.centerIn: parent
+                visible: root.editingPlaceholder
+                name: "apps"
+                size: root.trayIconSize
+                color: Theme.widgetIconColor
             }
         }
     }

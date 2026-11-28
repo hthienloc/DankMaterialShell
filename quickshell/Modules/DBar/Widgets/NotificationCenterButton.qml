@@ -11,9 +11,10 @@ BasePill {
     property var widgetData: null
     property bool hasUnread: false
     property bool isActive: false
+    property bool editingBar: false
 
     readonly property bool hideWhenEmpty: SettingsData.widgetOption("notificationButton", widgetData, "hideWhenEmpty")
-    readonly property bool shouldHide: hideWhenEmpty && widgetData?.enabled !== false && NotificationService.notifications.length === 0
+    readonly property bool shouldHide: !editingBar && hideWhenEmpty && widgetData?.enabled !== false && NotificationService.notifications.length === 0
 
     width: shouldHide ? 0 : (isVerticalOrientation ? barThickness : visualWidth)
     height: shouldHide ? 0 : (isVerticalOrientation ? visualHeight : barThickness)

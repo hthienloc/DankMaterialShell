@@ -15,6 +15,7 @@ BasePill {
     id: root
 
     property var widgetData: null
+    property bool editingBar: false
 
     readonly property string style: pick("style", SysmonCatalog.barChoices.style)
     readonly property string labelMode: pick("label", SysmonCatalog.barChoices.label)
@@ -39,7 +40,8 @@ BasePill {
     // Rebuilt once per sample, not by a binding: its inputs are DgopService properties a sample assigns one by one.
     property var groups: []
     readonly property string idleText: I18n.tr("Idle", "device state")
-    readonly property bool hiddenByIdle: groups.length === 0
+    readonly property bool editingPlaceholder: editingBar && groups.length === 0
+    readonly property bool hiddenByIdle: !editingBar && groups.length === 0
     readonly property bool splitActive: separator === "separate" && !noBackground && groups.length > 1
     // Centers of the gaps between groups, along the bar in visualContent coordinates.
     property var bounds: []
@@ -423,8 +425,17 @@ BasePill {
             // itemAt() is not observable, so the bounds binding re-runs when delegates come or go.
             property int itemsRevision: 0
 
-            implicitWidth: root.isVerticalOrientation ? root.contentThickness : layout.implicitWidth
-            implicitHeight: root.isVerticalOrientation ? layout.implicitHeight : root.contentThickness
+            implicitWidth: root.isVerticalOrientation ? root.contentThickness : (root.editingPlaceholder ? placeholderIcon.width : layout.implicitWidth)
+            implicitHeight: root.isVerticalOrientation ? (root.editingPlaceholder ? placeholderIcon.height : layout.implicitHeight) : root.contentThickness
+
+            DIcon {
+                id: placeholderIcon
+                anchors.centerIn: parent
+                visible: root.editingPlaceholder
+                name: "monitoring"
+                size: root.iconSize
+                color: root.contentColor
+            }
 
             Binding {
                 target: root

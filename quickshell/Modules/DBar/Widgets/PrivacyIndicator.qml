@@ -16,12 +16,16 @@ BasePill {
     property bool showCameraIcon: SettingsData.widgetOption("privacyIndicator", widgetData, "privacyShowCameraIcon")
     property bool showScreenSharingIcon: SettingsData.widgetOption("privacyIndicator", widgetData, "privacyShowScreenShareIcon")
 
-    readonly property bool hasActivePrivacy: showMicIcon || showCameraIcon || showScreenSharingIcon || PrivacyService.anyPrivacyActive
-    readonly property int activeCount: (showMicIcon ? 1 : PrivacyService.microphoneActive) + (showCameraIcon ? 1 : PrivacyService.cameraActive) + (showScreenSharingIcon ? 1 : PrivacyService.screensharingActive)
-    readonly property real contentWidth: hasActivePrivacy ? (activeCount * 18 + (activeCount - 1) * Theme.spacingXS) : 0
-    readonly property real contentHeight: hasActivePrivacy ? (activeCount * 18 + (activeCount - 1) * Theme.spacingXS) : 0
+    property bool editingBar: false
 
-    opacity: hasActivePrivacy ? 1 : 0
+    readonly property bool hasActivePrivacy: showMicIcon || showCameraIcon || showScreenSharingIcon || PrivacyService.anyPrivacyActive
+    readonly property bool editingPlaceholder: editingBar && !hasActivePrivacy
+    readonly property bool shown: hasActivePrivacy || editingBar
+    readonly property int activeCount: (showMicIcon ? 1 : PrivacyService.microphoneActive) + (showCameraIcon ? 1 : PrivacyService.cameraActive) + (showScreenSharingIcon ? 1 : PrivacyService.screensharingActive)
+    readonly property real contentWidth: hasActivePrivacy ? (activeCount * 18 + (activeCount - 1) * Theme.spacingXS) : (editingPlaceholder ? Theme.iconSizeSmall : 0)
+    readonly property real contentHeight: hasActivePrivacy ? (activeCount * 18 + (activeCount - 1) * Theme.spacingXS) : (editingPlaceholder ? Theme.iconSizeSmall : 0)
+
+    opacity: shown ? 1 : 0
 
     Ref {
         service: PrivacyService
@@ -30,7 +34,7 @@ BasePill {
     states: [
         State {
             name: "hidden_horizontal"
-            when: !hasActivePrivacy && !isVerticalOrientation
+            when: !shown && !isVerticalOrientation
             PropertyChanges {
                 target: root
                 width: 0
@@ -38,7 +42,7 @@ BasePill {
         },
         State {
             name: "hidden_vertical"
-            when: !hasActivePrivacy && isVerticalOrientation
+            when: !shown && isVerticalOrientation
             PropertyChanges {
                 target: root
                 height: 0
@@ -67,8 +71,16 @@ BasePill {
 
     content: Component {
         Item {
-            implicitWidth: root.hasActivePrivacy ? root.contentWidth : 0
-            implicitHeight: root.hasActivePrivacy ? root.contentHeight : 0
+            implicitWidth: root.shown ? root.contentWidth : 0
+            implicitHeight: root.shown ? root.contentHeight : 0
+
+            DIcon {
+                anchors.centerIn: parent
+                visible: root.editingPlaceholder
+                name: "privacy_tip"
+                size: Theme.iconSizeSmall
+                color: Theme.widgetIconColor
+            }
 
             Column {
                 anchors.centerIn: parent
